@@ -1,0 +1,16 @@
+{
+  "actions": [
+    { "name": "Run",         "keys": ["Shift"],  "pad": ["LThumb"], "mouse": [] },
+    { "name": "Crouch",      "keys": ["Ctrl"],   "pad": ["B"],      "mouse": [] },
+    { "name": "SwitchView",  "keys": ["V"],      "pad": ["Y"],      "mouse": [] },
+    { "name": "Pause",       "keys": ["Escape"], "pad": ["Start"],  "mouse": [] },
+    { "name": "DebugLight",  "keys": ["F3"],     "pad": ["Back"],   "mouse": [] },
+    { "name": "DebugPinger", "keys": ["F4"],     "pad": [],         "mouse": [] }
+  ],
+  "axes": [
+    { "name": "MoveX", "posKey": "D", "negKey": "A", "padAxis": "LX", "deadzone": 0.24 },
+    { "name": "MoveY", "posKey": "W", "negKey": "S", "padAxis": "LY", "deadzone": 0.24 },
+    { "name": "LookX", "posKey": "Right", "negKey": "Left", "padAxis": "RX", "deadzone": 0.18 },
+    { "name": "LookY", "posKey": "Up", "negKey": "Down", "padAxis": "RY", "deadzone": 0.18 }
+  ]
+}

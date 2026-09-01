@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_wall",
+  "shader": "forward_lit",
+  "baseColor": [0.52, 0.54, 0.58, 1.0],
+  "metallic": 0.0,
+  "roughness": 0.85,
+  "emissive": 0.0,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

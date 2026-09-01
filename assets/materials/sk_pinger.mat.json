@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_pinger",
+  "shader": "forward_lit",
+  "baseColor": [0.95, 0.65, 0.25, 1.0],
+  "metallic": 0.0,
+  "roughness": 0.5,
+  "emissive": 0.6,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

@@ -1,0 +1,816 @@
+{
+  "engine": "MyEngine",
+  "entities": [
+    {
+      "childIndex": 0,
+      "components": {
+        "Camera": {
+          "farZ": 1000.0,
+          "fovYDeg": 60.0,
+          "isPrimary": 1,
+          "nearZ": 0.10000000149011612
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            7.0,
+            -16.0
+          ],
+          "rotation": [
+            0.15643447637557983,
+            0.0,
+            0.0,
+            0.9876883625984192
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "fileId": 100,
+      "name": "Main Camera"
+    },
+    {
+      "childIndex": 1,
+      "components": {
+        "Light": {
+          "ambient": [
+            0.15000000596046448,
+            0.1599999964237213,
+            0.18000000715255737
+          ],
+          "castShadow": 0,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "intensity": 1.0,
+          "range": 15.0,
+          "spotInnerDeg": 25.0,
+          "spotOuterDeg": 35.0,
+          "type": 0
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.4082179069519043,
+            -0.23456971347332,
+            0.10938165336847305,
+            0.8754260540008545
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "fileId": 101,
+      "name": "Sun"
+    },
+    {
+      "childIndex": 2,
+      "components": {
+        "Light": {
+          "ambient": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "castShadow": 0,
+          "color": [
+            1.0,
+            0.9700000286102295,
+            0.9200000166893005
+          ],
+          "intensity": 0.0,
+          "range": 15.0,
+          "spotInnerDeg": 25.0,
+          "spotOuterDeg": 35.0,
+          "type": 0
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.4082300066947937,
+            -0.2345699965953827,
+            0.10937000066041946,
+            0.8754299879074097
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "fileId": 2,
+      "name": "DebugSun"
+    },
+    {
+      "childIndex": 3,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            4.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "ParticleEmitter": {
+          "blendMode": 0,
+          "boxExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "burstCount": 0,
+          "collisionBounce": 0.4000000059604645,
+          "collisionFloor": 0,
+          "collisionFloorY": 0.0,
+          "collisionFriction": 0.0,
+          "collisionLifeLoss": 0.0,
+          "collisionThickness": 0.0,
+          "colorBegin": [
+            1.0,
+            0.8500000238418579,
+            0.3499999940395355,
+            1.0
+          ],
+          "colorEnd": [
+            1.0,
+            0.15000000596046448,
+            0.019999999552965164,
+            0.0
+          ],
+          "colorMid1": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "colorMid2": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "colorMidT1": 0.0,
+          "colorMidT2": 0.0,
+          "coneAngleDeg": 20.0,
+          "depthCollision": 0,
+          "durationTicks": 0,
+          "emitFrom": 0,
+          "flipBlend": 0,
+          "flipCycles": 1.0,
+          "flipFps": 0.0,
+          "flipRandomStart": 0,
+          "flipTilesX": 1,
+          "flipTilesY": 1,
+          "gravity": [
+            0.0,
+            1.5,
+            0.0
+          ],
+          "lifetimeMax": 2.200000047683716,
+          "lifetimeMin": 1.2000000476837158,
+          "lightIntensity": 1.0,
+          "lightReceiveShadow": 1,
+          "lightWrap": 0.5,
+          "lightingMode": 0,
+          "looping": 1,
+          "maxParticles": 100000,
+          "noiseFrequency": 1.0,
+          "noiseSpeed": 0.5,
+          "playing": 1,
+          "prewarmTime": 0.0,
+          "rate": 200.0,
+          "rotationMax": 0.0,
+          "rotationMin": 0.0,
+          "rotationSpeedMax": 0.0,
+          "rotationSpeedMin": 0.0,
+          "seed": 12345,
+          "shape": 2,
+          "shapeRadius": 0.15000000596046448,
+          "simulationSpace": 0,
+          "sizeEndScale": 0.25,
+          "sizeMax": 0.2199999988079071,
+          "sizeMidScale": 1.0,
+          "sizeMidT": 0.0,
+          "sizeMin": 0.10000000149011612,
+          "softFadeDistance": 0.0,
+          "speedMax": 3.5,
+          "speedMin": 2.0,
+          "stretchMax": 4.0,
+          "stretchScale": 0.0,
+          "subframeEmission": 0,
+          "texture": 0,
+          "turbulence": 0.0,
+          "turbulenceMode": 0,
+          "velocityInheritance": 0.0,
+          "wind": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "fileId": 623,
+      "name": "Fire"
+    },
+    {
+      "childIndex": 4,
+      "components": {
+        "Camera": {
+          "farZ": 500.0,
+          "fovYDeg": 70.0,
+          "isPrimary": 1,
+          "nearZ": 0.10000000149011612
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            13.0,
+            -9.0
+          ],
+          "rotation": [
+            0.46175000071525574,
+            0.0,
+            0.0,
+            0.8870099782943726
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "fileId": 1,
+      "name": "Main Camera"
+    },
+    {
+      "childIndex": 5,
+      "components": {
+        "Collider": {
+          "friction": 0.800000011920929,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 4205236152057201153,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            16.0,
+            1.0,
+            16.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200897,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 3,
+      "name": "Floor"
+    },
+    {
+      "childIndex": 6,
+      "components": {
+        "Collider": {
+          "friction": 0.4000000059604645,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            1.5,
+            6.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            14.0,
+            3.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200898,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 4,
+      "name": "Wall_N"
+    },
+    {
+      "childIndex": 7,
+      "components": {
+        "Collider": {
+          "friction": 0.4000000059604645,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            1.5,
+            -6.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            14.0,
+            3.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200898,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 5,
+      "name": "Wall_S"
+    },
+    {
+      "childIndex": 8,
+      "components": {
+        "Collider": {
+          "friction": 0.4000000059604645,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            6.5,
+            1.5,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            3.0,
+            12.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200898,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 6,
+      "name": "Wall_E"
+    },
+    {
+      "childIndex": 9,
+      "components": {
+        "Collider": {
+          "friction": 0.4000000059604645,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            -6.5,
+            1.5,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            3.0,
+            12.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200898,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 7,
+      "name": "Wall_W"
+    },
+    {
+      "childIndex": 10,
+      "components": {
+        "Collider": {
+          "friction": 0.4000000059604645,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            -3.5,
+            1.5,
+            1.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            5.0,
+            3.0,
+            0.5
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200899,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 8,
+      "name": "Partition"
+    },
+    {
+      "childIndex": 11,
+      "components": {
+        "Collider": {
+          "friction": 0.4000000059604645,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 2.0,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 1
+        },
+        "LocalTransform": {
+          "position": [
+            3.0,
+            1.5,
+            3.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            3.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200899,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 9,
+      "name": "Pillar"
+    },
+    {
+      "childIndex": 12,
+      "components": {
+        "AcousticVolume": {
+          "blockLayerMask": 4294967295,
+          "cellSize": 0.5,
+          "dimX": 32,
+          "dimY": 6,
+          "dimZ": 32,
+          "enabled": true,
+          "glowIntensity": 1.0,
+          "glowKeepPerTick": 0.0,
+          "navCellRatio": 2
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            1.75,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "fileId": 10,
+      "name": "Acoustic Volume"
+    },
+    {
+      "childIndex": 13,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "SkDebugDirector": {
+          "applied": 0,
+          "litOn": 0,
+          "pinger": 0,
+          "pingerOn": 0,
+          "sun": 0
+        }
+      },
+      "fileId": 11,
+      "name": "GameRoot"
+    },
+    {
+      "childIndex": 14,
+      "components": {
+        "AcousticEmitter": {
+          "autoFootstep": true,
+          "cooldown": 0,
+          "cooldownTicks": 12,
+          "footstepGain": 1.0,
+          "pendingLoudness": 0.0,
+          "pendingRadiusM": 0.0,
+          "pendingTone": 0,
+          "stepDistanceM": 0.8999999761581421,
+          "ticksPerRing": 2,
+          "travelAccum": 0.0
+        },
+        "CharacterController": {
+          "gravityScale": 1.0,
+          "height": 1.600000023841858,
+          "isGrounded": 0,
+          "jumpSpeed": 0.0,
+          "moveInput": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.30000001192092896,
+          "skinWidth": 0.019999999552965164,
+          "slopeLimitDeg": 50.0,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.8500000238418579,
+            -4.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "SkFpsController": {
+          "breathPhase": 0,
+          "camera": 0,
+          "cursorMode": 0,
+          "firstPerson": 0,
+          "pitchDeg": 0.0,
+          "root": 0,
+          "yawDeg": 0.0
+        }
+      },
+      "fileId": 12,
+      "name": "Player"
+    },
+    {
+      "childIndex": 0,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            0.550000011920929,
+            1.5,
+            0.550000011920929
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200900,
+          "mesh": 1506918697593860217
+        }
+      },
+      "fileId": 13,
+      "name": "PlayerBody",
+      "parent": 12
+    },
+    {
+      "childIndex": 15,
+      "components": {
+        "AcousticEmitter": {
+          "autoFootstep": false,
+          "cooldown": 0,
+          "cooldownTicks": 30,
+          "footstepGain": 1.0,
+          "pendingLoudness": 0.0,
+          "pendingRadiusM": 0.0,
+          "pendingTone": 0,
+          "stepDistanceM": 0.800000011920929,
+          "ticksPerRing": 2,
+          "travelAccum": 0.0
+        },
+        "Active": {
+          "enabled": 0
+        },
+        "LocalTransform": {
+          "position": [
+            -4.0,
+            1.2000000476837158,
+            -3.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200901,
+          "mesh": 2446064346655322217
+        },
+        "SkPinger": {
+          "everyTicks": 150,
+          "loudness": 1.0,
+          "radiusM": 16.0,
+          "ringTicks": 2,
+          "startDelay": 6,
+          "ticks": 0,
+          "tone": 1
+        }
+      },
+      "fileId": 14,
+      "name": "DebugPinger"
+    }
+  ],
+  "nextFileId": 624,
+  "sceneName": "Untitled",
+  "version": 3
+}

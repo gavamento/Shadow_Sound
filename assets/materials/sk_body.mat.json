@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_body",
+  "shader": "forward_lit",
+  "baseColor": [0.25, 0.55, 0.65, 1.0],
+  "metallic": 0.0,
+  "roughness": 0.6,
+  "emissive": 0.0,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}
