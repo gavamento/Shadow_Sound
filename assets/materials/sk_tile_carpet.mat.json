@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_tile_carpet",
+  "shader": "forward_lit",
+  "baseColor": [0.30, 0.18, 0.17, 1.0],
+  "metallic": 0.0,
+  "roughness": 0.95,
+  "emissive": 0.0,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

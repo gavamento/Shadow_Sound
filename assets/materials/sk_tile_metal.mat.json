@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_tile_metal",
+  "shader": "forward_lit",
+  "baseColor": [0.56, 0.58, 0.62, 1.0],
+  "metallic": 0.8,
+  "roughness": 0.35,
+  "emissive": 0.0,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

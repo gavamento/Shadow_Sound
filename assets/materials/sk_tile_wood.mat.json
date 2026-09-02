@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_tile_wood",
+  "shader": "forward_lit",
+  "baseColor": [0.42, 0.30, 0.17, 1.0],
+  "metallic": 0.0,
+  "roughness": 0.80,
+  "emissive": 0.0,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

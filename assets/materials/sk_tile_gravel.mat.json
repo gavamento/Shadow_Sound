@@ -1,0 +1,13 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_tile_gravel",
+  "shader": "forward_lit",
+  "baseColor": [0.38, 0.38, 0.34, 1.0],
+  "metallic": 0.0,
+  "roughness": 0.95,
+  "emissive": 0.0,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

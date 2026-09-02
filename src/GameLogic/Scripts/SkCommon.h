@@ -44,6 +44,7 @@ inline constexpr const char* kNameCamera = "Main Camera";
 inline constexpr const char* kNameGameRoot = "GameRoot";
 inline constexpr const char* kNameDebugSun = "DebugSun";
 inline constexpr const char* kNameDebugPinger = "DebugPinger";
+inline constexpr const char* kNameAgentEar = "AgentEar"; // 音の敵 (企画 6-2)
 
 // ---- 組込みコンポーネントの名前ハッシュ (毎 tick 取り直さない流儀) ----
 // AcousticEmitter (Engine/Core/Components.h)
@@ -60,6 +61,10 @@ inline constexpr uint64_t kFieldIntensity = MyeNameHash("intensity");
 inline constexpr uint64_t kFieldAmbient = MyeNameHash("ambient");
 inline constexpr uint64_t kCompActive = MyeNameHash("Active");
 inline constexpr uint64_t kFieldEnabled = MyeNameHash("enabled");
+// AgentBrain (エンジン M65f)。敵の思考はエンジンのフェーズ 3.4 が回すので、
+// ゲーム側は state を**読むだけ**。0=巡回 1=警戒 2=探索 3=追跡 4=帰還
+inline constexpr uint64_t kCompAgentBrain = MyeNameHash("AgentBrain");
+inline constexpr uint64_t kFieldAgentState = MyeNameHash("state");
 
 // ---- SkTuning (assets\schemas\sk_tuning.component.schema.json, id 3001) ----
 inline constexpr uint64_t kCompTuning = MyeNameHash("SkTuning");
