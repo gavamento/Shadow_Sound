@@ -1,3 +1,7 @@
 /.mye/
 /cache/
 /dist/
+/crash/
+/save/
+/assets/scripts/Generated/
+*.log
