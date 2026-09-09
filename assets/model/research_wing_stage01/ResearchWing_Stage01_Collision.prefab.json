@@ -6,39 +6,6 @@
       "components": {
         "LocalTransform": {
           "position": [
-            -7.480412006378174,
-            2.74546164291678e-06,
-            -3.636683702468872
-          ],
-          "rotation": [
-            -0.0,
-            0.0,
-            -0.0,
-            1.0
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        },
-        "PrefabInstance": {
-          "outerLocalId": 0,
-          "prefabHash": 2478465742611309965
-        },
-        "PrefabLink": {
-          "localId": 0
-        }
-      },
-      "fileId": 845,
-      "name": "ResearchWing_Stage01_Collision",
-      "overrides": []
-    },
-    {
-      "childIndex": 0,
-      "components": {
-        "LocalTransform": {
-          "position": [
             0.0,
             0.0,
             0.0
@@ -54,15 +21,10 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 1
         }
       },
-      "fileId": 846,
-      "name": "ResearchWing_Stage01_Collision",
-      "overrides": [],
-      "parent": 845
+      "fileId": 1,
+      "name": "ResearchWing_Stage01_Collision"
     },
     {
       "childIndex": 0,
@@ -101,15 +63,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 2
         }
       },
-      "fileId": 847,
+      "fileId": 2,
       "name": "A1_LAB01_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 1,
@@ -148,15 +106,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 3
         }
       },
-      "fileId": 848,
+      "fileId": 3,
       "name": "A1_LAB01_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 2,
@@ -195,15 +149,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 4
         }
       },
-      "fileId": 849,
+      "fileId": 4,
       "name": "A2a_Corridor_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 3,
@@ -242,15 +192,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 5
         }
       },
-      "fileId": 850,
+      "fileId": 5,
       "name": "A2a_Corridor_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 4,
@@ -289,15 +235,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 6
         }
       },
-      "fileId": 851,
+      "fileId": 6,
       "name": "A2b_Corridor_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 5,
@@ -336,15 +278,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 7
         }
       },
-      "fileId": 852,
+      "fileId": 7,
       "name": "A2b_Corridor_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 6,
@@ -383,15 +321,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 8
         }
       },
-      "fileId": 853,
+      "fileId": 8,
       "name": "A3J_Junction_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 7,
@@ -430,15 +364,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 9
         }
       },
-      "fileId": 854,
+      "fileId": 9,
       "name": "A3J_Junction_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 8,
@@ -477,15 +407,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 10
         }
       },
-      "fileId": 855,
+      "fileId": 10,
       "name": "A3M_Metal_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 9,
@@ -524,15 +450,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 11
         }
       },
-      "fileId": 856,
+      "fileId": 11,
       "name": "A3M_Metal_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 10,
@@ -571,15 +493,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 12
         }
       },
-      "fileId": 857,
+      "fileId": 12,
       "name": "A3S_Storage_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 11,
@@ -618,15 +536,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 13
         }
       },
-      "fileId": 858,
+      "fileId": 13,
       "name": "A3S_Storage_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 12,
@@ -665,15 +579,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 14
         }
       },
-      "fileId": 859,
+      "fileId": 14,
       "name": "A4_Central_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 13,
@@ -712,15 +622,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 15
         }
       },
-      "fileId": 860,
+      "fileId": 15,
       "name": "A4_Central_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 14,
@@ -759,15 +665,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 16
         }
       },
-      "fileId": 861,
+      "fileId": 16,
       "name": "A5_Supply_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 15,
@@ -806,15 +708,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 17
         }
       },
-      "fileId": 862,
+      "fileId": 17,
       "name": "A5_Supply_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 16,
@@ -853,15 +751,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 18
         }
       },
-      "fileId": 863,
+      "fileId": 18,
       "name": "A6a_Connector_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 17,
@@ -900,15 +794,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 19
         }
       },
-      "fileId": 864,
+      "fileId": 19,
       "name": "A6a_Connector_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 18,
@@ -947,15 +837,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 20
         }
       },
-      "fileId": 865,
+      "fileId": 20,
       "name": "A6_Core_Floor",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 19,
@@ -994,15 +880,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 21
         }
       },
-      "fileId": 866,
+      "fileId": 21,
       "name": "A6_Core_Ceiling",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 20,
@@ -1041,15 +923,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 22
         }
       },
-      "fileId": 867,
+      "fileId": 22,
       "name": "Wall_x0_0_10",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 21,
@@ -1088,15 +966,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 23
         }
       },
-      "fileId": 868,
+      "fileId": 23,
       "name": "Wall_x12_0_6",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 22,
@@ -1135,15 +1009,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 24
         }
       },
-      "fileId": 869,
+      "fileId": 24,
       "name": "Wall_x12_6_7",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 23,
@@ -1182,15 +1052,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 25
         }
       },
-      "fileId": 870,
+      "fileId": 25,
       "name": "Wall_x12_7_9",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 24,
@@ -1229,15 +1095,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 26
         }
       },
-      "fileId": 871,
+      "fileId": 26,
       "name": "Wall_x12_9_10",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 25,
@@ -1276,15 +1138,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 27
         }
       },
-      "fileId": 872,
+      "fileId": 27,
       "name": "Wall_z0_0_12",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 26,
@@ -1323,15 +1181,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 28
         }
       },
-      "fileId": 873,
+      "fileId": 28,
       "name": "Wall_z10_0_12",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 27,
@@ -1370,15 +1224,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 29
         }
       },
-      "fileId": 874,
+      "fileId": 29,
       "name": "Wall_z10_12_20",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 28,
@@ -1417,15 +1267,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 30
         }
       },
-      "fileId": 875,
+      "fileId": 30,
       "name": "Wall_z10_40_48",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 29,
@@ -1464,15 +1310,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 31
         }
       },
-      "fileId": 876,
+      "fileId": 31,
       "name": "Wall_z10_48_51",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 30,
@@ -1511,15 +1353,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 32
         }
       },
-      "fileId": 877,
+      "fileId": 32,
       "name": "Wall_z10_51_53",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 31,
@@ -1558,15 +1396,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 33
         }
       },
-      "fileId": 878,
+      "fileId": 33,
       "name": "Wall_z10_53_56",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 32,
@@ -1605,15 +1439,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 34
         }
       },
-      "fileId": 879,
+      "fileId": 34,
       "name": "Wall_z10_56_60",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 33,
@@ -1652,15 +1482,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 35
         }
       },
-      "fileId": 880,
+      "fileId": 35,
       "name": "Wall_x24_6_10",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 34,
@@ -1699,15 +1525,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 36
         }
       },
-      "fileId": 881,
+      "fileId": 36,
       "name": "Wall_x24_10_16",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 35,
@@ -1746,15 +1568,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 37
         }
       },
-      "fileId": 882,
+      "fileId": 37,
       "name": "Wall_x24_16_17",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 36,
@@ -1793,15 +1611,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 38
         }
       },
-      "fileId": 883,
+      "fileId": 38,
       "name": "Wall_x24_17_19",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 37,
@@ -1840,15 +1654,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 39
         }
       },
-      "fileId": 884,
+      "fileId": 39,
       "name": "Wall_x24_19_20",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 38,
@@ -1887,15 +1697,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 40
         }
       },
-      "fileId": 885,
+      "fileId": 40,
       "name": "Wall_x24_20_24",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 39,
@@ -1934,15 +1740,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 41
         }
       },
-      "fileId": 886,
+      "fileId": 41,
       "name": "Wall_z6_12_24",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 40,
@@ -1981,15 +1783,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 42
         }
       },
-      "fileId": 887,
+      "fileId": 42,
       "name": "Wall_x20_10_20",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 41,
@@ -2028,15 +1826,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 43
         }
       },
-      "fileId": 888,
+      "fileId": 43,
       "name": "Wall_z20_20_24",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 42,
@@ -2075,15 +1869,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 44
         }
       },
-      "fileId": 889,
+      "fileId": 44,
       "name": "Wall_z20_28_40",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 43,
@@ -2122,15 +1912,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 45
         }
       },
-      "fileId": 890,
+      "fileId": 45,
       "name": "Wall_x28_16_17",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 44,
@@ -2169,15 +1955,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 46
         }
       },
-      "fileId": 891,
+      "fileId": 46,
       "name": "Wall_x28_17_19",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 45,
@@ -2216,15 +1998,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 47
         }
       },
-      "fileId": 892,
+      "fileId": 47,
       "name": "Wall_x28_19_20",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 46,
@@ -2263,15 +2041,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 48
         }
       },
-      "fileId": 893,
+      "fileId": 48,
       "name": "Wall_x28_20_21",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 47,
@@ -2310,15 +2084,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 49
         }
       },
-      "fileId": 894,
+      "fileId": 49,
       "name": "Wall_x28_21_23",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 48,
@@ -2357,15 +2127,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 50
         }
       },
-      "fileId": 895,
+      "fileId": 50,
       "name": "Wall_x28_23_24",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 49,
@@ -2404,15 +2170,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 51
         }
       },
-      "fileId": 896,
+      "fileId": 51,
       "name": "Wall_x28_24_36",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 50,
@@ -2451,15 +2213,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 52
         }
       },
-      "fileId": 897,
+      "fileId": 52,
       "name": "Wall_z16_24_28",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 51,
@@ -2498,15 +2256,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 53
         }
       },
-      "fileId": 898,
+      "fileId": 53,
       "name": "Wall_z16_28_40",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 52,
@@ -2545,15 +2299,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 54
         }
       },
-      "fileId": 899,
+      "fileId": 54,
       "name": "Wall_z24_24_28",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 53,
@@ -2592,15 +2342,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 55
         }
       },
-      "fileId": 900,
+      "fileId": 55,
       "name": "Wall_x40_10_16",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 54,
@@ -2639,15 +2385,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 56
         }
       },
-      "fileId": 901,
+      "fileId": 56,
       "name": "Wall_x40_16_17",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 55,
@@ -2686,15 +2428,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 57
         }
       },
-      "fileId": 902,
+      "fileId": 57,
       "name": "Wall_x40_17_19",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 56,
@@ -2733,15 +2471,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 58
         }
       },
-      "fileId": 903,
+      "fileId": 58,
       "name": "Wall_x40_19_20",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 57,
@@ -2780,15 +2514,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 59
         }
       },
-      "fileId": 904,
+      "fileId": 59,
       "name": "Wall_x40_20_27",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 58,
@@ -2827,15 +2557,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 60
         }
       },
-      "fileId": 905,
+      "fileId": 60,
       "name": "Wall_x40_27_29",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 59,
@@ -2874,15 +2600,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 61
         }
       },
-      "fileId": 906,
+      "fileId": 61,
       "name": "Wall_x40_29_30",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 60,
@@ -2921,15 +2643,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 62
         }
       },
-      "fileId": 907,
+      "fileId": 62,
       "name": "Wall_x40_30_36",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 61,
@@ -2968,15 +2686,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 63
         }
       },
-      "fileId": 908,
+      "fileId": 63,
       "name": "Wall_z36_28_40",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 62,
@@ -3015,15 +2729,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 64
         }
       },
-      "fileId": 909,
+      "fileId": 64,
       "name": "Wall_x60_10_18",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 63,
@@ -3062,15 +2772,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 65
         }
       },
-      "fileId": 910,
+      "fileId": 65,
       "name": "Wall_x60_18_19",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 64,
@@ -3109,15 +2815,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 66
         }
       },
-      "fileId": 911,
+      "fileId": 66,
       "name": "Wall_x60_19_21",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 65,
@@ -3156,15 +2858,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 67
         }
       },
-      "fileId": 912,
+      "fileId": 67,
       "name": "Wall_x60_21_22",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 66,
@@ -3203,15 +2901,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 68
         }
       },
-      "fileId": 913,
+      "fileId": 68,
       "name": "Wall_x60_22_30",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 67,
@@ -3250,15 +2944,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 69
         }
       },
-      "fileId": 914,
+      "fileId": 69,
       "name": "Wall_z30_40_60",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 68,
@@ -3297,15 +2987,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 70
         }
       },
-      "fileId": 915,
+      "fileId": 70,
       "name": "Wall_x48_2_10",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 69,
@@ -3344,15 +3030,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 71
         }
       },
-      "fileId": 916,
+      "fileId": 71,
       "name": "Wall_x56_2_10",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 70,
@@ -3391,15 +3073,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 72
         }
       },
-      "fileId": 917,
+      "fileId": 72,
       "name": "Wall_z2_48_56",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 71,
@@ -3438,15 +3116,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 73
         }
       },
-      "fileId": 918,
+      "fileId": 73,
       "name": "Wall_x64_18_19",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 72,
@@ -3485,15 +3159,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 74
         }
       },
-      "fileId": 919,
+      "fileId": 74,
       "name": "Wall_x64_19_21",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 73,
@@ -3532,15 +3202,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 75
         }
       },
-      "fileId": 920,
+      "fileId": 75,
       "name": "Wall_x64_21_22",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 74,
@@ -3579,15 +3245,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 76
         }
       },
-      "fileId": 921,
+      "fileId": 76,
       "name": "Wall_x64_22_26",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 75,
@@ -3626,15 +3288,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 77
         }
       },
-      "fileId": 922,
+      "fileId": 77,
       "name": "Wall_z18_60_64",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 76,
@@ -3673,15 +3331,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 78
         }
       },
-      "fileId": 923,
+      "fileId": 78,
       "name": "Wall_z18_64_74",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 77,
@@ -3720,15 +3374,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 79
         }
       },
-      "fileId": 924,
+      "fileId": 79,
       "name": "Wall_z22_60_64",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 78,
@@ -3767,15 +3417,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 80
         }
       },
-      "fileId": 925,
+      "fileId": 80,
       "name": "Wall_x74_18_26",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 79,
@@ -3814,15 +3460,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 81
         }
       },
-      "fileId": 926,
+      "fileId": 81,
       "name": "Wall_z26_64_74",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 80,
@@ -3861,15 +3503,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 82
         }
       },
-      "fileId": 927,
+      "fileId": 82,
       "name": "A1_Bench",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 81,
@@ -3908,15 +3546,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 83
         }
       },
-      "fileId": 928,
+      "fileId": 83,
       "name": "A1_Shelf",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 82,
@@ -3955,15 +3589,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 84
         }
       },
-      "fileId": 929,
+      "fileId": 84,
       "name": "A1_Sink",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 83,
@@ -4002,15 +3632,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 85
         }
       },
-      "fileId": 930,
+      "fileId": 85,
       "name": "A3S_ShelfA",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 84,
@@ -4049,15 +3675,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 86
         }
       },
-      "fileId": 931,
+      "fileId": 86,
       "name": "A3S_ShelfB",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 85,
@@ -4096,15 +3718,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 87
         }
       },
-      "fileId": 932,
+      "fileId": 87,
       "name": "A4_EastBench",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 86,
@@ -4143,15 +3761,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 88
         }
       },
-      "fileId": 933,
+      "fileId": 88,
       "name": "A4_NWShelf",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 87,
@@ -4190,15 +3804,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 89
         }
       },
-      "fileId": 934,
+      "fileId": 89,
       "name": "A4_NEShelf",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 88,
@@ -4237,15 +3847,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 90
         }
       },
-      "fileId": 935,
+      "fileId": 90,
       "name": "A5_WestShelf",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 89,
@@ -4284,15 +3890,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 91
         }
       },
-      "fileId": 936,
+      "fileId": 91,
       "name": "A5_EastShelf",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 90,
@@ -4331,15 +3933,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 92
         }
       },
-      "fileId": 937,
+      "fileId": 92,
       "name": "A4_Pillar",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 91,
@@ -4378,15 +3976,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 93
         }
       },
-      "fileId": 938,
+      "fileId": 93,
       "name": "A2_Pipes",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 92,
@@ -4425,15 +4019,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 94
         }
       },
-      "fileId": 939,
+      "fileId": 94,
       "name": "A4_Pipes",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 93,
@@ -4472,15 +4062,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 95
         }
       },
-      "fileId": 940,
+      "fileId": 95,
       "name": "I01_Crate",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 94,
@@ -4519,15 +4105,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 96
         }
       },
-      "fileId": 941,
+      "fileId": 96,
       "name": "I02_Crate",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 95,
@@ -4566,15 +4148,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 97
         }
       },
-      "fileId": 942,
+      "fileId": 97,
       "name": "I03_Crate",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 96,
@@ -4613,15 +4191,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 98
         }
       },
-      "fileId": 943,
+      "fileId": 98,
       "name": "Core_Pedestal",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 97,
@@ -4660,15 +4234,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 99
         }
       },
-      "fileId": 944,
+      "fileId": 99,
       "name": "FixedLight_Plinth",
-      "overrides": [],
-      "parent": 846
+      "parent": 1
     },
     {
       "childIndex": 1,
@@ -4690,15 +4260,10 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 121
         }
       },
-      "fileId": 945,
-      "name": "ResearchWing_Stage01_OpenTop",
-      "overrides": [],
-      "parent": 845
+      "fileId": 121,
+      "name": "ResearchWing_Stage01_OpenTop"
     },
     {
       "childIndex": 0,
@@ -4720,15 +4285,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 122
         }
       },
-      "fileId": 946,
+      "fileId": 122,
       "name": "A1_Bench",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -4754,15 +4315,11 @@
         "MeshRenderer": {
           "material": 5783724367083455450,
           "mesh": 746218225513481099
-        },
-        "PrefabLink": {
-          "localId": 123
         }
       },
-      "fileId": 947,
+      "fileId": 123,
       "name": "part0",
-      "overrides": [],
-      "parent": 946
+      "parent": 122
     },
     {
       "childIndex": 1,
@@ -4788,15 +4345,11 @@
         "MeshRenderer": {
           "material": 7616957696499588101,
           "mesh": 746217126001852888
-        },
-        "PrefabLink": {
-          "localId": 124
         }
       },
-      "fileId": 948,
+      "fileId": 124,
       "name": "part1",
-      "overrides": [],
-      "parent": 946
+      "parent": 122
     },
     {
       "childIndex": 2,
@@ -4822,15 +4375,11 @@
         "MeshRenderer": {
           "material": 7616956596987959890,
           "mesh": 746220424536737521
-        },
-        "PrefabLink": {
-          "localId": 125
         }
       },
-      "fileId": 949,
+      "fileId": 125,
       "name": "part2",
-      "overrides": [],
-      "parent": 946
+      "parent": 122
     },
     {
       "childIndex": 3,
@@ -4856,15 +4405,11 @@
         "MeshRenderer": {
           "material": 7616955497476331679,
           "mesh": 746219325025109310
-        },
-        "PrefabLink": {
-          "localId": 126
         }
       },
-      "fileId": 950,
+      "fileId": 126,
       "name": "part3",
-      "overrides": [],
-      "parent": 946
+      "parent": 122
     },
     {
       "childIndex": 4,
@@ -4890,15 +4435,11 @@
         "MeshRenderer": {
           "material": 7616954397964703468,
           "mesh": 746222623559993943
-        },
-        "PrefabLink": {
-          "localId": 127
         }
       },
-      "fileId": 951,
+      "fileId": 127,
       "name": "part4",
-      "overrides": [],
-      "parent": 946
+      "parent": 122
     },
     {
       "childIndex": 5,
@@ -4924,15 +4465,11 @@
         "MeshRenderer": {
           "material": 7616953298453075257,
           "mesh": 746221524048365732
-        },
-        "PrefabLink": {
-          "localId": 128
         }
       },
-      "fileId": 952,
+      "fileId": 128,
       "name": "part5",
-      "overrides": [],
-      "parent": 946
+      "parent": 122
     },
     {
       "childIndex": 1,
@@ -4958,15 +4495,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 11036292980849339202
-        },
-        "PrefabLink": {
-          "localId": 129
         }
       },
-      "fileId": 953,
+      "fileId": 129,
       "name": "A1_LAB01_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 2,
@@ -4988,15 +4521,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 130
         }
       },
-      "fileId": 954,
+      "fileId": 130,
       "name": "A1_Shelf",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -5022,15 +4551,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 7416591677311146257
-        },
-        "PrefabLink": {
-          "localId": 131
         }
       },
-      "fileId": 955,
+      "fileId": 131,
       "name": "part0",
-      "overrides": [],
-      "parent": 954
+      "parent": 130
     },
     {
       "childIndex": 1,
@@ -5056,15 +4581,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 7416590577799518046
-        },
-        "PrefabLink": {
-          "localId": 132
         }
       },
-      "fileId": 956,
+      "fileId": 132,
       "name": "part1",
-      "overrides": [],
-      "parent": 954
+      "parent": 130
     },
     {
       "childIndex": 2,
@@ -5090,15 +4611,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 7416589478287889835
-        },
-        "PrefabLink": {
-          "localId": 133
         }
       },
-      "fileId": 957,
+      "fileId": 133,
       "name": "part2",
-      "overrides": [],
-      "parent": 954
+      "parent": 130
     },
     {
       "childIndex": 3,
@@ -5124,15 +4641,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 7416588378776261624
-        },
-        "PrefabLink": {
-          "localId": 134
         }
       },
-      "fileId": 958,
+      "fileId": 134,
       "name": "part3",
-      "overrides": [],
-      "parent": 954
+      "parent": 130
     },
     {
       "childIndex": 3,
@@ -5154,15 +4667,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 135
         }
       },
-      "fileId": 959,
+      "fileId": 135,
       "name": "A1_Sink",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -5188,15 +4697,11 @@
         "MeshRenderer": {
           "material": 7615965937011131004,
           "mesh": 14354439050153798200
-        },
-        "PrefabLink": {
-          "localId": 136
         }
       },
-      "fileId": 960,
+      "fileId": 136,
       "name": "part0",
-      "overrides": [],
-      "parent": 959
+      "parent": 135
     },
     {
       "childIndex": 1,
@@ -5222,15 +4727,11 @@
         "MeshRenderer": {
           "material": 7615967036522759215,
           "mesh": 14354440149665426411
-        },
-        "PrefabLink": {
-          "localId": 137
         }
       },
-      "fileId": 961,
+      "fileId": 137,
       "name": "part1",
-      "overrides": [],
-      "parent": 959
+      "parent": 135
     },
     {
       "childIndex": 2,
@@ -5256,15 +4757,11 @@
         "MeshRenderer": {
           "material": 7615968136034387426,
           "mesh": 14354441249177054622
-        },
-        "PrefabLink": {
-          "localId": 138
         }
       },
-      "fileId": 962,
+      "fileId": 138,
       "name": "part2",
-      "overrides": [],
-      "parent": 959
+      "parent": 135
     },
     {
       "childIndex": 3,
@@ -5290,15 +4787,11 @@
         "MeshRenderer": {
           "material": 7615969235546015637,
           "mesh": 14354442348688682833
-        },
-        "PrefabLink": {
-          "localId": 139
         }
       },
-      "fileId": 963,
+      "fileId": 139,
       "name": "part3",
-      "overrides": [],
-      "parent": 959
+      "parent": 135
     },
     {
       "childIndex": 4,
@@ -5324,15 +4817,11 @@
         "MeshRenderer": {
           "material": 7615961538964618160,
           "mesh": 14354443448200311044
-        },
-        "PrefabLink": {
-          "localId": 140
         }
       },
-      "fileId": 964,
+      "fileId": 140,
       "name": "part4",
-      "overrides": [],
-      "parent": 959
+      "parent": 135
     },
     {
       "childIndex": 4,
@@ -5358,15 +4847,11 @@
         "MeshRenderer": {
           "material": 7615962638476246371,
           "mesh": 2523500114024613607
-        },
-        "PrefabLink": {
-          "localId": 141
         }
       },
-      "fileId": 965,
+      "fileId": 141,
       "name": "A2_Pipes",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 5,
@@ -5392,15 +4877,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 16356249347443590462
-        },
-        "PrefabLink": {
-          "localId": 142
         }
       },
-      "fileId": 966,
+      "fileId": 142,
       "name": "A2a_Corridor_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 6,
@@ -5426,15 +4907,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 2640946371733505101
-        },
-        "PrefabLink": {
-          "localId": 143
         }
       },
-      "fileId": 967,
+      "fileId": 143,
       "name": "A2b_Corridor_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 7,
@@ -5460,15 +4937,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 17071069907900483732
-        },
-        "PrefabLink": {
-          "localId": 144
         }
       },
-      "fileId": 968,
+      "fileId": 144,
       "name": "A3J_Junction_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 8,
@@ -5494,15 +4967,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 352630989410937203
-        },
-        "PrefabLink": {
-          "localId": 145
         }
       },
-      "fileId": 969,
+      "fileId": 145,
       "name": "A3M_Metal_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 9,
@@ -5524,15 +4993,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 146
         }
       },
-      "fileId": 970,
+      "fileId": 146,
       "name": "A3S_ShelfA",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -5558,15 +5023,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 3943577349365014649
-        },
-        "PrefabLink": {
-          "localId": 147
         }
       },
-      "fileId": 971,
+      "fileId": 147,
       "name": "part0",
-      "overrides": [],
-      "parent": 970
+      "parent": 146
     },
     {
       "childIndex": 1,
@@ -5592,15 +5053,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 3943576249853386438
-        },
-        "PrefabLink": {
-          "localId": 148
         }
       },
-      "fileId": 972,
+      "fileId": 148,
       "name": "part1",
-      "overrides": [],
-      "parent": 970
+      "parent": 146
     },
     {
       "childIndex": 2,
@@ -5626,15 +5083,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 3943575150341758227
-        },
-        "PrefabLink": {
-          "localId": 149
         }
       },
-      "fileId": 973,
+      "fileId": 149,
       "name": "part2",
-      "overrides": [],
-      "parent": 970
+      "parent": 146
     },
     {
       "childIndex": 3,
@@ -5660,15 +5113,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 3943574050830130016
-        },
-        "PrefabLink": {
-          "localId": 150
         }
       },
-      "fileId": 974,
+      "fileId": 150,
       "name": "part3",
-      "overrides": [],
-      "parent": 970
+      "parent": 146
     },
     {
       "childIndex": 10,
@@ -5690,15 +5139,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 151
         }
       },
-      "fileId": 975,
+      "fileId": 151,
       "name": "A3S_ShelfB",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -5724,15 +5169,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 17903798739233915082
-        },
-        "PrefabLink": {
-          "localId": 152
         }
       },
-      "fileId": 976,
+      "fileId": 152,
       "name": "part0",
-      "overrides": [],
-      "parent": 975
+      "parent": 151
     },
     {
       "childIndex": 1,
@@ -5758,15 +5199,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 17903799838745543293
-        },
-        "PrefabLink": {
-          "localId": 153
         }
       },
-      "fileId": 977,
+      "fileId": 153,
       "name": "part1",
-      "overrides": [],
-      "parent": 975
+      "parent": 151
     },
     {
       "childIndex": 2,
@@ -5792,15 +5229,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 17903796540210658660
-        },
-        "PrefabLink": {
-          "localId": 154
         }
       },
-      "fileId": 978,
+      "fileId": 154,
       "name": "part2",
-      "overrides": [],
-      "parent": 975
+      "parent": 151
     },
     {
       "childIndex": 3,
@@ -5826,15 +5259,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 17903797639722286871
-        },
-        "PrefabLink": {
-          "localId": 155
         }
       },
-      "fileId": 979,
+      "fileId": 155,
       "name": "part3",
-      "overrides": [],
-      "parent": 975
+      "parent": 151
     },
     {
       "childIndex": 11,
@@ -5860,15 +5289,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 6654940675518013779
-        },
-        "PrefabLink": {
-          "localId": 156
         }
       },
-      "fileId": 980,
+      "fileId": 156,
       "name": "A3S_Storage_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 12,
@@ -5894,15 +5319,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 16579446058842829300
-        },
-        "PrefabLink": {
-          "localId": 157
         }
       },
-      "fileId": 981,
+      "fileId": 157,
       "name": "A4_Central_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 13,
@@ -5924,15 +5345,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 158
         }
       },
-      "fileId": 982,
+      "fileId": 158,
       "name": "A4_EastBench",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -5958,15 +5375,11 @@
         "MeshRenderer": {
           "material": 5783724367083455450,
           "mesh": 9909306627828238069
-        },
-        "PrefabLink": {
-          "localId": 159
         }
       },
-      "fileId": 983,
+      "fileId": 159,
       "name": "part0",
-      "overrides": [],
-      "parent": 982
+      "parent": 158
     },
     {
       "childIndex": 1,
@@ -5992,15 +5405,11 @@
         "MeshRenderer": {
           "material": 7616957696499588101,
           "mesh": 9909305528316609858
-        },
-        "PrefabLink": {
-          "localId": 160
         }
       },
-      "fileId": 984,
+      "fileId": 160,
       "name": "part1",
-      "overrides": [],
-      "parent": 982
+      "parent": 158
     },
     {
       "childIndex": 2,
@@ -6026,15 +5435,11 @@
         "MeshRenderer": {
           "material": 7616956596987959890,
           "mesh": 9909304428804981647
-        },
-        "PrefabLink": {
-          "localId": 161
         }
       },
-      "fileId": 985,
+      "fileId": 161,
       "name": "part2",
-      "overrides": [],
-      "parent": 982
+      "parent": 158
     },
     {
       "childIndex": 3,
@@ -6060,15 +5465,11 @@
         "MeshRenderer": {
           "material": 7616955497476331679,
           "mesh": 9909303329293353436
-        },
-        "PrefabLink": {
-          "localId": 162
         }
       },
-      "fileId": 986,
+      "fileId": 162,
       "name": "part3",
-      "overrides": [],
-      "parent": 982
+      "parent": 158
     },
     {
       "childIndex": 4,
@@ -6094,15 +5495,11 @@
         "MeshRenderer": {
           "material": 7616954397964703468,
           "mesh": 9909302229781725225
-        },
-        "PrefabLink": {
-          "localId": 163
         }
       },
-      "fileId": 987,
+      "fileId": 163,
       "name": "part4",
-      "overrides": [],
-      "parent": 982
+      "parent": 158
     },
     {
       "childIndex": 5,
@@ -6128,15 +5525,11 @@
         "MeshRenderer": {
           "material": 7616953298453075257,
           "mesh": 9909301130270097014
-        },
-        "PrefabLink": {
-          "localId": 164
         }
       },
-      "fileId": 988,
+      "fileId": 164,
       "name": "part5",
-      "overrides": [],
-      "parent": 982
+      "parent": 158
     },
     {
       "childIndex": 14,
@@ -6158,15 +5551,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 165
         }
       },
-      "fileId": 989,
+      "fileId": 165,
       "name": "A4_NEShelf",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -6192,15 +5581,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 2557713778258932038
-        },
-        "PrefabLink": {
-          "localId": 166
         }
       },
-      "fileId": 990,
+      "fileId": 166,
       "name": "part0",
-      "overrides": [],
-      "parent": 989
+      "parent": 165
     },
     {
       "childIndex": 1,
@@ -6226,15 +5611,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 2557714877770560249
-        },
-        "PrefabLink": {
-          "localId": 167
         }
       },
-      "fileId": 991,
+      "fileId": 167,
       "name": "part1",
-      "overrides": [],
-      "parent": 989
+      "parent": 165
     },
     {
       "childIndex": 2,
@@ -6260,15 +5641,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 2557711579235675616
-        },
-        "PrefabLink": {
-          "localId": 168
         }
       },
-      "fileId": 992,
+      "fileId": 168,
       "name": "part2",
-      "overrides": [],
-      "parent": 989
+      "parent": 165
     },
     {
       "childIndex": 3,
@@ -6294,15 +5671,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 2557712678747303827
-        },
-        "PrefabLink": {
-          "localId": 169
         }
       },
-      "fileId": 993,
+      "fileId": 169,
       "name": "part3",
-      "overrides": [],
-      "parent": 989
+      "parent": 165
     },
     {
       "childIndex": 15,
@@ -6324,15 +5697,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 170
         }
       },
-      "fileId": 994,
+      "fileId": 170,
       "name": "A4_NWShelf",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -6358,15 +5727,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 7729761906161021583
-        },
-        "PrefabLink": {
-          "localId": 171
         }
       },
-      "fileId": 995,
+      "fileId": 171,
       "name": "part0",
-      "overrides": [],
-      "parent": 994
+      "parent": 170
     },
     {
       "childIndex": 1,
@@ -6392,15 +5757,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 7729760806649393372
-        },
-        "PrefabLink": {
-          "localId": 172
         }
       },
-      "fileId": 996,
+      "fileId": 172,
       "name": "part1",
-      "overrides": [],
-      "parent": 994
+      "parent": 170
     },
     {
       "childIndex": 2,
@@ -6426,15 +5787,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 7729764105184278005
-        },
-        "PrefabLink": {
-          "localId": 173
         }
       },
-      "fileId": 997,
+      "fileId": 173,
       "name": "part2",
-      "overrides": [],
-      "parent": 994
+      "parent": 170
     },
     {
       "childIndex": 3,
@@ -6460,15 +5817,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 7729763005672649794
-        },
-        "PrefabLink": {
-          "localId": 174
         }
       },
-      "fileId": 998,
+      "fileId": 174,
       "name": "part3",
-      "overrides": [],
-      "parent": 994
+      "parent": 170
     },
     {
       "childIndex": 16,
@@ -6494,15 +5847,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 7178096872704800416
-        },
-        "PrefabLink": {
-          "localId": 175
         }
       },
-      "fileId": 999,
+      "fileId": 175,
       "name": "A4_Pillar",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 17,
@@ -6528,15 +5877,11 @@
         "MeshRenderer": {
           "material": 7615962638476246371,
           "mesh": 871914496138668913
-        },
-        "PrefabLink": {
-          "localId": 176
         }
       },
-      "fileId": 1000,
+      "fileId": 176,
       "name": "A4_Pipes",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 18,
@@ -6558,15 +5903,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 177
         }
       },
-      "fileId": 1001,
+      "fileId": 177,
       "name": "A5_EastShelf",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -6592,15 +5933,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 3681333224552762914
-        },
-        "PrefabLink": {
-          "localId": 178
         }
       },
-      "fileId": 1002,
+      "fileId": 178,
       "name": "part0",
-      "overrides": [],
-      "parent": 1001
+      "parent": 177
     },
     {
       "childIndex": 1,
@@ -6626,15 +5963,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 3681334324064391125
-        },
-        "PrefabLink": {
-          "localId": 179
         }
       },
-      "fileId": 1003,
+      "fileId": 179,
       "name": "part1",
-      "overrides": [],
-      "parent": 1001
+      "parent": 177
     },
     {
       "childIndex": 2,
@@ -6660,15 +5993,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 3681331025529506492
-        },
-        "PrefabLink": {
-          "localId": 180
         }
       },
-      "fileId": 1004,
+      "fileId": 180,
       "name": "part2",
-      "overrides": [],
-      "parent": 1001
+      "parent": 177
     },
     {
       "childIndex": 3,
@@ -6694,15 +6023,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 3681332125041134703
-        },
-        "PrefabLink": {
-          "localId": 181
         }
       },
-      "fileId": 1005,
+      "fileId": 181,
       "name": "part3",
-      "overrides": [],
-      "parent": 1001
+      "parent": 177
     },
     {
       "childIndex": 19,
@@ -6728,15 +6053,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 15837641754736143694
-        },
-        "PrefabLink": {
-          "localId": 182
         }
       },
-      "fileId": 1006,
+      "fileId": 182,
       "name": "A5_Supply_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 20,
@@ -6758,15 +6079,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 183
         }
       },
-      "fileId": 1007,
+      "fileId": 183,
       "name": "A5_WestShelf",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 0,
@@ -6792,15 +6109,11 @@
         "MeshRenderer": {
           "material": 7616951099429818835,
           "mesh": 2122198041537647325
-        },
-        "PrefabLink": {
-          "localId": 184
         }
       },
-      "fileId": 1008,
+      "fileId": 184,
       "name": "part0",
-      "overrides": [],
-      "parent": 1007
+      "parent": 183
     },
     {
       "childIndex": 1,
@@ -6826,15 +6139,11 @@
         "MeshRenderer": {
           "material": 7616949999918190624,
           "mesh": 2122196942026019114
-        },
-        "PrefabLink": {
-          "localId": 185
         }
       },
-      "fileId": 1009,
+      "fileId": 185,
       "name": "part1",
-      "overrides": [],
-      "parent": 1007
+      "parent": 183
     },
     {
       "childIndex": 2,
@@ -6860,15 +6169,11 @@
         "MeshRenderer": {
           "material": 7616966492592613789,
           "mesh": 2122195842514390903
-        },
-        "PrefabLink": {
-          "localId": 186
         }
       },
-      "fileId": 1010,
+      "fileId": 186,
       "name": "part2",
-      "overrides": [],
-      "parent": 1007
+      "parent": 183
     },
     {
       "childIndex": 3,
@@ -6894,15 +6199,11 @@
         "MeshRenderer": {
           "material": 7616965393080985578,
           "mesh": 2122194743002762692
-        },
-        "PrefabLink": {
-          "localId": 187
         }
       },
-      "fileId": 1011,
+      "fileId": 187,
       "name": "part3",
-      "overrides": [],
-      "parent": 1007
+      "parent": 183
     },
     {
       "childIndex": 21,
@@ -6928,15 +6229,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 12784787477640233096
-        },
-        "PrefabLink": {
-          "localId": 188
         }
       },
-      "fileId": 1012,
+      "fileId": 188,
       "name": "A6_Core_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 22,
@@ -6962,15 +6259,11 @@
         "MeshRenderer": {
           "material": 7616952198941447046,
           "mesh": 4588678137903934135
-        },
-        "PrefabLink": {
-          "localId": 189
         }
       },
-      "fileId": 1013,
+      "fileId": 189,
       "name": "A6a_Connector_Floor",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 23,
@@ -6996,15 +6289,11 @@
         "MeshRenderer": {
           "material": 7615962638476246371,
           "mesh": 787365288253234514
-        },
-        "PrefabLink": {
-          "localId": 190
         }
       },
-      "fileId": 1014,
+      "fileId": 190,
       "name": "Core_Pedestal",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 24,
@@ -7030,15 +6319,11 @@
         "MeshRenderer": {
           "material": 7615964837499502793,
           "mesh": 6508235282728185761
-        },
-        "PrefabLink": {
-          "localId": 191
         }
       },
-      "fileId": 1015,
+      "fileId": 191,
       "name": "F01_Glass",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 25,
@@ -7064,15 +6349,11 @@
         "MeshRenderer": {
           "material": 7615974733104156692,
           "mesh": 5327192936339657180
-        },
-        "PrefabLink": {
-          "localId": 192
         }
       },
-      "fileId": 1016,
+      "fileId": 192,
       "name": "F02_Water",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 26,
@@ -7098,15 +6379,11 @@
         "MeshRenderer": {
           "material": 7615975832615784903,
           "mesh": 17623451464197878619
-        },
-        "PrefabLink": {
-          "localId": 193
         }
       },
-      "fileId": 1017,
+      "fileId": 193,
       "name": "F03_Carpet",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 27,
@@ -7132,15 +6409,11 @@
         "MeshRenderer": {
           "material": 7615962638476246371,
           "mesh": 11167568983310729910
-        },
-        "PrefabLink": {
-          "localId": 194
         }
       },
-      "fileId": 1018,
+      "fileId": 194,
       "name": "F04_Metal",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 28,
@@ -7166,15 +6439,11 @@
         "MeshRenderer": {
           "material": 7618800477988091287,
           "mesh": 15684526149014206373
-        },
-        "PrefabLink": {
-          "localId": 195
         }
       },
-      "fileId": 1019,
+      "fileId": 195,
       "name": "F05a_Rubber",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 29,
@@ -7200,15 +6469,11 @@
         "MeshRenderer": {
           "material": 7618800477988091287,
           "mesh": 8596704433175812811
-        },
-        "PrefabLink": {
-          "localId": 196
         }
       },
-      "fileId": 1020,
+      "fileId": 196,
       "name": "F05b_Rubber",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 30,
@@ -7234,15 +6499,11 @@
         "MeshRenderer": {
           "material": 7618800477988091287,
           "mesh": 10718489755654050700
-        },
-        "PrefabLink": {
-          "localId": 197
         }
       },
-      "fileId": 1021,
+      "fileId": 197,
       "name": "F06_Rubber",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 31,
@@ -7268,15 +6529,11 @@
         "MeshRenderer": {
           "material": 7618800477988091287,
           "mesh": 8787805417094541905
-        },
-        "PrefabLink": {
-          "localId": 198
         }
       },
-      "fileId": 1022,
+      "fileId": 198,
       "name": "F07_Rubber",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 32,
@@ -7302,15 +6559,11 @@
         "MeshRenderer": {
           "material": 7618800477988091287,
           "mesh": 6178802845056039042
-        },
-        "PrefabLink": {
-          "localId": 199
         }
       },
-      "fileId": 1023,
+      "fileId": 199,
       "name": "F08_Rubber",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 33,
@@ -7336,15 +6589,11 @@
         "MeshRenderer": {
           "material": 7618800477988091287,
           "mesh": 10129103091900232999
-        },
-        "PrefabLink": {
-          "localId": 200
         }
       },
-      "fileId": 1024,
+      "fileId": 200,
       "name": "F09_Rubber",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 34,
@@ -7370,15 +6619,11 @@
         "MeshRenderer": {
           "material": 7615974733104156692,
           "mesh": 3513297954319865976
-        },
-        "PrefabLink": {
-          "localId": 201
         }
       },
-      "fileId": 1025,
+      "fileId": 201,
       "name": "F10_Water",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 35,
@@ -7404,15 +6649,11 @@
         "MeshRenderer": {
           "material": 7615962638476246371,
           "mesh": 4401768175904003469
-        },
-        "PrefabLink": {
-          "localId": 202
         }
       },
-      "fileId": 1026,
+      "fileId": 202,
       "name": "FixedLight_Plinth",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 36,
@@ -7438,15 +6679,11 @@
         "MeshRenderer": {
           "material": 7618799378476463076,
           "mesh": 18361954381400801150
-        },
-        "PrefabLink": {
-          "localId": 203
         }
       },
-      "fileId": 1027,
+      "fileId": 203,
       "name": "I01_Crate",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 37,
@@ -7472,15 +6709,11 @@
         "MeshRenderer": {
           "material": 7618799378476463076,
           "mesh": 7958233967286556595
-        },
-        "PrefabLink": {
-          "localId": 204
         }
       },
-      "fileId": 1028,
+      "fileId": 204,
       "name": "I02_Crate",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 38,
@@ -7506,15 +6739,11 @@
         "MeshRenderer": {
           "material": 7618799378476463076,
           "mesh": 630030868148142804
-        },
-        "PrefabLink": {
-          "localId": 205
         }
       },
-      "fileId": 1029,
+      "fileId": 205,
       "name": "I03_Crate",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 39,
@@ -7540,15 +6769,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 310966754944921752
-        },
-        "PrefabLink": {
-          "localId": 206
         }
       },
-      "fileId": 1030,
+      "fileId": 206,
       "name": "Wall_x0_0_10",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 40,
@@ -7574,15 +6799,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 12526669836443697479
-        },
-        "PrefabLink": {
-          "localId": 207
         }
       },
-      "fileId": 1031,
+      "fileId": 207,
       "name": "Wall_x12_0_6",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 41,
@@ -7608,15 +6829,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 3512808429234326686
-        },
-        "PrefabLink": {
-          "localId": 208
         }
       },
-      "fileId": 1032,
+      "fileId": 208,
       "name": "Wall_x12_6_7",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 42,
@@ -7642,15 +6859,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 7615302858087094829
-        },
-        "PrefabLink": {
-          "localId": 209
         }
       },
-      "fileId": 1033,
+      "fileId": 209,
       "name": "Wall_x12_7_9",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 43,
@@ -7676,15 +6889,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 8081698639104904108
-        },
-        "PrefabLink": {
-          "localId": 210
         }
       },
-      "fileId": 1034,
+      "fileId": 210,
       "name": "Wall_x12_9_10",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 44,
@@ -7710,15 +6919,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 5149630741502567275
-        },
-        "PrefabLink": {
-          "localId": 211
         }
       },
-      "fileId": 1035,
+      "fileId": 211,
       "name": "Wall_x20_10_20",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 45,
@@ -7744,15 +6949,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 15194681529563302050
-        },
-        "PrefabLink": {
-          "localId": 212
         }
       },
-      "fileId": 1036,
+      "fileId": 212,
       "name": "Wall_x24_10_16",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 46,
@@ -7778,15 +6979,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 12385262801149208049
-        },
-        "PrefabLink": {
-          "localId": 213
         }
       },
-      "fileId": 1037,
+      "fileId": 213,
       "name": "Wall_x24_16_17",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 47,
@@ -7812,15 +7009,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 244701104005787936
-        },
-        "PrefabLink": {
-          "localId": 214
         }
       },
-      "fileId": 1038,
+      "fileId": 214,
       "name": "Wall_x24_17_19",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 48,
@@ -7846,15 +7039,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 796366137462009103
-        },
-        "PrefabLink": {
-          "localId": 215
         }
       },
-      "fileId": 1039,
+      "fileId": 215,
       "name": "Wall_x24_19_20",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 49,
@@ -7880,15 +7069,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 13635546346548186461
-        },
-        "PrefabLink": {
-          "localId": 216
         }
       },
-      "fileId": 1040,
+      "fileId": 216,
       "name": "Wall_x24_20_24",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 50,
@@ -7914,15 +7099,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 8904245986037131214
-        },
-        "PrefabLink": {
-          "localId": 217
         }
       },
-      "fileId": 1041,
+      "fileId": 217,
       "name": "Wall_x24_6_10",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 51,
@@ -7948,15 +7129,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 16102026442914473271
-        },
-        "PrefabLink": {
-          "localId": 218
         }
       },
-      "fileId": 1042,
+      "fileId": 218,
       "name": "Wall_x28_16_17",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 52,
@@ -7982,15 +7159,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 5851391708941220616
-        },
-        "PrefabLink": {
-          "localId": 219
         }
       },
-      "fileId": 1043,
+      "fileId": 219,
       "name": "Wall_x28_17_19",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 53,
@@ -8016,15 +7189,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 18021583587738724897
-        },
-        "PrefabLink": {
-          "localId": 220
         }
       },
-      "fileId": 1044,
+      "fileId": 220,
       "name": "Wall_x28_19_20",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 54,
@@ -8050,15 +7219,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 12300713593263773650
-        },
-        "PrefabLink": {
-          "localId": 221
         }
       },
-      "fileId": 1045,
+      "fileId": 221,
       "name": "Wall_x28_20_21",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 55,
@@ -8084,15 +7249,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 10690055695498866139
-        },
-        "PrefabLink": {
-          "localId": 222
         }
       },
-      "fileId": 1046,
+      "fileId": 222,
       "name": "Wall_x28_21_23",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 56,
@@ -8118,15 +7279,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 16840541241350196316
-        },
-        "PrefabLink": {
-          "localId": 223
         }
       },
-      "fileId": 1047,
+      "fileId": 223,
       "name": "Wall_x28_23_24",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 57,
@@ -8152,15 +7309,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 8751130380315193893
-        },
-        "PrefabLink": {
-          "localId": 224
         }
       },
-      "fileId": 1048,
+      "fileId": 224,
       "name": "Wall_x28_24_36",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 58,
@@ -8186,15 +7339,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 4234173214611717430
-        },
-        "PrefabLink": {
-          "localId": 225
         }
       },
-      "fileId": 1049,
+      "fileId": 225,
       "name": "Wall_x40_10_16",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 59,
@@ -8220,15 +7369,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 17692151150066578178
-        },
-        "PrefabLink": {
-          "localId": 226
         }
       },
-      "fileId": 1050,
+      "fileId": 226,
       "name": "Wall_x40_16_17",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 60,
@@ -8254,15 +7399,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 1854409648395529425
-        },
-        "PrefabLink": {
-          "localId": 227
         }
       },
-      "fileId": 1051,
+      "fileId": 227,
       "name": "Wall_x40_17_19",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 61,
@@ -8288,15 +7429,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 3785093986955038220
-        },
-        "PrefabLink": {
-          "localId": 228
         }
       },
-      "fileId": 1052,
+      "fileId": 228,
       "name": "Wall_x40_19_20",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 62,
@@ -8322,15 +7459,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 1663308664476800331
-        },
-        "PrefabLink": {
-          "localId": 229
         }
       },
-      "fileId": 1053,
+      "fileId": 229,
       "name": "Wall_x40_20_27",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 63,
@@ -8356,15 +7489,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 11428558612701788670
-        },
-        "PrefabLink": {
-          "localId": 230
         }
       },
-      "fileId": 1054,
+      "fileId": 230,
       "name": "Wall_x40_27_29",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 64,
@@ -8390,15 +7519,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 15915116480914542605
-        },
-        "PrefabLink": {
-          "localId": 231
         }
       },
-      "fileId": 1055,
+      "fileId": 231,
       "name": "Wall_x40_29_30",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 65,
@@ -8424,15 +7549,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 15026646259330405112
-        },
-        "PrefabLink": {
-          "localId": 232
         }
       },
-      "fileId": 1056,
+      "fileId": 232,
       "name": "Wall_x40_30_36",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 66,
@@ -8458,15 +7579,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 3195707323201220519
-        },
-        "PrefabLink": {
-          "localId": 233
         }
       },
-      "fileId": 1057,
+      "fileId": 233,
       "name": "Wall_x48_2_10",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 67,
@@ -8492,15 +7609,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 823472519652798762
-        },
-        "PrefabLink": {
-          "localId": 234
         }
       },
-      "fileId": 1058,
+      "fileId": 234,
       "name": "Wall_x56_2_10",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 68,
@@ -8526,15 +7639,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 4925931764133464153
-        },
-        "PrefabLink": {
-          "localId": 235
         }
       },
-      "fileId": 1059,
+      "fileId": 235,
       "name": "Wall_x60_10_18",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 69,
@@ -8560,15 +7669,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 11582631257455548591
-        },
-        "PrefabLink": {
-          "localId": 236
         }
       },
-      "fileId": 1060,
+      "fileId": 236,
       "name": "Wall_x60_18_19",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 70,
@@ -8594,15 +7699,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 11457326097251851584
-        },
-        "PrefabLink": {
-          "localId": 237
         }
       },
-      "fileId": 1061,
+      "fileId": 237,
       "name": "Wall_x60_19_21",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 71,
@@ -8628,15 +7729,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 14188535852375289237
-        },
-        "PrefabLink": {
-          "localId": 238
         }
       },
-      "fileId": 1062,
+      "fileId": 238,
       "name": "Wall_x60_21_22",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 72,
@@ -8662,15 +7759,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 6026660427681884262
-        },
-        "PrefabLink": {
-          "localId": 239
         }
       },
-      "fileId": 1063,
+      "fileId": 239,
       "name": "Wall_x60_22_30",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 73,
@@ -8696,15 +7789,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 15968668498646087027
-        },
-        "PrefabLink": {
-          "localId": 240
         }
       },
-      "fileId": 1064,
+      "fileId": 240,
       "name": "Wall_x64_18_19",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 74,
@@ -8730,15 +7819,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 14240363343426081940
-        },
-        "PrefabLink": {
-          "localId": 241
         }
       },
-      "fileId": 1065,
+      "fileId": 241,
       "name": "Wall_x64_19_21",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 75,
@@ -8764,15 +7849,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 13641227874364662681
-        },
-        "PrefabLink": {
-          "localId": 242
         }
       },
-      "fileId": 1066,
+      "fileId": 242,
       "name": "Wall_x64_21_22",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 76,
@@ -8798,15 +7879,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 9154845928012422506
-        },
-        "PrefabLink": {
-          "localId": 243
         }
       },
-      "fileId": 1067,
+      "fileId": 243,
       "name": "Wall_x64_22_26",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 77,
@@ -8832,15 +7909,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 18139537623259763431
-        },
-        "PrefabLink": {
-          "localId": 244
         }
       },
-      "fileId": 1068,
+      "fileId": 244,
       "name": "Wall_x74_18_26",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 78,
@@ -8866,15 +7939,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 11523732485679396408
-        },
-        "PrefabLink": {
-          "localId": 245
         }
       },
-      "fileId": 1069,
+      "fileId": 245,
       "name": "Wall_z0_0_12",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 79,
@@ -8900,15 +7969,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 9907145472651183836
-        },
-        "PrefabLink": {
-          "localId": 246
         }
       },
-      "fileId": 1070,
+      "fileId": 246,
       "name": "Wall_z10_0_12",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 80,
@@ -8934,15 +7999,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 3756659926799853659
-        },
-        "PrefabLink": {
-          "localId": 247
         }
       },
-      "fileId": 1071,
+      "fileId": 247,
       "name": "Wall_z10_12_20",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 81,
@@ -8968,15 +8029,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 5367317824564761170
-        },
-        "PrefabLink": {
-          "localId": 248
         }
       },
-      "fileId": 1072,
+      "fileId": 248,
       "name": "Wall_z10_40_48",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 82,
@@ -9002,15 +8059,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 11088187819039712417
-        },
-        "PrefabLink": {
-          "localId": 249
         }
       },
-      "fileId": 1073,
+      "fileId": 249,
       "name": "Wall_z10_48_51",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 83,
@@ -9036,15 +8089,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 17364740013951759752
-        },
-        "PrefabLink": {
-          "localId": 250
         }
       },
-      "fileId": 1074,
+      "fileId": 250,
       "name": "Wall_z10_51_53",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 84,
@@ -9070,15 +8119,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 9168630674215460791
-        },
-        "PrefabLink": {
-          "localId": 251
         }
       },
-      "fileId": 1075,
+      "fileId": 251,
       "name": "Wall_z10_53_56",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 85,
@@ -9104,15 +8149,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 1970850217338118734
-        },
-        "PrefabLink": {
-          "localId": 252
         }
       },
-      "fileId": 1076,
+      "fileId": 252,
       "name": "Wall_z10_56_60",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 86,
@@ -9138,15 +8179,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 6702150577849173981
-        },
-        "PrefabLink": {
-          "localId": 253
         }
       },
-      "fileId": 1077,
+      "fileId": 253,
       "name": "Wall_z16_24_28",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 87,
@@ -9172,15 +8209,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 5514339624168491620
-        },
-        "PrefabLink": {
-          "localId": 254
         }
       },
-      "fileId": 1078,
+      "fileId": 254,
       "name": "Wall_z16_28_40",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 88,
@@ -9206,15 +8239,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 16775318165825839299
-        },
-        "PrefabLink": {
-          "localId": 255
         }
       },
-      "fileId": 1079,
+      "fileId": 255,
       "name": "Wall_z18_60_64",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 89,
@@ -9240,15 +8269,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 13367757953406068561
-        },
-        "PrefabLink": {
-          "localId": 256
         }
       },
-      "fileId": 1080,
+      "fileId": 256,
       "name": "Wall_z18_64_74",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 90,
@@ -9274,15 +8299,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 10758755381367565698
-        },
-        "PrefabLink": {
-          "localId": 257
         }
       },
-      "fileId": 1081,
+      "fileId": 257,
       "name": "Wall_z20_20_24",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 91,
@@ -9308,15 +8329,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 13176656969487339467
-        },
-        "PrefabLink": {
-          "localId": 258
         }
       },
-      "fileId": 1082,
+      "fileId": 258,
       "name": "Wall_z20_28_40",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 92,
@@ -9342,15 +8359,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 15298442291965577356
-        },
-        "PrefabLink": {
-          "localId": 259
         }
       },
-      "fileId": 1083,
+      "fileId": 259,
       "name": "Wall_z22_60_64",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 93,
@@ -9376,15 +8389,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 8981720712215530125
-        },
-        "PrefabLink": {
-          "localId": 260
         }
       },
-      "fileId": 1084,
+      "fileId": 260,
       "name": "Wall_z24_24_28",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 94,
@@ -9410,15 +8419,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 4495162844002776190
-        },
-        "PrefabLink": {
-          "localId": 261
         }
       },
-      "fileId": 1085,
+      "fileId": 261,
       "name": "Wall_z26_64_74",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 95,
@@ -9444,15 +8449,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 14709055628211759655
-        },
-        "PrefabLink": {
-          "localId": 262
         }
       },
-      "fileId": 1086,
+      "fileId": 262,
       "name": "Wall_z2_48_56",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 96,
@@ -9478,15 +8479,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 8093250490631392632
-        },
-        "PrefabLink": {
-          "localId": 263
         }
       },
-      "fileId": 1087,
+      "fileId": 263,
       "name": "Wall_z30_40_60",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 97,
@@ -9512,15 +8509,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 16439280069144003289
-        },
-        "PrefabLink": {
-          "localId": 264
         }
       },
-      "fileId": 1088,
+      "fileId": 264,
       "name": "Wall_z36_28_40",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 98,
@@ -9546,15 +8539,11 @@
         "MeshRenderer": {
           "material": 7615963737987874582,
           "mesh": 12336820824663337898
-        },
-        "PrefabLink": {
-          "localId": 265
         }
       },
-      "fileId": 1089,
+      "fileId": 265,
       "name": "Wall_z6_12_24",
-      "overrides": [],
-      "parent": 945
+      "parent": 121
     },
     {
       "childIndex": 2,
@@ -9576,15 +8565,10 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 266
         }
       },
-      "fileId": 1090,
-      "name": "ResearchWing_Stage01_Markers",
-      "overrides": [],
-      "parent": 845
+      "fileId": 266,
+      "name": "ResearchWing_Stage01_Markers"
     },
     {
       "childIndex": 0,
@@ -9606,15 +8590,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 267
         }
       },
-      "fileId": 1091,
+      "fileId": 267,
       "name": "E1_PATROL_01",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 1,
@@ -9636,15 +8616,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 268
         }
       },
-      "fileId": 1092,
+      "fileId": 268,
       "name": "E1_PATROL_02",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 2,
@@ -9666,15 +8642,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 269
         }
       },
-      "fileId": 1093,
+      "fileId": 269,
       "name": "E1_PATROL_03",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 3,
@@ -9696,15 +8668,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 270
         }
       },
-      "fileId": 1094,
+      "fileId": 270,
       "name": "E1_PATROL_04",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 4,
@@ -9730,15 +8698,11 @@
         "MeshRenderer": {
           "material": 11122558508243022206,
           "mesh": 8320356864331139011
-        },
-        "PrefabLink": {
-          "localId": 271
         }
       },
-      "fileId": 1095,
+      "fileId": 271,
       "name": "E1_SPAWN",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 5,
@@ -9760,15 +8724,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 272
         }
       },
-      "fileId": 1096,
+      "fileId": 272,
       "name": "E2_PATROL_01",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 6,
@@ -9790,15 +8750,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 273
         }
       },
-      "fileId": 1097,
+      "fileId": 273,
       "name": "E2_PATROL_02",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 7,
@@ -9820,15 +8776,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 274
         }
       },
-      "fileId": 1098,
+      "fileId": 274,
       "name": "E2_PATROL_03",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 8,
@@ -9850,15 +8802,11 @@
             1.0,
             1.0
           ]
-        },
-        "PrefabLink": {
-          "localId": 275
         }
       },
-      "fileId": 1099,
+      "fileId": 275,
       "name": "E2_PATROL_04",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 9,
@@ -9884,15 +8832,11 @@
         "MeshRenderer": {
           "material": 11122558508243022206,
           "mesh": 16141397016948363337
-        },
-        "PrefabLink": {
-          "localId": 276
         }
       },
-      "fileId": 1100,
+      "fileId": 276,
       "name": "E2_SPAWN",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 10,
@@ -9918,15 +8862,11 @@
         "MeshRenderer": {
           "material": 11122557408731393995,
           "mesh": 8394160250966180442
-        },
-        "PrefabLink": {
-          "localId": 277
         }
       },
-      "fileId": 1101,
+      "fileId": 277,
       "name": "FIXED_LIGHT",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 11,
@@ -9952,15 +8892,11 @@
         "MeshRenderer": {
           "material": 11122556309219765784,
           "mesh": 2995627985982517091
-        },
-        "PrefabLink": {
-          "localId": 278
         }
       },
-      "fileId": 1102,
+      "fileId": 278,
       "name": "I01_STONE_2",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 12,
@@ -9986,15 +8922,11 @@
         "MeshRenderer": {
           "material": 11122556309219765784,
           "mesh": 10565456957394706820
-        },
-        "PrefabLink": {
-          "localId": 279
         }
       },
-      "fileId": 1103,
+      "fileId": 279,
       "name": "I02_STONE_1",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 13,
@@ -10020,15 +8952,11 @@
         "MeshRenderer": {
           "material": 11122556309219765784,
           "mesh": 6911289116223345989
-        },
-        "PrefabLink": {
-          "localId": 280
         }
       },
-      "fileId": 1104,
+      "fileId": 280,
       "name": "I03_BOTTLE_1",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 14,
@@ -10054,15 +8982,11 @@
         "MeshRenderer": {
           "material": 11122556309219765784,
           "mesh": 2778113914903033302
-        },
-        "PrefabLink": {
-          "localId": 281
         }
       },
-      "fileId": 1105,
+      "fileId": 281,
       "name": "I04_STONE_3_BOTTLE_2",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 15,
@@ -10088,15 +9012,11 @@
         "MeshRenderer": {
           "material": 11122556309219765784,
           "mesh": 16666726754114427551
-        },
-        "PrefabLink": {
-          "localId": 282
         }
       },
-      "fileId": 1106,
+      "fileId": 282,
       "name": "I05_LIGHT_REFILL_1",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 16,
@@ -10122,15 +9042,11 @@
         "MeshRenderer": {
           "material": 11122564005801163261,
           "mesh": 1068211938663459952
-        },
-        "PrefabLink": {
-          "localId": 283
         }
       },
-      "fileId": 1107,
+      "fileId": 283,
       "name": "I06_DATA_CORE",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 17,
@@ -10156,15 +9072,11 @@
         "MeshRenderer": {
           "material": 11122557408731393995,
           "mesh": 3537342252261497025
-        },
-        "PrefabLink": {
-          "localId": 284
         }
       },
-      "fileId": 1108,
+      "fileId": 284,
       "name": "L1_CANDIDATE_NOT_REQUIRED",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 18,
@@ -10190,15 +9102,11 @@
         "MeshRenderer": {
           "material": 11122557408731393995,
           "mesh": 15879152892136111602
-        },
-        "PrefabLink": {
-          "localId": 285
         }
       },
-      "fileId": 1109,
+      "fileId": 285,
       "name": "L2_CANDIDATE_NOT_REQUIRED",
-      "overrides": [],
-      "parent": 1090
+      "parent": 266
     },
     {
       "childIndex": 19,
@@ -10224,458 +9132,13 @@
         "MeshRenderer": {
           "material": 11122557408731393995,
           "mesh": 16224263978688143006
-        },
-        "PrefabLink": {
-          "localId": 286
         }
       },
-      "fileId": 1110,
+      "fileId": 286,
       "name": "START",
-      "overrides": [],
-      "parent": 1090
-    },
-    {
-      "childIndex": 1,
-      "components": {
-        "Camera": {
-          "farZ": 500.0,
-          "fovYDeg": 70.0,
-          "isPrimary": 1,
-          "nearZ": 0.10000000149011612
-        },
-        "LocalTransform": {
-          "position": [
-            0.32697582244873047,
-            1.4999998807907104,
-            -1.2816280126571655
-          ],
-          "rotation": [
-            0.09671467542648315,
-            0.0020845693070441484,
-            -0.0002025573921855539,
-            0.9953151941299438
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        }
-      },
-      "fileId": 1,
-      "name": "Main Camera"
-    },
-    {
-      "childIndex": 2,
-      "components": {
-        "Light": {
-          "ambient": [
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05999999865889549
-          ],
-          "castShadow": 0,
-          "color": [
-            1.0,
-            1.0,
-            1.0
-          ],
-          "intensity": 0.0,
-          "range": 15.0,
-          "safeRadius": 0.0,
-          "spotInnerDeg": 25.0,
-          "spotOuterDeg": 35.0,
-          "type": 0
-        },
-        "LocalTransform": {
-          "position": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "rotation": [
-            0.4082179069519043,
-            -0.23456971347332,
-            0.10938165336847305,
-            0.8754260540008545
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        }
-      },
-      "fileId": 2,
-      "name": "Sun"
-    },
-    {
-      "childIndex": 3,
-      "components": {
-        "Light": {
-          "ambient": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "castShadow": 0,
-          "color": [
-            1.0,
-            0.9700000286102295,
-            0.9200000166893005
-          ],
-          "intensity": 0.0,
-          "range": 15.0,
-          "safeRadius": 0.0,
-          "spotInnerDeg": 25.0,
-          "spotOuterDeg": 35.0,
-          "type": 0
-        },
-        "LocalTransform": {
-          "position": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "rotation": [
-            0.4082300066947937,
-            -0.2345699965953827,
-            0.10937000066041946,
-            0.8754299879074097
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        }
-      },
-      "fileId": 3,
-      "name": "DebugSun"
-    },
-    {
-      "childIndex": 4,
-      "components": {
-        "LocalTransform": {
-          "position": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        },
-        "SkDebugDirector": {
-          "agent": 8,
-          "agentState": 3,
-          "applied": 1,
-          "litOn": 0,
-          "pinger": 9,
-          "pingerOn": 0,
-          "sun": 3
-        },
-        "SkTuning": {
-          "breathLoudness": 0.07000000029802322,
-          "breathRadiusM": 3.0,
-          "breathTicks": 96,
-          "crouchSpeed": 1.0,
-          "debugFullbright": 0,
-          "debugPinger": 0,
-          "eyeHeight": 0.699999988079071,
-          "gainCrouch": 0.6000000238418579,
-          "gainRun": 1.600000023841858,
-          "gainWalk": 1.0,
-          "lookSpeedDeg": 140.0,
-          "mouseSensDeg": 0.05999999865889549,
-          "pitchLimitDeg": 80.0,
-          "runSpeed": 4.400000095367432,
-          "strideCrouch": 1.7000000476837158,
-          "strideRun": 0.550000011920929,
-          "strideWalk": 0.8999999761581421,
-          "walkSpeed": 2.200000047683716
-        }
-      },
-      "fileId": 4,
-      "name": "GameRoot"
-    },
-    {
-      "childIndex": 5,
-      "components": {
-        "AcousticVolume": {
-          "blockLayerMask": 4294967295,
-          "cellSize": 0.5,
-          "dimX": 28,
-          "dimY": 6,
-          "dimZ": 38,
-          "enabled": true,
-          "glowIntensity": 1.0,
-          "glowKeepPerTick": 0.0,
-          "navCellRatio": 2
-        },
-        "LocalTransform": {
-          "position": [
-            1.25,
-            1.600000023841858,
-            4.400000095367432
-          ],
-          "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        }
-      },
-      "fileId": 5,
-      "name": "Acoustic Volume"
-    },
-    {
-      "childIndex": 6,
-      "components": {
-        "AcousticEmitter": {
-          "autoFootstep": true,
-          "cooldown": 0,
-          "cooldownTicks": 12,
-          "footstepGain": 0.6000000238418579,
-          "pendingLoudness": 0.0,
-          "pendingRadiusM": 0.0,
-          "pendingTone": 1,
-          "stepDistanceM": 1.7000000476837158,
-          "ticksPerRing": 2,
-          "travelAccum": 1.2180917263031006
-        },
-        "CharacterController": {
-          "gravityScale": 1.0,
-          "height": 1.600000023841858,
-          "isGrounded": 1,
-          "jumpSpeed": 0.0,
-          "moveInput": [
-            -0.999994695186615,
-            0.0,
-            0.004188758321106434
-          ],
-          "radius": 0.30000001192092896,
-          "skinWidth": 0.019999999552965164,
-          "slopeLimitDeg": 50.0,
-          "velocity": [
-            -0.9999954104423523,
-            0.0,
-            0.0041913981549441814
-          ]
-        },
-        "LocalTransform": {
-          "position": [
-            -5.809464454650879,
-            2.033437728881836,
-            -1.013927698135376
-          ],
-          "rotation": [
-            0.09671527147293091,
-            0.0020845821127295494,
-            -0.00020255859999451786,
-            0.9953098893165588
-          ],
-          "scale": [
-            1.0,
-            1.000000238418579,
-            0.9999983906745911
-          ]
-        },
-        "SkFpsController": {
-          "breathPhase": 0,
-          "camera": 1,
-          "cursorMode": 1,
-          "firstPerson": 1,
-          "pitchDeg": 11.100021362304688,
-          "root": 4,
-          "yawDeg": 0.23999886214733124
-        }
-      },
-      "fileId": 6,
-      "name": "Player"
-    },
-    {
-      "childIndex": 0,
-      "components": {
-        "LocalTransform": {
-          "position": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ],
-          "scale": [
-            0.550000011920929,
-            1.5,
-            0.550000011920929
-          ]
-        },
-        "MeshRenderer": {
-          "material": 4205236152057200900,
-          "mesh": 2446064346655322217
-        }
-      },
-      "fileId": 7,
-      "name": "PlayerBody",
-      "parent": 6
-    },
-    {
-      "childIndex": 7,
-      "components": {
-        "AcousticListener": {
-          "lastHeardPos": [
-            0.5,
-            0.8500000238418579,
-            -0.34999990463256836
-          ],
-          "lastHeardTick": 4288,
-          "lastLoudness": 0.0043916827999055386,
-          "lastSourceEntity": 6,
-          "lastTone": 1,
-          "threshold": 0.001500000013038516
-        },
-        "AgentBrain": {
-          "alertTicks": 30,
-          "emitEveryTicks": 45,
-          "emitLoudness": 0.3499999940395355,
-          "emitPhase": 8,
-          "home": [
-            4.0,
-            0.8500000238418579,
-            11.5
-          ],
-          "loseTicks": 120,
-          "memoryTicks": 600,
-          "runSpeed": 3.0,
-          "searchTicks": 180,
-          "state": 3,
-          "stateTicks": 252,
-          "target": [
-            0.5,
-            0.8500000238418579,
-            -0.34999990463256836
-          ],
-          "walkSpeed": 1.2000000476837158
-        },
-        "CharacterController": {
-          "gravityScale": 1.0,
-          "height": 1.600000023841858,
-          "isGrounded": 1,
-          "jumpSpeed": 0.0,
-          "moveInput": [
-            0.0,
-            0.0,
-            -3.0
-          ],
-          "radius": 0.30000001192092896,
-          "skinWidth": 0.019999999552965164,
-          "slopeLimitDeg": 50.0,
-          "velocity": [
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        "LocalTransform": {
-          "position": [
-            13.101278305053711,
-            1.2799999713897705,
-            4.418885231018066
-          ],
-          "rotation": [
-            -0.0,
-            0.0,
-            -0.0,
-            1.0
-          ],
-          "scale": [
-            0.6000000238418579,
-            1.600000023841858,
-            0.6000000238418579
-          ]
-        },
-        "MeshRenderer": {
-          "material": 4205236152057200908,
-          "mesh": 1506918697593860217
-        }
-      },
-      "fileId": 8,
-      "name": "AgentEar"
-    },
-    {
-      "childIndex": 8,
-      "components": {
-        "AcousticEmitter": {
-          "autoFootstep": false,
-          "cooldown": 0,
-          "cooldownTicks": 30,
-          "footstepGain": 1.0,
-          "pendingLoudness": 0.0,
-          "pendingRadiusM": 0.0,
-          "pendingTone": 0,
-          "stepDistanceM": 0.800000011920929,
-          "ticksPerRing": 2,
-          "travelAccum": 0.0
-        },
-        "Active": {
-          "enabled": 0
-        },
-        "LocalTransform": {
-          "position": [
-            0.0,
-            1.2000000476837158,
-            2.0
-          ],
-          "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ],
-          "scale": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ]
-        },
-        "MeshRenderer": {
-          "material": 4205236152057200901,
-          "mesh": 2446064346655322217
-        },
-        "SkPinger": {
-          "everyTicks": 150,
-          "loudness": 1.0,
-          "radiusM": 16.0,
-          "ringTicks": 2,
-          "startDelay": 6,
-          "ticks": 0,
-          "tone": 1
-        }
-      },
-      "fileId": 9,
-      "name": "DebugPinger"
+      "parent": 266
     }
   ],
-  "nextFileId": 1111,
-  "sceneName": "Stage1",
-  "version": 3
+  "name": "ResearchWing_Stage01_Collision",
+  "prefab": 1
 }
