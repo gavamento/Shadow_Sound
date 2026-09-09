@@ -1,0 +1,85 @@
+{
+  "mesh_objects": 5,
+  "triangles": 131648,
+  "armatures": 1,
+  "animation_actions": [
+    "CrawlerC_Rig|CrawlerC_Rig|00_Idle",
+    "CrawlerC_Rig|CrawlerC_Rig|01_Patrol_Crawl",
+    "CrawlerC_Rig|CrawlerC_Rig|02_Alert",
+    "CrawlerC_Rig|CrawlerC_Rig|03_Search",
+    "CrawlerC_Rig|CrawlerC_Rig|04_Chase",
+    "CrawlerC_Rig|CrawlerC_Rig|05_Attack",
+    "CrawlerC_Rig|CrawlerC_Rig|06_Hit",
+    "CrawlerC_Rig|CrawlerC_Rig|07_LightFlinch",
+    "CrawlerC_Rig|CrawlerC_Rig|08_Death",
+    "CrawlerC_Rig|CrawlerC_Rig|09_LightBoundary",
+    "CrawlerC_Rig|CrawlerC_Rig|10_WallCrawl"
+  ],
+  "previews": [
+    {
+      "file": "01_ThreeQuarter.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "standard_deviation": 0.24017637968063354
+    },
+    {
+      "file": "02_Front.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "standard_deviation": 0.26802536845207214
+    },
+    {
+      "file": "03_Side.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "standard_deviation": 0.26860636472702026
+    },
+    {
+      "file": "04_HeadDetail.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "standard_deviation": 0.1386580467224121
+    },
+    {
+      "file": "05_Attack.png",
+      "size": [
+        1200,
+        800
+      ],
+      "standard_deviation": 0.2447669953107834
+    },
+    {
+      "file": "06_LightFlinch.png",
+      "size": [
+        1200,
+        800
+      ],
+      "standard_deviation": 0.2469312697649002
+    },
+    {
+      "file": "07_Death.png",
+      "size": [
+        1200,
+        800
+      ],
+      "standard_deviation": 0.2485487014055252
+    },
+    {
+      "file": "08_WallCrawl.png",
+      "size": [
+        1200,
+        800
+      ],
+      "standard_deviation": 0.13644641637802124
+    }
+  ],
+  "failures": []
+}

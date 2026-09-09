@@ -1,0 +1,122 @@
+{
+  "file": "Enemy_Crawler_C.fbx",
+  "units": "meters",
+  "fps": 60,
+  "source_forward": "-Y",
+  "engine_forward": "-Z",
+  "engine_up": "+Y",
+  "rest_bounds_blender": {
+    "min": [
+      -0.6012660264968872,
+      -1.0859999656677246,
+      0.009000001475214958
+    ],
+    "max": [
+      0.6012905240058899,
+      1.130000114440918,
+      0.5998001098632812
+    ]
+  },
+  "deform_bones": 64,
+  "clips": [
+    {
+      "name": "CrawlerC_Rig|00_Idle",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|01_Patrol_Crawl",
+      "duration_seconds": 2.4,
+      "loop": true,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|02_Alert",
+      "duration_seconds": 1.0,
+      "loop": false,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|03_Search",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|04_Chase",
+      "duration_seconds": 0.9,
+      "loop": true,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|05_Attack",
+      "duration_seconds": 1.2,
+      "loop": false,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|06_Hit",
+      "duration_seconds": 1.0,
+      "loop": false,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|07_LightFlinch",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|08_Death",
+      "duration_seconds": 2.0,
+      "loop": false,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|09_LightBoundary",
+      "duration_seconds": 2.4,
+      "loop": true,
+      "root_motion": false
+    },
+    {
+      "name": "CrawlerC_Rig|10_WallCrawl",
+      "duration_seconds": 2.0,
+      "loop": true,
+      "root_motion": false
+    }
+  ],
+  "wall_clip": "Orient the entity to the wall normal; local support plane is XY in Blender / XZ in engine.",
+  "materials": {
+    "Skin": {
+      "metallic": 0,
+      "roughness": 0.6700000166893005,
+      "color": "textures/Skin_BaseColor.png",
+      "normal": "textures/Skin_Normal_DX.png"
+    },
+    "Sensor": {
+      "metallic": 0,
+      "roughness": 0.800000011920929,
+      "color": "textures/Sensor_BaseColor.png",
+      "normal": "textures/Sensor_Normal_DX.png"
+    },
+    "Keratin": {
+      "metallic": 0,
+      "roughness": 0.49000000953674316,
+      "color": "textures/Keratin_BaseColor.png",
+      "normal": "textures/Keratin_Normal_DX.png"
+    },
+    "Crease": {
+      "metallic": 0,
+      "roughness": 0.8399999737739563,
+      "color": "textures/Crease_BaseColor.png",
+      "normal": "textures/Crease_Normal_DX.png"
+    },
+    "CloudedEye": {
+      "metallic": 0,
+      "roughness": 0.23000000417232513,
+      "color": "textures/CloudedEye_BaseColor.png",
+      "normal": "textures/CloudedEye_Normal_DX.png"
+    }
+  }
+}
