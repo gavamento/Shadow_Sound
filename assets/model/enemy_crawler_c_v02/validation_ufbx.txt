@@ -1,0 +1,18 @@
+MATERIAL CloudedEye roughness=0.260
+MATERIAL Crease roughness=0.840
+MATERIAL Keratin roughness=0.560
+MATERIAL Sensor roughness=0.800
+MATERIAL Skin roughness=0.720
+GEOMETRY triangles=127420 meshes=5 max_skin_clusters=65
+CLIP CrawlerC_Rig|00_Idle duration=3.000 max_motion=0.0092 loop_error=0.00000 min_height=0.0090 max_extent=2.2164
+CLIP CrawlerC_Rig|01_Patrol_Crawl duration=2.400 max_motion=0.2004 loop_error=0.00000 min_height=0.0090 max_extent=2.3549
+CLIP CrawlerC_Rig|02_Alert duration=1.000 max_motion=0.0971 loop_error=0.09708 min_height=0.0090 max_extent=2.2164
+CLIP CrawlerC_Rig|03_Search duration=3.000 max_motion=0.1107 loop_error=0.00000 min_height=0.0014 max_extent=2.2931
+CLIP CrawlerC_Rig|04_Chase duration=0.900 max_motion=0.3676 loop_error=0.00000 min_height=0.0090 max_extent=2.5406
+CLIP CrawlerC_Rig|05_Attack duration=1.200 max_motion=0.2092 loop_error=0.00000 min_height=0.0090 max_extent=2.4060
+CLIP CrawlerC_Rig|06_Hit duration=1.000 max_motion=0.1233 loop_error=0.00000 min_height=0.0090 max_extent=2.2160
+CLIP CrawlerC_Rig|07_LightFlinch duration=1.500 max_motion=0.3771 loop_error=0.00000 min_height=0.0090 max_extent=2.2160
+CLIP CrawlerC_Rig|08_Death duration=2.000 max_motion=0.3194 loop_error=0.31944 min_height=0.0038 max_extent=2.2160
+CLIP CrawlerC_Rig|09_LightBoundary duration=2.400 max_motion=0.1292 loop_error=0.00000 min_height=0.0090 max_extent=2.2160
+CLIP CrawlerC_Rig|10_WallCrawl duration=2.000 max_motion=0.2404 loop_error=0.00000 min_height=0.0090 max_extent=2.3827
+RESULT failures=0

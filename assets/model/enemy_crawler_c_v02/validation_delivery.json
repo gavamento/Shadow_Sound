@@ -1,0 +1,111 @@
+{
+  "source_images": [
+    {
+      "path": "//textures\\CloudedEye_BaseColor.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\CloudedEye_Normal.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Crease_BaseColor.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Crease_Normal.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Keratin_BaseColor.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Keratin_Normal.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Sensor_BaseColor.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Sensor_Normal.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Skin_BaseColor.png",
+      "present_in_delivery": true
+    },
+    {
+      "path": "//textures\\Skin_Normal.png",
+      "present_in_delivery": true
+    }
+  ],
+  "previews": [
+    {
+      "name": "01_ThreeQuarter",
+      "size": [
+        1400,
+        950
+      ],
+      "contrast": 0.2534589469432831
+    },
+    {
+      "name": "02_Front",
+      "size": [
+        1400,
+        950
+      ],
+      "contrast": 0.2715720236301422
+    },
+    {
+      "name": "03_Side",
+      "size": [
+        1400,
+        950
+      ],
+      "contrast": 0.2715320289134979
+    },
+    {
+      "name": "04_HeadDetail",
+      "size": [
+        1400,
+        950
+      ],
+      "contrast": 0.15315353870391846
+    },
+    {
+      "name": "05_Attack",
+      "size": [
+        1200,
+        800
+      ],
+      "contrast": 0.2504023015499115
+    },
+    {
+      "name": "06_LightFlinch",
+      "size": [
+        1200,
+        800
+      ],
+      "contrast": 0.2508210837841034
+    },
+    {
+      "name": "07_Death",
+      "size": [
+        1200,
+        800
+      ],
+      "contrast": 0.2530883550643921
+    },
+    {
+      "name": "08_WallCrawl",
+      "size": [
+        1200,
+        800
+      ],
+      "contrast": 0.1396942138671875
+    }
+  ],
+  "failures": []
+}

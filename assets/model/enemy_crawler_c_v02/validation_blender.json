@@ -1,0 +1,326 @@
+{
+  "blender_version": "5.1.1",
+  "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\Enemy_Crawler_C.fbx",
+  "sha256": "9aada6463f8147bd14723c30867f5013a325cd508849e12cae6ba2bdc84c3c6d",
+  "meshes": [
+    {
+      "name": "CrawlerC_Keratin",
+      "triangles": 12160,
+      "bad_weights": 0
+    },
+    {
+      "name": "CrawlerC_CloudedEye",
+      "triangles": 2432,
+      "bad_weights": 0
+    },
+    {
+      "name": "CrawlerC_Sensor",
+      "triangles": 29184,
+      "bad_weights": 0
+    },
+    {
+      "name": "CrawlerC_Crease",
+      "triangles": 3648,
+      "bad_weights": 0
+    },
+    {
+      "name": "CrawlerC_Skin",
+      "triangles": 79996,
+      "bad_weights": 0
+    }
+  ],
+  "clips": [
+    {
+      "name": "00_Idle",
+      "duration": 3.0,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6015943884849548,
+          -1.0863654613494873,
+          0.008650180883705616
+        ],
+        [
+          0.6016193628311157,
+          1.1299997568130493,
+          0.5868561863899231
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": true
+    },
+    {
+      "name": "01_Patrol_Crawl",
+      "duration": 2.4,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6213205456733704,
+          -1.1860004663467407,
+          0.009000307880342007
+        ],
+        [
+          0.6209046244621277,
+          1.2236038446426392,
+          0.5948562026023865
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": true
+    },
+    {
+      "name": "02_Alert",
+      "duration": 1.0,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6012662649154663,
+          -1.0863654613494873,
+          -0.008373912423849106
+        ],
+        [
+          0.6012907028198242,
+          1.1299997568130493,
+          0.5868561863899231
+        ]
+      ],
+      "endpoint_max_distance_m": 0.08479133993387222,
+      "loop": false
+    },
+    {
+      "name": "03_Search",
+      "duration": 3.0,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6179714202880859,
+          -1.1410006284713745,
+          0.0014123506844043732
+        ],
+        [
+          0.6175686120986938,
+          1.181482195854187,
+          0.5948562026023865
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": true
+    },
+    {
+      "name": "04_Chase",
+      "duration": 0.9,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6257337331771851,
+          -1.2460005283355713,
+          0.004999786615371704
+        ],
+        [
+          0.6257544755935669,
+          1.299113392829895,
+          0.5948562026023865
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": true
+    },
+    {
+      "name": "05_Attack",
+      "duration": 1.2,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6012662649154663,
+          -1.136000394821167,
+          0.00900046993046999
+        ],
+        [
+          0.6012907028198242,
+          1.1299997568130493,
+          0.5868561863899231
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": false
+    },
+    {
+      "name": "06_Hit",
+      "duration": 1.0,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6400620341300964,
+          -1.1468061208724976,
+          0.00900046993046999
+        ],
+        [
+          0.6012907028198242,
+          1.1299997568130493,
+          0.5882816910743713
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": false
+    },
+    {
+      "name": "07_LightFlinch",
+      "duration": 1.5,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6012662649154663,
+          -1.0861501693725586,
+          0.00899756234139204
+        ],
+        [
+          0.6012907028198242,
+          1.1300042867660522,
+          0.5868561863899231
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": false
+    },
+    {
+      "name": "08_Death",
+      "duration": 2.0,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6705524325370789,
+          -1.0878432989120483,
+          0.009000261314213276
+        ],
+        [
+          0.6251837015151978,
+          1.1299999952316284,
+          0.5868561863899231
+        ]
+      ],
+      "endpoint_max_distance_m": 0.22799518704414368,
+      "loop": false
+    },
+    {
+      "name": "09_LightBoundary",
+      "duration": 2.4,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6626002788543701,
+          -1.086000680923462,
+          0.009000098332762718
+        ],
+        [
+          0.6585475206375122,
+          1.1299999952316284,
+          0.5948562026023865
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": true
+    },
+    {
+      "name": "10_WallCrawl",
+      "duration": 2.0,
+      "samples": 9,
+      "bounds_blender": [
+        [
+          -0.6185585260391235,
+          -1.2060009241104126,
+          0.009000306949019432
+        ],
+        [
+          0.6181333065032959,
+          1.242324709892273,
+          0.5618604421615601
+        ]
+      ],
+      "endpoint_max_distance_m": 0.0,
+      "loop": true
+    }
+  ],
+  "textures": [
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\CloudedEye_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\CloudedEye_Normal_DX.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Crease_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Crease_Normal_DX.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Keratin_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Keratin_Normal_DX.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Sensor_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Sensor_Normal_DX.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Skin_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "C:\\HAL\\Shadow_Sound\\assets\\model\\enemy_crawler_c_v02\\textures\\Skin_Normal_DX.png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "failures": [],
+  "warnings": [],
+  "limits": [
+    "Sampled poses, not exhaustive self-intersection detection",
+    "No engine/GPU/AI/collision validation"
+  ],
+  "triangles": 127420,
+  "bones": [
+    65
+  ],
+  "fps": 60
+}
