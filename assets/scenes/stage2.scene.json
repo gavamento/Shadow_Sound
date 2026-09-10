@@ -12,9 +12,9 @@
         },
         "LocalTransform": {
           "position": [
-            3.0,
+            70.0,
             1.600000023841858,
-            3.0
+            22.0
           ],
           "rotation": [
             0.06041087955236435,
@@ -149,7 +149,7 @@
           "sun": 0
         },
         "SkTuning": {
-          "beaconCount": 3,
+          "beaconCount": 2,
           "beaconRangeM": 0.009999999776482582,
           "breathLoudness": 0.07000000029802322,
           "breathRadiusM": 3.0,
@@ -161,7 +161,7 @@
           "debugFullbright": 0,
           "debugNoTransition": 0,
           "debugPinger": 0,
-          "echoCost": 1.0,
+          "echoCost": 1.399999976158142,
           "echoGain": 0.10000000149011612,
           "echoMax": 1.0,
           "eyeHeight": 0.699999988079071,
@@ -274,9 +274,9 @@
         },
         "LocalTransform": {
           "position": [
-            3.0,
+            70.0,
             0.8999999761581421,
-            3.0
+            22.0
           ],
           "rotation": [
             0.0,
@@ -646,6 +646,118 @@
     {
       "childIndex": 8,
       "components": {
+        "AcousticListener": {
+          "lastHeardPos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lastHeardTick": 0,
+          "lastLoudness": 0.0,
+          "lastSourceEntity": 0,
+          "lastTone": 0,
+          "threshold": 0.001500000013038516
+        },
+        "AgentBrain": {
+          "alertTicks": 30,
+          "emitEveryTicks": 60,
+          "emitLoudness": 0.2199999988079071,
+          "emitPhase": 0,
+          "home": [
+            34.0,
+            1.2799999713897705,
+            26.0
+          ],
+          "loseTicks": 120,
+          "memoryTicks": 600,
+          "runSpeed": 3.0,
+          "searchTicks": 180,
+          "state": 0,
+          "stateTicks": 0,
+          "target": [
+            34.0,
+            1.2799999713897705,
+            26.0
+          ],
+          "walkSpeed": 1.2000000476837158
+        },
+        "CharacterController": {
+          "gravityScale": 1.0,
+          "height": 1.600000023841858,
+          "isGrounded": 0,
+          "jumpSpeed": 0.0,
+          "moveInput": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.30000001192092896,
+          "skinWidth": 0.019999999552965164,
+          "slopeLimitDeg": 50.0,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "LocalTransform": {
+          "position": [
+            34.0,
+            1.2799999713897705,
+            26.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            0.6000000238418579,
+            1.600000023841858,
+            0.6000000238418579
+          ]
+        },
+        "MeshRenderer": {
+          "material": 4205236152057200908,
+          "mesh": 1506918697593860217
+        },
+        "SkAgent": {
+          "dwell": 0,
+          "prevState": -1,
+          "root": 0,
+          "tag": 2,
+          "voiceTicks": 0,
+          "wp0": [
+            30.0,
+            1.2799999713897705,
+            22.0
+          ],
+          "wp1": [
+            36.0,
+            1.2799999713897705,
+            22.0
+          ],
+          "wp2": [
+            36.0,
+            1.2799999713897705,
+            32.0
+          ],
+          "wp3": [
+            30.0,
+            1.2799999713897705,
+            32.0
+          ],
+          "wpCount": 4,
+          "wpIndex": 0
+        }
+      },
+      "fileId": 21,
+      "name": "AgentEar3"
+    },
+    {
+      "childIndex": 9,
+      "components": {
         "AcousticEmitter": {
           "autoFootstep": false,
           "cooldown": 0,
@@ -697,7 +809,7 @@
       "name": "DebugPinger"
     },
     {
-      "childIndex": 9,
+      "childIndex": 10,
       "components": {
         "Light": {
           "ambient": [
@@ -720,9 +832,9 @@
         },
         "LocalTransform": {
           "position": [
-            2.0,
+            72.0,
             1.0,
-            2.0
+            22.0
           ],
           "rotation": [
             0.0,
@@ -745,7 +857,7 @@
       "name": "FixedLight"
     },
     {
-      "childIndex": 10,
+      "childIndex": 11,
       "components": {
         "Light": {
           "ambient": [
@@ -793,7 +905,7 @@
       "name": "SkLamp0"
     },
     {
-      "childIndex": 11,
+      "childIndex": 12,
       "components": {
         "Light": {
           "ambient": [
@@ -841,7 +953,7 @@
       "name": "SkLamp1"
     },
     {
-      "childIndex": 12,
+      "childIndex": 13,
       "components": {
         "Light": {
           "ambient": [
@@ -889,7 +1001,7 @@
       "name": "SkLamp2"
     },
     {
-      "childIndex": 13,
+      "childIndex": 14,
       "components": {
         "LocalTransform": {
           "position": [
@@ -949,7 +1061,7 @@
       "name": "UiEchoBg"
     },
     {
-      "childIndex": 14,
+      "childIndex": 15,
       "components": {
         "LocalTransform": {
           "position": [
@@ -1009,7 +1121,7 @@
       "name": "UiEchoFill"
     },
     {
-      "childIndex": 15,
+      "childIndex": 16,
       "components": {
         "LocalTransform": {
           "position": [
@@ -1058,7 +1170,7 @@
           ],
           "sliced": 0,
           "space": 0,
-          "text": "BEACON 3 / 3",
+          "text": "BEACON 2 / 2",
           "texture": 0,
           "w": 320.0,
           "x": 40.0,
@@ -1069,7 +1181,7 @@
       "name": "UiBeaconText"
     },
     {
-      "childIndex": 16,
+      "childIndex": 17,
       "components": {
         "AcousticEmitter": {
           "autoFootstep": false,
@@ -1085,9 +1197,9 @@
         },
         "LocalTransform": {
           "position": [
-            69.0,
+            4.0,
             1.0,
-            24.0
+            4.0
           ],
           "rotation": [
             0.0,
@@ -1126,7 +1238,7 @@
       "name": "DataCore"
     },
     {
-      "childIndex": 17,
+      "childIndex": 18,
       "components": {
         "LocalTransform": {
           "position": [
@@ -1186,7 +1298,7 @@
       "name": "UiClearText"
     },
     {
-      "childIndex": 18,
+      "childIndex": 19,
       "components": {
         "LocalTransform": {
           "position": [
@@ -2429,7 +2541,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201153,
+          "physMaterial": 4205236152057201155,
           "radius": 0.5,
           "shape": 1
         },
@@ -2521,7 +2633,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201153,
+          "physMaterial": 4205236152057201155,
           "radius": 0.5,
           "shape": 1
         },
@@ -2613,7 +2725,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 17039387027085347429,
+          "physMaterial": 4205236152057201153,
           "radius": 0.5,
           "shape": 1
         },
@@ -3993,7 +4105,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201155,
+          "physMaterial": 4205236152057201157,
           "radius": 0.5,
           "shape": 1
         },
@@ -4039,7 +4151,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201155,
+          "physMaterial": 4205236152057201157,
           "radius": 0.5,
           "shape": 1
         },
@@ -4085,7 +4197,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201155,
+          "physMaterial": 4205236152057201157,
           "radius": 0.5,
           "shape": 1
         },
@@ -4131,7 +4243,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201155,
+          "physMaterial": 4205236152057201157,
           "radius": 0.5,
           "shape": 1
         },
@@ -4177,7 +4289,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201155,
+          "physMaterial": 4205236152057201157,
           "radius": 0.5,
           "shape": 1
         },
@@ -4223,7 +4335,7 @@
           "mask": 4294967295,
           "materialOverrideBits": 0,
           "meshAsset": 0,
-          "physMaterial": 4205236152057201155,
+          "physMaterial": 4205236152057201157,
           "radius": 0.5,
           "shape": 1
         },
@@ -13144,6 +13256,6 @@
     }
   ],
   "nextFileId": 1416,
-  "sceneName": "Stage1",
+  "sceneName": "Stage2",
   "version": 3
 }

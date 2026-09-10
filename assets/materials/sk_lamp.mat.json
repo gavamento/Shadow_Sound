@@ -1,0 +1,18 @@
+{
+  "engine": "MyEngine",
+  "material": 1,
+  "name": "sk_lamp",
+  "shader": "forward_lit",
+  "baseColor": [
+    1.0,
+    0.94,
+    0.82,
+    1.0
+  ],
+  "metallic": 0.0,
+  "roughness": 0.35,
+  "emissive": 3.5,
+  "texture": "",
+  "normalMap": "",
+  "transparent": false
+}

@@ -1,5 +1,5 @@
 {
-  "bootScene": "scenes/main.scene.json",
+  "bootScene": "scenes/stage1.scene.json",
   "engineVersion": "0.66",
   "formatVersion": 1,
   "name": "三校"
