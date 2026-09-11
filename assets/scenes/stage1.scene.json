@@ -494,12 +494,24 @@
             0.6000000238418579
           ]
         },
-        "MeshRenderer": {
-          "material": 4205236152057200908,
-          "mesh": 1506918697593860217
-        },
         "SkAgent": {
+          "animBound": 0,
+          "animClip": -1,
+          "animMoving": 0,
+          "body": 0,
           "dwell": 0,
+          "faceDir": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "flinchLeft": 0,
+          "flinchRequest": 0,
+          "part0": 0,
+          "part1": 0,
+          "part2": 0,
+          "part3": 0,
+          "part4": 0,
           "prevState": -1,
           "root": 0,
           "tag": 0,
@@ -530,6 +542,222 @@
       },
       "fileId": 8,
       "name": "AgentEar"
+    },
+    {
+      "childIndex": 0,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            -0.800000011920929,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.6666666269302368,
+            0.625,
+            1.6666666269302368
+          ]
+        }
+      },
+      "fileId": 1001,
+      "name": "AgentEar_Body",
+      "parent": 8
+    },
+    {
+      "childIndex": 0,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6855219864386248869,
+          "mesh": 9805813858447930514
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 10995180333008878233,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1002,
+      "name": "AgentEar_Body_Skin",
+      "parent": 1001
+    },
+    {
+      "childIndex": 1,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6855216565851364236,
+          "mesh": 14946652324466804635
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 6819635466209885405,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1003,
+      "name": "AgentEar_Body_Sensor",
+      "parent": 1001
+    },
+    {
+      "childIndex": 2,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6855217665362992447,
+          "mesh": 2266471094737008412
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 13865871922671404313,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1004,
+      "name": "AgentEar_Body_Keratin",
+      "parent": 1001
+    },
+    {
+      "childIndex": 3,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6856201728270052067,
+          "mesh": 5290180075511694365
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 1505593122625393509,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1005,
+      "name": "AgentEar_Body_Crease",
+      "parent": 1001
+    },
+    {
+      "childIndex": 4,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6856200628758423856,
+          "mesh": 803762944787351438
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 7968612881564139277,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1006,
+      "name": "AgentEar_Body_CloudedEye",
+      "parent": 1001
     },
     {
       "childIndex": 7,
@@ -606,12 +834,24 @@
             0.6000000238418579
           ]
         },
-        "MeshRenderer": {
-          "material": 4205236152057200908,
-          "mesh": 1506918697593860217
-        },
         "SkAgent": {
+          "animBound": 0,
+          "animClip": -1,
+          "animMoving": 0,
+          "body": 0,
           "dwell": 0,
+          "faceDir": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "flinchLeft": 0,
+          "flinchRequest": 0,
+          "part0": 0,
+          "part1": 0,
+          "part2": 0,
+          "part3": 0,
+          "part4": 0,
           "prevState": -1,
           "root": 0,
           "tag": 1,
@@ -642,6 +882,222 @@
       },
       "fileId": 18,
       "name": "AgentEar2"
+    },
+    {
+      "childIndex": 0,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            -0.800000011920929,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.6666666269302368,
+            0.625,
+            1.6666666269302368
+          ]
+        }
+      },
+      "fileId": 1011,
+      "name": "AgentEar2_Body",
+      "parent": 18
+    },
+    {
+      "childIndex": 0,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6855219864386248869,
+          "mesh": 9805813858447930514
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 10995180333008878233,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1012,
+      "name": "AgentEar2_Body_Skin",
+      "parent": 1011
+    },
+    {
+      "childIndex": 1,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6855216565851364236,
+          "mesh": 14946652324466804635
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 6819635466209885405,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1013,
+      "name": "AgentEar2_Body_Sensor",
+      "parent": 1011
+    },
+    {
+      "childIndex": 2,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6855217665362992447,
+          "mesh": 2266471094737008412
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 13865871922671404313,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1014,
+      "name": "AgentEar2_Body_Keratin",
+      "parent": 1011
+    },
+    {
+      "childIndex": 3,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6856201728270052067,
+          "mesh": 5290180075511694365
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 1505593122625393509,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1015,
+      "name": "AgentEar2_Body_Crease",
+      "parent": 1011
+    },
+    {
+      "childIndex": 4,
+      "components": {
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "MeshRenderer": {
+          "material": 6856200628758423856,
+          "mesh": 803762944787351438
+        },
+        "SkinnedMesh": {
+          "clip": 1,
+          "fadeTicks": 0,
+          "loop": 1,
+          "model": 7968612881564139277,
+          "playing": 1,
+          "timeTicks": 0
+        }
+      },
+      "fileId": 1016,
+      "name": "AgentEar2_Body_CloudedEye",
+      "parent": 1011
     },
     {
       "childIndex": 8,
