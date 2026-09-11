@@ -47,7 +47,6 @@ SCENE_DIR = os.path.join(ROOT, "assets", "scenes")
 MAT_ACCENT = 0x3A5C000000000103
 MAT_BODY = 0x3A5C000000000104
 MAT_PINGER = 0x3A5C000000000105
-MAT_AGENT_EAR = 0x3A5C00000000010C
 MAT_LAMP = 0x3A5C00000000010D
 # ビーコンが育つ 4 段階 (SkCommon.h の kMatBeacon と同じ並び)。シーンには l0 を置く
 MAT_BEACON = (0x3A5C000000000110, 0x3A5C000000000111,
@@ -119,6 +118,37 @@ def fnv1a(data: bytes) -> int:
 
 MESH_CUBE = fnv1a(b"builtin://cube")
 MESH_SPHERE = fnv1a(b"builtin://sphere")
+
+# ---- 敵の見た目 (assets\model\enemy_crawler_c_v02) ----
+# ★FBX 由来の AssetID は「正規化した絶対パス + #mesh<element_id>…」のハッシュで決まる
+#   (エンジン FbxLoader.cpp の LoadSkin / LoadMeshInto)。数値をシーンに書き写すと、上の (2) と
+#   同じくリポジトリを移した瞬間に直せなくなるので、**生成のたびにパスから計算する**。
+#   移したら mkstage を回し直せば戻る。
+# ★element_id は FBX の中身で決まる。FBX を書き出し直したら、FbxLoader の MakeOpts と
+#   同じ ufbx 設定 (tools\crawler_c_v02\verify_crawler.c と同じ読み方) で読み直して表を
+#   更新すること。ずれると敵が**黙って見えなくなる** (未登録の AssetID は描画が飛ばすだけ)
+CRAWLER_FBX = os.path.join(ROOT, "assets", "model", "enemy_crawler_c_v02", "Enemy_Crawler_C.fbx")
+# (部位名 = SkCommon.h の kCrawlerPart, mesh element_id, skin element_id, material element_id)
+# FBX は材質ごとにメッシュが割れていて、5 つとも同じリグで動く
+CRAWLER_PARTS = (
+    ("Skin", 6, 412, 482),
+    ("Sensor", 5, 345, 481),
+    ("Keratin", 4, 278, 480),
+    ("Crease", 3, 211, 479),
+    ("CloudedEye", 2, 144, 478),
+)
+CRAWLER_BODY_SUFFIX = "_Body"  # SkCommon.h の kCrawlerBodySuffix
+# エディタで開いたときの姿勢。本編では SkAgent が最初の Update で状態に合わせて書き直す
+CRAWLER_EDIT_CLIP = 1  # 01_Patrol_Crawl (SkCommon.h の kClipPatrol)
+
+
+def fbx_key_prefix(path):
+    """エンジンの NormalizePathKey と同じ正規化 (絶対パス → lexically_normal → '\\' → 小文字)。"""
+    return os.path.normpath(os.path.abspath(path)).replace("/", "\\").lower()
+
+
+def fbx_asset_id(path, suffix):
+    return fnv1a((fbx_key_prefix(path) + suffix).encode("utf-8"))
 
 
 def f32(v):
@@ -286,6 +316,10 @@ def sk_agent(route, tag):
         "wp0": wp[0], "wp1": wp[1], "wp2": wp[2], "wp3": wp[3],
         "wpCount": min(len(route), 4), "wpIndex": 0,
         "tag": tag, "prevState": -1, "voiceTicks": 0, "dwell": 0, "root": 0,
+        # ---- 見た目 (SkAgent が名前で引いて埋める) ----
+        "body": 0, "part0": 0, "part1": 0, "part2": 0, "part3": 0, "part4": 0,
+        "animBound": 0, "animClip": -1, "animMoving": 0, "flinchRequest": 0, "flinchLeft": 0,
+        "faceDir": vec3(0, 0, -1),
     }
 
 
@@ -326,6 +360,9 @@ PLAYER_EYE_CENTER_Y = 0.9  # 立ち姿勢のカプセル中心 (COLLISION.md)
 # 静止時の中心は床上面 + 半分 = 1.28m。ここを間違えると床にめり込んで足踏みし続ける
 AGENT_SCALE = (0.6, 1.6, 0.6)
 AGENT_CENTER_Y = 1.6 * 1.6 * 0.5
+# 敵の見た目 (Body + 5 部位) の fileId。敵 1 体ごとに base + 10 * tag から 6 つ使う。
+# ★ゲーム側の 1..21 とも、ステージのプレハブ (1110〜) とも重ならない帯
+CRAWLER_FILE_ID_BASE = 1001
 
 # ★検証用の固定音源。本編では OFF (SkTuning.debugPinger = 0) で、
 #   tools\mkverifyscene.ps1 が複製の debugPinger を 1 にして鳴らす。
@@ -609,6 +646,7 @@ def build_scene(cfg):
     #   無音になり、毎 tick 占有署名が変わって音響グリッドを全再ベイクする
     # ★巡回路は manifest の patrol_xz をそのまま SkAgent へ渡す。AgentBrain には経路の
     #   概念が無く home の周り 4m を歩くだけなので、SkAgent が home を巡回点へ動かす
+    # ★本体にメッシュは付けない。見た目は子の "<名前>_Body" (クローラー) が持つ
     def add_agent(file_id, name, spawn, route, tag):
         home = vec3(spawn[0], AGENT_CENTER_Y, spawn[2])
         sb.add(file_id, name, {
@@ -624,9 +662,38 @@ def build_scene(cfg):
             },
             "CharacterController": character_controller(),
             "LocalTransform": transform(home, IDENT_ROT, AGENT_SCALE),
-            "MeshRenderer": {"material": MAT_AGENT_EAR, "mesh": MESH_CUBE},
             "SkAgent": sk_agent(route, tag),
         })
+        add_crawler(CRAWLER_FILE_ID_BASE + 10 * tag, name, file_id)
+
+    # 敵の見た目 = Body 1 + スキン付きメッシュ 5。★名前の綴りは SkCommon.h と揃える
+    #   (SkAgent が "<kNameAgent[tag]>_Body_<部位>" で引く)
+    # ★Body は敵本体の非一様スケール (AGENT_SCALE) を打ち消す。本体のスケールは当たり判定の
+    #   寸法そのものなので触れない。yaw 回転は X と Z の倍率が等しいスケールと可換なので、
+    #   打ち消した Body を SkAgent が回しても歪まない
+    # ★高さは足元 = 床上面。カプセル中心 (AGENT_CENTER_Y) から親のスケール分を割り戻す
+    # ★スキン付きメッシュは Body の直下に恒等変換で置く。FBX のスキンは骨の祖先までボーン
+    #   パレットに入っているので、メッシュ側に変換を乗せると二重に掛かって吹き飛ぶ
+    #   (エンジン FbxLoader.cpp の P4-5。エディタへ D&D したときと同じ形)
+    def add_crawler(base_file_id, agent_name, agent_file_id):
+        body = agent_name + CRAWLER_BODY_SUFFIX
+        sb.add(base_file_id, body, {
+            "LocalTransform": transform((0.0, -AGENT_CENTER_Y / AGENT_SCALE[1], 0.0), IDENT_ROT,
+                                        tuple(1.0 / s for s in AGENT_SCALE)),
+        }, parent=agent_file_id)
+        for i, (part, mesh, skin, mat) in enumerate(CRAWLER_PARTS):
+            sb.add(base_file_id + 1 + i, "%s_%s" % (body, part), {
+                "LocalTransform": transform((0.0, 0.0, 0.0)),
+                "MeshRenderer": {
+                    "material": fbx_asset_id(CRAWLER_FBX, "#mat%d" % mat),
+                    "mesh": fbx_asset_id(CRAWLER_FBX, "#mesh%d#part0" % mesh),
+                },
+                "SkinnedMesh": {
+                    "clip": CRAWLER_EDIT_CLIP, "fadeTicks": 0, "loop": 1,
+                    "model": fbx_asset_id(CRAWLER_FBX, "#mesh%d#skin%d" % (mesh, skin)),
+                    "playing": 1, "timeTicks": 0,
+                },
+            }, parent=base_file_id)
 
     for a in cfg["agents"]:
         add_agent(a["file_id"], a["name"], resolve_pos(a["spawn"], marker),

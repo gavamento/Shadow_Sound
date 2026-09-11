@@ -482,6 +482,10 @@ struct SkLightTool : Script<SkLightTool> {
             }
             MyeSetField(ctx, a, sk::kCompAgentBrain, sk::kFieldAgentState, kAgentReturn);
             MyeSetField(ctx, a, sk::kCompAgentBrain, sk::kFieldAgentStateTicks, int32_t{ 0 });
+            // 見た目のひるみ (07_LightFlinch)。アニメは SkAgent の持ち物なので要求だけ立てる。
+            // ★state は帰還へ飛ぶだけで「ひるんだ」ことは AgentBrain に残らない —
+            //   自然な探索 -> 帰還と区別する手段がここにしか無い
+            MyeSetField(ctx, a, sk::kCompSkAgent, sk::kFieldFlinchRequest, int32_t{ 1 });
         }
     }
 

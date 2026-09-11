@@ -125,6 +125,35 @@ inline constexpr uint64_t kFieldEmitEveryTicks = MyeNameHash("emitEveryTicks");
 inline constexpr uint64_t kFieldEmitLoudness = MyeNameHash("emitLoudness");
 inline constexpr uint64_t kFieldEmitPhase = MyeNameHash("emitPhase");
 
+// ---- 敵の見た目 (assets\model\enemy_crawler_c_v02)。★綴りは mkstage.py の CRAWLER_* と揃える ----
+// 敵エンティティの子 "<敵の名前>_Body" の下に、材質ごとに割れたスキン付きメッシュが 5 つ並ぶ
+// ("<敵の名前>_Body_<部位>")。クリップは 5 つ全部へ同じ値を書く — 1 つでも書き漏らすと
+// その材質の部位だけが別の姿勢のまま置いていかれる。
+// ★SkAgent は敵の名前を kNameAgent[tag] から組み立てる (スクリプトから自分の名前を引く口が
+//   エンジンに無い)。mkstage の tag はこの並びと同じ番号にしてある
+inline constexpr const char* kCrawlerBodySuffix = "_Body";
+inline constexpr int32_t kCrawlerPartCount = 5;
+inline constexpr const char* kCrawlerPart[kCrawlerPartCount] = {
+    "Skin", "Sensor", "Keratin", "Crease", "CloudedEye",
+};
+// クリップ番号 = FBX のアニメスタックの並び (FbxLoader がその順に SkinnedModel.clips へ積む)
+inline constexpr int32_t kClipIdle = 0;   // 00_Idle
+inline constexpr int32_t kClipPatrol = 1; // 01_Patrol_Crawl
+inline constexpr int32_t kClipAlert = 2;  // 02_Alert (一度きり)
+inline constexpr int32_t kClipSearch = 3; // 03_Search
+inline constexpr int32_t kClipChase = 4;  // 04_Chase
+inline constexpr int32_t kClipFlinch = 7; // 07_LightFlinch (一度きり)
+// SkinnedMesh (エンジン M18 + クロスフェード追補)。NoHash なので書いてもリプレイは動かない
+inline constexpr uint64_t kCompSkinnedMesh = MyeNameHash("SkinnedMesh");
+inline constexpr uint64_t kFieldSkinClip = MyeNameHash("clip");
+inline constexpr uint64_t kFieldSkinLoop = MyeNameHash("loop");
+inline constexpr uint64_t kFieldSkinFadeTicks = MyeNameHash("fadeTicks");
+inline constexpr uint64_t kFieldSkinTimeTicks = MyeNameHash("timeTicks");
+// SkAgent のひるみ要求。閃光を当てた SkLightTool が 1 を書き、SkAgent が次の Update で消費する
+// (アニメは SkAgent の持ち物なので、SkLightTool は要求を立てるだけ)
+inline constexpr uint64_t kCompSkAgent = MyeNameHash("SkAgent");
+inline constexpr uint64_t kFieldFlinchRequest = MyeNameHash("flinchRequest");
+
 // ---- SkTuning (assets\schemas\sk_tuning.component.schema.json, id 3001) ----
 inline constexpr uint64_t kCompTuning = MyeNameHash("SkTuning");
 inline constexpr uint64_t kFieldWalkSpeed = MyeNameHash("walkSpeed");
