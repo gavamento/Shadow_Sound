@@ -19,10 +19,11 @@
 #       うっかり掴んで動かした GameRoot が、そのまま「本編の初期状態」として焼き付く。
 #       実際に一度そうなった。**シーンの正本はこのスクリプト**にして、疑わしくなったら
 #       再生成すれば必ず既知の状態へ戻れるようにする。
-#   (2) ステージ本体は FBX 由来のメッシュ / マテリアル AssetID を持つが、その ID は
-#       絶対パスのハッシュで決まる。手書きの数値としてシーンに埋めると、リポジトリを
-#       別のディレクトリへ移した瞬間に二度と直せない。ここではステージを
-#       **プレハブ (.prefab.json) の機械展開**として吐くので、ID はプレハブ側 1 箇所だけ
+#   (2) ステージ本体は FBX 由来のメッシュ / マテリアル AssetID を持つ。その ID は、エンジン M74a
+#       以降は FBX の .meta の guid から決まる (M74 以前は絶対パスのハッシュで、clone 先が違う
+#       2 台で互いのモデルが消えた)。それでも手書きの数値としてシーンに埋めると、FBX を
+#       書き出し直したときに追えないので、ステージは**プレハブ (.prefab.json) の機械展開**として
+#       吐き、ID はプレハブ側 1 箇所だけに置く
 #       (プレハブの再生成手順は assets\model\research_wing_stage01\COLLISION.md)。
 #
 # ★座標の正本は placement_manifest.json (開始地点・敵の湧き位置・巡回点)。
@@ -120,10 +121,10 @@ MESH_CUBE = fnv1a(b"builtin://cube")
 MESH_SPHERE = fnv1a(b"builtin://sphere")
 
 # ---- 敵の見た目 (assets\model\enemy_crawler_c_v02) ----
-# ★FBX 由来の AssetID は「正規化した絶対パス + #mesh<element_id>…」のハッシュで決まる
-#   (エンジン FbxLoader.cpp の LoadSkin / LoadMeshInto)。数値をシーンに書き写すと、上の (2) と
-#   同じくリポジトリを移した瞬間に直せなくなるので、**生成のたびにパスから計算する**。
-#   移したら mkstage を回し直せば戻る。
+# ★FBX 由来の AssetID は「"guid://<FBX の .meta の guid>" + #mesh<element_id>…」のハッシュで決まる
+#   (エンジン M74a、FbxLoader.cpp の LoadSkin / LoadMeshInto と AssetKeyResolver.cpp)。
+#   clone 先にも FBX の移動にも依存しないが、数値をシーンに書き写すと .meta を作り直したときに
+#   追えないので、**生成のたびに .meta から計算する**。
 # ★element_id は FBX の中身で決まる。FBX を書き出し直したら、FbxLoader の MakeOpts と
 #   同じ ufbx 設定 (tools\crawler_c_v02\verify_crawler.c と同じ読み方) で読み直して表を
 #   更新すること。ずれると敵が**黙って見えなくなる** (未登録の AssetID は描画が飛ばすだけ)
@@ -143,8 +144,16 @@ CRAWLER_EDIT_CLIP = 1  # 01_Patrol_Crawl (SkCommon.h の kClipPatrol)
 
 
 def fbx_key_prefix(path):
-    """エンジンの NormalizePathKey と同じ正規化 (絶対パス → lexically_normal → '\\' → 小文字)。"""
-    return os.path.normpath(os.path.abspath(path)).replace("/", "\\").lower()
+    """エンジンの assetkey::SubAssetKeyPrefix と同じ接頭辞 ("guid://" + .meta の guid 16 桁小文字)。
+
+    ★M74a 以前はここが「正規化した絶対パス」だった。.meta が無い FBX はエンジン側で
+      path-hash に落ちるが、それはコミットされていない = 他の clone 先で ID が変わる状態なので、
+      生成器としては黙って合わせずに止める。"""
+    meta = path + ".meta"
+    if not os.path.exists(meta):
+        raise SystemExit("mkstage: %s が無い — エディタで一度開いて .meta を作り、コミットすること" % meta)
+    with open(meta, encoding="utf-8") as f:
+        return "guid://%016x" % int(json.load(f)["guid"], 16)
 
 
 def fbx_asset_id(path, suffix):

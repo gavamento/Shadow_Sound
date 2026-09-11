@@ -7,7 +7,7 @@
 
 ## 使うファイル
 
-MyEngineで描画と物理材質付き当たり判定をまとめて配置する場合は、[ResearchWing_Stage01_Collision.prefab.json](ResearchWing_Stage01_Collision.prefab.json) を使用してください。天井付きFBXの描画階層を含みます。詳細と再生成方法は [COLLISION.md](COLLISION.md) を参照してください。
+MyEngineで描画と物理材質付き当たり判定をまとめて配置する場合は、[ResearchWing_Stage01_Collision.prefab.json](ResearchWing_Stage01_Collision.prefab.json) を使用してください。天井なし (OpenTop) FBXの描画階層を含みます (2026-09-12 に天井付きから切り替え)。詳細と再生成方法は [COLLISION.md](COLLISION.md) を参照してください。
 
 | ファイル | 内容 |
 |---|---|
