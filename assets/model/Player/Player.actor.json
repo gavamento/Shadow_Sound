@@ -1,49 +1,34 @@
 {
+  "actor": 1,
   "engine": "MyEngine",
   "entities": [
     {
       "childIndex": 0,
       "components": {
-        "CharacterController": {
-          "gravityScale": 1.0,
-          "height": 1.7999999523162842,
-          "isGrounded": 0,
-          "jumpSpeed": 0.0,
-          "moveInput": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "radius": 0.30000001192092896,
-          "skinWidth": 0.019999999552965164,
-          "slopeLimitDeg": 45.0,
-          "velocity": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        "Animator": {
+          "clip": 7965338503624954232,
+          "loop": 1,
+          "playing": 1,
+          "speed": 1,
+          "timeTicks": 0
         },
-        "Collider": {
-          "friction": 0.5,
-          "halfExtents": [
-            0.5,
-            0.5,
-            0.5
-          ],
-          "height": 1.7999999523162842,
-          "isTrigger": false,
-          "layer": 0,
-          "mask": 4294967295,
-          "materialOverrideBits": 0,
-          "meshAsset": 0,
-          "physMaterial": 0,
-          "radius": 0.30000001192092896,
-          "shape": 2
+        "AnimatorController": {
+          "controller": 0,
+          "currentState": 0,
+          "param0": 0,
+          "param1": 0,
+          "param2": 0,
+          "param3": 0,
+          "stateTimeTicks": 0,
+          "transitionDuration": 0,
+          "transitionTick": 0,
+          "transitionTo": -1,
+          "transitionToTime": 0
         },
         "LocalTransform": {
           "position": [
             0.0,
-            0.8999999761581421,
+            0.0,
             0.0
           ],
           "rotation": [
@@ -60,7 +45,7 @@
         }
       },
       "fileId": 1,
-      "name": "Player_Researcher_FP_Body"
+      "name": "Player"
     },
     {
       "childIndex": 0,
@@ -68,7 +53,7 @@
         "LocalTransform": {
           "position": [
             0.0,
-            -0.8999999761581421,
+            2.384185791015625e-07,
             0.0
           ],
           "rotation": [
@@ -85,33 +70,8 @@
         }
       },
       "fileId": 2,
-      "name": "Player_FP_VisualAnchor",
+      "name": "Player_Researcher_FP",
       "parent": 1
-    },
-    {
-      "childIndex": 1,
-      "components": {
-        "LocalTransform": {
-          "position": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ],
-          "scale": [
-            1.0,
-            1.0,
-            1.0
-          ]
-        }
-      },
-      "fileId": 3,
-      "name": "Player_Researcher_FP"
     },
     {
       "childIndex": 0,
@@ -135,9 +95,9 @@
           ]
         }
       },
-      "fileId": 4,
+      "fileId": 3,
       "name": "CoatSleeve_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 1,
@@ -171,9 +131,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 5,
+      "fileId": 4,
       "name": "CoatSleeve_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 2,
@@ -197,9 +157,9 @@
           ]
         }
       },
-      "fileId": 6,
+      "fileId": 5,
       "name": "CoatSleeve_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 3,
@@ -233,9 +193,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 7,
+      "fileId": 6,
       "name": "CoatSleeve_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 4,
@@ -259,9 +219,9 @@
           ]
         }
       },
-      "fileId": 8,
+      "fileId": 7,
       "name": "GloveCuff_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 5,
@@ -295,9 +255,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 9,
+      "fileId": 8,
       "name": "GloveCuff_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 6,
@@ -321,9 +281,9 @@
           ]
         }
       },
-      "fileId": 10,
+      "fileId": 9,
       "name": "GloveCuff_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 7,
@@ -357,9 +317,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 11,
+      "fileId": 10,
       "name": "GloveCuff_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 8,
@@ -383,9 +343,9 @@
           ]
         }
       },
-      "fileId": 12,
+      "fileId": 11,
       "name": "GloveFinger1_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 9,
@@ -419,9 +379,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 13,
+      "fileId": 12,
       "name": "GloveFinger1_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 10,
@@ -445,9 +405,9 @@
           ]
         }
       },
-      "fileId": 14,
+      "fileId": 13,
       "name": "GloveFinger1_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 11,
@@ -481,9 +441,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 15,
+      "fileId": 14,
       "name": "GloveFinger1_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 12,
@@ -507,9 +467,9 @@
           ]
         }
       },
-      "fileId": 16,
+      "fileId": 15,
       "name": "GloveFinger2_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 13,
@@ -543,9 +503,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 17,
+      "fileId": 16,
       "name": "GloveFinger2_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 14,
@@ -569,9 +529,9 @@
           ]
         }
       },
-      "fileId": 18,
+      "fileId": 17,
       "name": "GloveFinger2_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 15,
@@ -605,9 +565,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 19,
+      "fileId": 18,
       "name": "GloveFinger2_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 16,
@@ -631,9 +591,9 @@
           ]
         }
       },
-      "fileId": 20,
+      "fileId": 19,
       "name": "GloveFinger3_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 17,
@@ -667,9 +627,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 21,
+      "fileId": 20,
       "name": "GloveFinger3_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 18,
@@ -693,9 +653,9 @@
           ]
         }
       },
-      "fileId": 22,
+      "fileId": 21,
       "name": "GloveFinger3_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 19,
@@ -729,9 +689,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 23,
+      "fileId": 22,
       "name": "GloveFinger3_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 20,
@@ -755,9 +715,9 @@
           ]
         }
       },
-      "fileId": 24,
+      "fileId": 23,
       "name": "GloveFinger4_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 21,
@@ -791,9 +751,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 25,
+      "fileId": 24,
       "name": "GloveFinger4_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 22,
@@ -817,9 +777,9 @@
           ]
         }
       },
-      "fileId": 26,
+      "fileId": 25,
       "name": "GloveFinger4_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 23,
@@ -853,9 +813,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 27,
+      "fileId": 26,
       "name": "GloveFinger4_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 24,
@@ -879,9 +839,9 @@
           ]
         }
       },
-      "fileId": 28,
+      "fileId": 27,
       "name": "GlovePalm_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 25,
@@ -915,9 +875,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 29,
+      "fileId": 28,
       "name": "GlovePalm_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 26,
@@ -941,9 +901,9 @@
           ]
         }
       },
-      "fileId": 30,
+      "fileId": 29,
       "name": "GlovePalm_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 27,
@@ -977,9 +937,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 31,
+      "fileId": 30,
       "name": "GlovePalm_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 28,
@@ -1003,9 +963,9 @@
           ]
         }
       },
-      "fileId": 32,
+      "fileId": 31,
       "name": "GloveThumb_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 29,
@@ -1039,9 +999,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 33,
+      "fileId": 32,
       "name": "GloveThumb_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 30,
@@ -1065,9 +1025,9 @@
           ]
         }
       },
-      "fileId": 34,
+      "fileId": 33,
       "name": "GloveThumb_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 31,
@@ -1101,9 +1061,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 35,
+      "fileId": 34,
       "name": "GloveThumb_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 32,
@@ -1127,9 +1087,9 @@
           ]
         }
       },
-      "fileId": 36,
+      "fileId": 35,
       "name": "Researcher_Rig",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 0,
@@ -1153,9 +1113,9 @@
           ]
         }
       },
-      "fileId": 37,
+      "fileId": 36,
       "name": "Root",
-      "parent": 36
+      "parent": 35
     },
     {
       "childIndex": 0,
@@ -1179,9 +1139,9 @@
           ]
         }
       },
-      "fileId": 38,
+      "fileId": 37,
       "name": "Pelvis",
-      "parent": 37
+      "parent": 36
     },
     {
       "childIndex": 0,
@@ -1205,9 +1165,9 @@
           ]
         }
       },
-      "fileId": 39,
+      "fileId": 38,
       "name": "Chest",
-      "parent": 38
+      "parent": 37
     },
     {
       "childIndex": 0,
@@ -1231,9 +1191,9 @@
           ]
         }
       },
-      "fileId": 40,
+      "fileId": 39,
       "name": "UpperArm_L",
-      "parent": 39
+      "parent": 38
     },
     {
       "childIndex": 0,
@@ -1257,9 +1217,9 @@
           ]
         }
       },
-      "fileId": 41,
+      "fileId": 40,
       "name": "Forearm_L",
-      "parent": 40
+      "parent": 39
     },
     {
       "childIndex": 0,
@@ -1283,9 +1243,9 @@
           ]
         }
       },
-      "fileId": 42,
+      "fileId": 41,
       "name": "Hand_L",
-      "parent": 41
+      "parent": 40
     },
     {
       "childIndex": 0,
@@ -1309,9 +1269,9 @@
           ]
         }
       },
-      "fileId": 43,
+      "fileId": 42,
       "name": "Finger1A_L",
-      "parent": 42
+      "parent": 41
     },
     {
       "childIndex": 0,
@@ -1335,9 +1295,9 @@
           ]
         }
       },
-      "fileId": 44,
+      "fileId": 43,
       "name": "Finger1B_L",
-      "parent": 43
+      "parent": 42
     },
     {
       "childIndex": 1,
@@ -1361,9 +1321,9 @@
           ]
         }
       },
-      "fileId": 45,
+      "fileId": 44,
       "name": "Finger2A_L",
-      "parent": 42
+      "parent": 41
     },
     {
       "childIndex": 0,
@@ -1387,9 +1347,9 @@
           ]
         }
       },
-      "fileId": 46,
+      "fileId": 45,
       "name": "Finger2B_L",
-      "parent": 45
+      "parent": 44
     },
     {
       "childIndex": 2,
@@ -1413,9 +1373,9 @@
           ]
         }
       },
-      "fileId": 47,
+      "fileId": 46,
       "name": "Finger3A_L",
-      "parent": 42
+      "parent": 41
     },
     {
       "childIndex": 0,
@@ -1439,9 +1399,9 @@
           ]
         }
       },
-      "fileId": 48,
+      "fileId": 47,
       "name": "Finger3B_L",
-      "parent": 47
+      "parent": 46
     },
     {
       "childIndex": 3,
@@ -1465,9 +1425,9 @@
           ]
         }
       },
-      "fileId": 49,
+      "fileId": 48,
       "name": "Finger4A_L",
-      "parent": 42
+      "parent": 41
     },
     {
       "childIndex": 0,
@@ -1491,9 +1451,9 @@
           ]
         }
       },
-      "fileId": 50,
+      "fileId": 49,
       "name": "Finger4B_L",
-      "parent": 49
+      "parent": 48
     },
     {
       "childIndex": 4,
@@ -1517,9 +1477,9 @@
           ]
         }
       },
-      "fileId": 51,
+      "fileId": 50,
       "name": "ThumbA_L",
-      "parent": 42
+      "parent": 41
     },
     {
       "childIndex": 0,
@@ -1543,9 +1503,9 @@
           ]
         }
       },
-      "fileId": 52,
+      "fileId": 51,
       "name": "ThumbB_L",
-      "parent": 51
+      "parent": 50
     },
     {
       "childIndex": 1,
@@ -1569,9 +1529,9 @@
           ]
         }
       },
-      "fileId": 53,
+      "fileId": 52,
       "name": "UpperArm_R",
-      "parent": 39
+      "parent": 38
     },
     {
       "childIndex": 0,
@@ -1595,9 +1555,9 @@
           ]
         }
       },
-      "fileId": 54,
+      "fileId": 53,
       "name": "Forearm_R",
-      "parent": 53
+      "parent": 52
     },
     {
       "childIndex": 0,
@@ -1621,9 +1581,9 @@
           ]
         }
       },
-      "fileId": 55,
+      "fileId": 54,
       "name": "Hand_R",
-      "parent": 54
+      "parent": 53
     },
     {
       "childIndex": 0,
@@ -1647,9 +1607,9 @@
           ]
         }
       },
-      "fileId": 56,
+      "fileId": 55,
       "name": "Finger1A_R",
-      "parent": 55
+      "parent": 54
     },
     {
       "childIndex": 0,
@@ -1673,9 +1633,9 @@
           ]
         }
       },
-      "fileId": 57,
+      "fileId": 56,
       "name": "Finger1B_R",
-      "parent": 56
+      "parent": 55
     },
     {
       "childIndex": 1,
@@ -1699,9 +1659,9 @@
           ]
         }
       },
-      "fileId": 58,
+      "fileId": 57,
       "name": "Finger2A_R",
-      "parent": 55
+      "parent": 54
     },
     {
       "childIndex": 0,
@@ -1725,9 +1685,9 @@
           ]
         }
       },
-      "fileId": 59,
+      "fileId": 58,
       "name": "Finger2B_R",
-      "parent": 58
+      "parent": 57
     },
     {
       "childIndex": 2,
@@ -1751,9 +1711,9 @@
           ]
         }
       },
-      "fileId": 60,
+      "fileId": 59,
       "name": "Finger3A_R",
-      "parent": 55
+      "parent": 54
     },
     {
       "childIndex": 0,
@@ -1777,9 +1737,9 @@
           ]
         }
       },
-      "fileId": 61,
+      "fileId": 60,
       "name": "Finger3B_R",
-      "parent": 60
+      "parent": 59
     },
     {
       "childIndex": 3,
@@ -1803,9 +1763,9 @@
           ]
         }
       },
-      "fileId": 62,
+      "fileId": 61,
       "name": "Finger4A_R",
-      "parent": 55
+      "parent": 54
     },
     {
       "childIndex": 0,
@@ -1829,9 +1789,9 @@
           ]
         }
       },
-      "fileId": 63,
+      "fileId": 62,
       "name": "Finger4B_R",
-      "parent": 62
+      "parent": 61
     },
     {
       "childIndex": 4,
@@ -1855,9 +1815,9 @@
           ]
         }
       },
-      "fileId": 64,
+      "fileId": 63,
       "name": "ThumbA_R",
-      "parent": 55
+      "parent": 54
     },
     {
       "childIndex": 0,
@@ -1881,9 +1841,9 @@
           ]
         }
       },
-      "fileId": 65,
+      "fileId": 64,
       "name": "ThumbB_R",
-      "parent": 64
+      "parent": 63
     },
     {
       "childIndex": 1,
@@ -1907,9 +1867,9 @@
           ]
         }
       },
-      "fileId": 66,
+      "fileId": 65,
       "name": "Thigh_L",
-      "parent": 38
+      "parent": 37
     },
     {
       "childIndex": 0,
@@ -1933,9 +1893,9 @@
           ]
         }
       },
-      "fileId": 67,
+      "fileId": 66,
       "name": "Shin_L",
-      "parent": 66
+      "parent": 65
     },
     {
       "childIndex": 0,
@@ -1959,9 +1919,9 @@
           ]
         }
       },
-      "fileId": 68,
+      "fileId": 67,
       "name": "Foot_L",
-      "parent": 67
+      "parent": 66
     },
     {
       "childIndex": 2,
@@ -1985,9 +1945,9 @@
           ]
         }
       },
-      "fileId": 69,
+      "fileId": 68,
       "name": "Thigh_R",
-      "parent": 38
+      "parent": 37
     },
     {
       "childIndex": 0,
@@ -2011,9 +1971,9 @@
           ]
         }
       },
-      "fileId": 70,
+      "fileId": 69,
       "name": "Shin_R",
-      "parent": 69
+      "parent": 68
     },
     {
       "childIndex": 0,
@@ -2037,9 +1997,9 @@
           ]
         }
       },
-      "fileId": 71,
+      "fileId": 70,
       "name": "Foot_R",
-      "parent": 70
+      "parent": 69
     },
     {
       "childIndex": 33,
@@ -2063,9 +2023,9 @@
           ]
         }
       },
-      "fileId": 72,
+      "fileId": 71,
       "name": "Shoe_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 34,
@@ -2099,9 +2059,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 73,
+      "fileId": 72,
       "name": "Shoe_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 35,
@@ -2125,9 +2085,9 @@
           ]
         }
       },
-      "fileId": 74,
+      "fileId": 73,
       "name": "Shoe_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 36,
@@ -2161,9 +2121,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 75,
+      "fileId": 74,
       "name": "Shoe_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 37,
@@ -2187,9 +2147,9 @@
           ]
         }
       },
-      "fileId": 76,
+      "fileId": 75,
       "name": "Sole_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 38,
@@ -2223,9 +2183,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 77,
+      "fileId": 76,
       "name": "Sole_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 39,
@@ -2249,9 +2209,9 @@
           ]
         }
       },
-      "fileId": 78,
+      "fileId": 77,
       "name": "Sole_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 40,
@@ -2285,9 +2245,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 79,
+      "fileId": 78,
       "name": "Sole_R_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 41,
@@ -2311,9 +2271,9 @@
           ]
         }
       },
-      "fileId": 80,
+      "fileId": 79,
       "name": "Trousers_L",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 42,
@@ -2347,9 +2307,9 @@
           "timeTicks": 0
         }
       },
-      "fileId": 81,
+      "fileId": 80,
       "name": "Trousers_L_skin0",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 43,
@@ -2373,9 +2333,9 @@
           ]
         }
       },
-      "fileId": 82,
+      "fileId": 81,
       "name": "Trousers_R",
-      "parent": 3
+      "parent": 2
     },
     {
       "childIndex": 44,
@@ -2409,11 +2369,42 @@
           "timeTicks": 0
         }
       },
-      "fileId": 83,
+      "fileId": 82,
       "name": "Trousers_R_skin0",
-      "parent": 3
+      "parent": 2
+    },
+    {
+      "childIndex": 1,
+      "components": {
+        "Camera": {
+          "farZ": 1000.0,
+          "fovYDeg": 60.0,
+          "isPrimary": 0,
+          "nearZ": 0.10000000149011612
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            1.480102777481079,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            -0.9999998807907104,
+            -0.0,
+            -1.1920928955078125e-07
+          ],
+          "scale": [
+            0.9999997615814209,
+            1.0,
+            0.9999997615814209
+          ]
+        }
+      },
+      "fileId": 83,
+      "name": "Camera",
+      "parent": 1
     }
   ],
-  "name": "Player_Researcher_FP_Collision",
-  "prefab": 1
+  "name": "Player"
 }
