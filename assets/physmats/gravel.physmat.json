@@ -11,5 +11,6 @@
   "adhesion": 0.0,
   "acousticLoudness": 0.55,
   "acousticRadiusM": 13.0,
-  "acousticTone": 2
+  "acousticTone": 2,
+  "acousticSound": "footstep_gravel"
 }

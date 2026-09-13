@@ -7,11 +7,11 @@
 #         python tools\mkstage.py --stage 2      … ステージ 2 だけ書く
 #         python tools\mkstage.py --check        … 書かずに、既存シーンとの差分だけ報告
 #
-# ★ステージ 1 と 2 は**同じ建物 (research_wing_stage01) を逆向きに使う**。
-#   新しい間取りの FBX は無く、作るのは Blender 側の別作業なので、変えられるのは
-#   経路 (開始とゴールの入れ替え) / 敵の数と巡回路 / 床材 / ビーコンの本数だけ。
-#   「入ってきた道を、光をほとんど持たずに戻る」= 企画 §8「終盤、自分で作った安全網が
-#   最も危険な場所になっている」と同じ向きに難度が上がる。
+# ★ステージ 1 は研究棟 (research_wing_stage01)、ステージ 2 は中央研究施設 (central_facility_stage02)。
+#   建物ごとにプレハブ / placement_manifest / 音のボクセル場の範囲が違うので、それは STAGES に持つ。
+#   2026-09-12 までのステージ 2 は「研究棟を逆走する」構成だったが、ステージ2.md の設計
+#   (ハブ + A/B/C 区画 + ループ + ショートカット) に沿った専用の建物に差し替えた。
+#   生成は tools\stage02\build_stage.cmd (Blender → FBX → プレハブ)。
 #   差分は STAGES の 1 箇所に集める — 組み立ての手順そのものは 1 本しか持たない。
 #
 # ★なぜ生成器を置くか (2 つとも実害から来ている):
@@ -39,10 +39,18 @@ import sys
 
 # ---------------------------------------------------------------- パス
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STAGE_DIR = os.path.join(ROOT, "assets", "model", "research_wing_stage01")
-STAGE_PREFAB = os.path.join(STAGE_DIR, "ResearchWing_Stage01_Collision.prefab.json")
-STAGE_MANIFEST = os.path.join(STAGE_DIR, "placement_manifest.json")
+MODEL_DIR = os.path.join(ROOT, "assets", "model")
 SCENE_DIR = os.path.join(ROOT, "assets", "scenes")
+
+
+def stage_prefab(cfg):
+    """建物のプレハブ (.prefab.json)。ID の正本はこのファイル 1 箇所 (冒頭の ★(2))。"""
+    return os.path.join(MODEL_DIR, cfg["model_dir"], cfg["prefab"])
+
+
+def stage_manifest(cfg):
+    """建物の placement_manifest.json (開始地点・敵の湧き位置・巡回点の正本)。"""
+    return os.path.join(MODEL_DIR, cfg["model_dir"], "placement_manifest.json")
 
 # 組込みアセット (assets\*.meta の guid = 手で振った 3a5c 系)
 MAT_ACCENT = 0x3A5C000000000103
@@ -65,7 +73,8 @@ MAT_BEACON = (0x3A5C000000000110, 0x3A5C000000000111,
 #   面は波でしか見えないので実害は無いが、FBX を作り直すときに揃えること。
 PHYSMAT_WOOD = 0x3A5C000000000201    # acousticLoudness 0.30
 PHYSMAT_GRAVEL = 0x3A5C000000000203  # 0.55
-PHYSMAT_METAL = 0x3A5C000000000205   # 1.00
+PHYSMAT_METAL = 0x3A5C000000000205   # 1.00 (扉の箱コライダ)
+MAT_DOOR = 0x3A5C00000000010A        # sk_tile_metal (扉の見た目)
 
 # ステージ 1: 静かな道が多く、うるさい床は「取りに行くと賭けになる」場所に限る
 FLOOR_OVERRIDES_S1 = (
@@ -78,18 +87,9 @@ FLOOR_OVERRIDES_S1 = (
     (48.0, 56.0, 2.0, 10.0, PHYSMAT_GRAVEL, "A5 supply -> gravel"),
 )
 
-# ステージ 2: **帰り道そのものがうるさい**。ステージ 1 で「木だから輪郭が見える」と
-# 覚えた同じ廊下が砂利に変わっているのが要点で、同じ道を通る意味が反転する。
-# ★A3M は元から金属。ここを広げるのではなく廊下側を上げるのは、迂回路が
-#   「静かだが遠い」ままでないと選択にならないため
-FLOOR_OVERRIDES_S2 = (
-    (12.0, 24.0, 6.0, 10.0, PHYSMAT_GRAVEL, "A2a corridor -> gravel"),
-    (20.0, 24.0, 10.0, 20.0, PHYSMAT_GRAVEL, "A2b corridor -> gravel"),
-    # A5 補給室: ステージ 1 の砂利から金属へ。最後の補給が最大の賭けになる
-    (48.0, 56.0, 2.0, 10.0, PHYSMAT_METAL, "A5 supply -> metal"),
-    # A3J 分岐: 逆走の最初の関門。木を 1 枚だけ挟んで「ここから読める」を作る
-    (24.0, 28.0, 16.0, 24.0, PHYSMAT_WOOD, "A3J junction -> wood"),
-)
+# ステージ 2: 敷き直しは無し。中央研究施設のプレハブは木 / 砂利も含めて 6 段の床材を
+# 最初から敷いている (tools\stage02\build_stage.py の SURFACES が正本)
+FLOOR_OVERRIDES_S2 = ()
 
 
 def floor_override_for(pos, half, overrides):
@@ -217,10 +217,10 @@ COMPONENT_DEFAULTS = {
 }
 
 
-def character_controller():
+def character_controller(height=1.6):
     return {
         "gravityScale": f32(1.0),
-        "height": f32(1.6),
+        "height": f32(height),
         "isGrounded": 0,
         "jumpSpeed": f32(0.0),
         "moveInput": vec3(0, 0, 0),
@@ -273,6 +273,45 @@ def emitter(auto_footstep, cooldown_ticks, step_distance_m):
     }
 
 
+# ---------------------------------------------------------------- 音 (エンジン ImpactSynth)
+# 鳴る音は全部「波」から出る (AcousticAudio = エンジン M68b の調整卓)。足音は床材の
+# .physmat.json の acousticSound が決め、床材ではない発音元 (石 / 瓶 / 敵 / データコア / ポンプ)
+# は WaveSound (NoHash) の名前で決める。名前は assets\audio\impact\*.impact.json のファイル名。
+# ★どれも NoHash (音レーン) なので、付けても .rep もゴールデンも 1 bit も動かない
+WAVE_SOUND_STONE = "stone_impact"
+WAVE_SOUND_BOTTLE = "glass_break"   # 既定。割れない着弾は SkThrower が "glass_impact" へ書き換える
+WAVE_SOUND_ENEMY = "enemy_voice"
+WAVE_SOUND_CORE = "core_ping"       # データコアの ping とデバッグピンガー
+WAVE_SOUND_PUMP = "pump_thud"
+ACOUSTIC_AUDIO_FILE_ID = 43         # 施設の帯 (22..42) の次
+
+
+def wave_sound(name):
+    return {"sound": name}
+
+
+def acoustic_audio():
+    """AcousticAudio の全フィールド (既定値はエンジン Components.h の AcousticAudioComponent)。
+    toneSound0..3 は「床材に acousticSound が無いとき」のフォールバック
+    (0 = carpet/water 系 / 1 = wood / 2 = gravel / 3 = metal/glass)。"""
+    return {
+        "enabled": True,
+        "probeMaxRing": 96,
+        "bendFullM": f32(8.0), "lpfFloor": f32(0.25),
+        "occludedGain": f32(0.15), "occludedLpf": f32(0.10), "smoothTicks": 6,
+        "roomProbeM": f32(6.0), "openSmall": f32(0.30), "openLarge": f32(0.8),
+        "roomSmoothTicks": 18, "reverbSmall": 3, "reverbLarge": 6, "detourWet": f32(0.25),
+        # 呼吸 (0.07) は鳴らず carpet の足音 (0.12) は鳴る境が 0.10
+        "waveVolume": f32(1.0), "minWaveVolume": f32(0.10), "waveReverbSend": f32(0.35),
+        # 聴感カーブ (音量 = 振幅^exp)。2.0 で しゃがみ 0.6 / 歩き 1.0 / 走り 1.6 の差が
+        # -9 dB / 0 / +8 dB に開く (線形だと -4 / 0 / +4)。波そのもの = 敵の耳は変わらない
+        "waveVolumeExp": f32(2.0),
+        "waveRolloff": 0,
+        "toneSound0": "footstep_tile", "toneSound1": "footstep_wood",
+        "toneSound2": "footstep_gravel", "toneSound3": "footstep_metal",
+    }
+
+
 # ---------------------------------------------------------------- 調整値 (SkTuning)
 # ★ここに書く既定値は assets\schemas\sk_tuning.component.schema.json の default と
 #   1 つずつ一致させること。ずれると「スライダーを触っていないのに値が違う」になる。
@@ -297,10 +336,22 @@ SK_TUNING = {
     "voiceSearchTicks": 26, "voiceSearchJitter": 34, "voiceSearchLoud": f32(0.38),
     "voiceChaseTicks": 10, "voiceChaseLoud": f32(0.62),
     "waypointReachM": f32(3.0), "waypointDwellTicks": 150,
+    # ---- 追跡: 聞いた地点に着くまで諦めない (SkAgent が AgentBrain.loseTicks を書き換える) ----
+    "chaseHoldTicks": 1500, "chaseReachM": f32(2.5),
     # ---- ゴール / ステージ遷移 ----
     "goalReachM": f32(2.2),
     "clearHoldTicks": 180, "debugNoTransition": 0,
     "debugAutoLight": 0,
+    # ---- ステージ 2 の仕掛け (SkFacility / SkThrower / SkPickup / SkGoal.returnToStart) ----
+    "interactTicks": 90, "interactReachM": f32(2.0),
+    "throwSpeedMps": f32(9.0), "throwUpMps": f32(2.5),
+    "stoneLoudness": f32(0.5), "stoneRadiusM": f32(14.0),
+    "bottleLoudness": f32(1.6), "bottleRadiusM": f32(26.0),
+    "pickupReachM": f32(1.3),
+    "dataWaveLoudness": f32(8.0), "dataWaveRadiusM": f32(90.0),
+    "messageTicks": 240,
+    "debugAutoInteract": 0, "debugAutoThrow": 0,
+    "bottleBreakSpeedMps": f32(4.0),
 }
 
 # スクリプトの登録フィールド初期値。★C++ 側の初期化子と一致させること
@@ -329,10 +380,33 @@ def sk_agent(route, tag):
         "body": 0, "part0": 0, "part1": 0, "part2": 0, "part3": 0, "part4": 0,
         "animBound": 0, "animClip": -1, "animMoving": 0, "flinchRequest": 0, "flinchLeft": 0,
         "faceDir": vec3(0, 0, -1),
+        # ---- 追跡 (-1 = AgentBrain.loseTicks をまだ読んでいない) ----
+        "loseBase": -1, "holding": 0,
     }
 
 
-SK_GOAL = {"cleared": 0, "player": 0, "uiClear": 0, "root": 0, "bound": 0}
+# ★returnToStart は build_scene が facility 付きのステージで 1 にする (取得 → 帰還でクリア)
+SK_GOAL = {"cleared": 0, "holdLeft": 0, "player": 0, "uiClear": 0, "root": 0, "bound": 0,
+           "returnToStart": 0, "taken": 0, "msgLeft": 0, "fixedLight": 0, "uiMsg": 0,
+           # 死亡でデータを失う (SkGoal.WatchDeaths)。値は Take が控えるので既定は 0 でよい
+           "deathsSeen": 0, "pingEvery": 0, "corePos": vec3(0, 0, 0), "msgKind": 0}
+SK_FACILITY = {
+    "lockA": 0, "lockB": 0, "lockC": 0, "vaultOpen": 0, "floodOpen": 0, "shortcutOpen": 0,
+    "hold": 0, "holdTarget": -1, "msgLeft": 0, "msgKind": 0,
+    "terminalA": 0, "terminalB": 0, "terminalC": 0, "doorVault": 0, "doorFlood": 0,
+    "doorShortcut": 0, "pump": 0, "player": 0, "uiMsg": 0, "root": 0, "bound": 0,
+}
+SK_THROWER = {
+    "stones": 0, "bottles": 0, "stoneFlying": 0, "bottleFlying": 0,
+    "stoneVel": vec3(0, 0, 0), "bottleVel": vec3(0, 0, 0), "stoneTicks": 0, "bottleTicks": 0,
+    "autoTicks": 0, "stone": 0, "bottle": 0, "uiText": 0, "root": 0, "bound": 0,
+}
+SK_PICKUP = {"kind": 0, "count": 1, "taken": 0, "player": 0, "root": 0, "bound": 0}
+# 扉の閉位置の高さ (SkCommon.h の kDoorClosedY と一致させること)。開口は高さ 2.4m
+DOOR_Y = 1.2
+DOOR_SIZE = (2.0, 2.4, 0.3)   # 幅 x 高さ x 厚み (開口の幅 2m)
+PROJECTILE_SCALE = {"SkStone": 0.15, "SkBottle": 0.22}
+PICKUP_SCALE = 0.22
 SK_LIGHT_TOOL = {
     "mode": 0, "progress": 0, "busyIdx": -1,
     "lamp0": 0, "lamp1": 0, "lamp2": 0,
@@ -347,28 +421,38 @@ SK_LIGHT_TOOL = {
 }
 
 # ---------------------------------------------------------------- ステージ寸法
-# 研究棟は床領域 74x36m (stage.md / COLLISION.md)。床上面 Y=0、通常天井 3m、中央実験室 4.5m。
-STAGE_X = 74.0
-STAGE_Z = 36.0
+# 床領域は STAGES[n]["extent"] = (x0, x1, z0, z1)。床上面 Y=0、通常天井 3m、大部屋 4.5m。
+#   研究棟 74x36m (stage.md / COLLISION.md)、中央研究施設 88x72m (X 4..92 / Z 0..72)。
 
 # ★音のボクセル場。上端は**壁コライダの上端 (3.0m) より低く**しなければならない —
 #   はみ出すと波が壁を越えて隣の部屋へ回り込み、遮蔽が丸ごと嘘になる。
-#   cellSize 0.5 のまま 148 x 5 x 72 = 53,280 セル (エンジン上限 4M に対して十分小さい)。
-#   y は 0.1〜2.6m。扉の上部の壁 (2.4〜3.0m) は最上段のセルだけを塞ぐので、
-#   高さ 2.4m の開口はちゃんと 4 段ぶん開いたまま残る。
+#   cellSize 0.5 で研究棟は 148 x 5 x 72 = 53,280 セル、中央研究施設は 176 x 5 x 144 = 126,720
+#   セル (エンジン上限 4M に対して十分小さい)。y は 0.1〜2.6m。扉の上部の壁 (2.4〜3.0m) は
+#   最上段のセルだけを塞ぐので、高さ 2.4m の開口はちゃんと 4 段ぶん開いたまま残る。
 ACOUSTIC_CELL = 0.5
-ACOUSTIC_DIM = (148, 5, 72)
-ACOUSTIC_CENTER = (
-    STAGE_X * 0.5,
-    0.1 + ACOUSTIC_DIM[1] * ACOUSTIC_CELL * 0.5,
-    STAGE_Z * 0.5,
-)
+ACOUSTIC_DIM_Y = 5
+
+
+def acoustic_volume(extent):
+    """extent (x0, x1, z0, z1) を cellSize で割った (dim, center)。★端数は切り上げて
+    床領域を必ず覆う (欠けたセルは「壁も床も無い外」= 波が漏れる)。"""
+    import math
+    x0, x1, z0, z1 = extent
+    dim = (int(math.ceil((x1 - x0) / ACOUSTIC_CELL)), ACOUSTIC_DIM_Y,
+           int(math.ceil((z1 - z0) / ACOUSTIC_CELL)))
+    center = (x0 + dim[0] * ACOUSTIC_CELL * 0.5,
+              0.1 + dim[1] * ACOUSTIC_CELL * 0.5,
+              z0 + dim[2] * ACOUSTIC_CELL * 0.5)
+    return dim, center
 
 PLAYER_EYE_CENTER_Y = 0.9  # 立ち姿勢のカプセル中心 (COLLISION.md)
-# 敵は scale 1.6 倍なので CharacterController の全高も 1.6 倍 (= 2.56m)。
-# 静止時の中心は床上面 + 半分 = 1.28m。ここを間違えると床にめり込んで足踏みし続ける
+# 敵は scale 1.6 倍なので CharacterController の全高も 1.6 倍される (エンジンはカプセル高を
+# height × Y スケールで取る)。height 1.6 のままだと実高 2.56m で扉開口 (2.4m) をくぐれないので
+# 1.05 (実高 1.68m) にする。静止時の中心は床上面 + 半分 = 0.84m。ここを間違えると床に
+# めり込んで足踏みし続ける
 AGENT_SCALE = (0.6, 1.6, 0.6)
-AGENT_CENTER_Y = 1.6 * 1.6 * 0.5
+AGENT_HEIGHT = 1.05
+AGENT_CENTER_Y = AGENT_HEIGHT * AGENT_SCALE[1] * 0.5
 # 敵の見た目 (Body + 5 部位) の fileId。敵 1 体ごとに base + 10 * tag から 6 つ使う。
 # ★ゲーム側の 1..21 とも、ステージのプレハブ (1110〜) とも重ならない帯
 CRAWLER_FILE_ID_BASE = 1001
@@ -399,11 +483,19 @@ SHOT_CAM_PITCH_DEG = 8.0
 # ★アンカー 6 = 左下。矩形は「アンカー原点 + (x, y)」から右下へ伸びるので、下端から
 #   持ち上げるには y を負にする (UILayout.cpp の Resolve)。単位は 1920x1080 基準の
 #   キャンバス座標で、実解像度へは一様スケールで落ちる
-UI_MARGIN = 40.0
-UI_BAR_W = 320.0
-UI_BAR_H = 22.0
+UI_MARGIN = 56.0
+UI_BAR_W = 540.0
+UI_BAR_H = 36.0
 UI_BAR_Y = -(UI_MARGIN + UI_BAR_H)      # 残響バー
-UI_TEXT_Y = UI_BAR_Y - 40.0             # その上のビーコン所持数
+UI_TEXT_H = 44.0
+UI_TEXT_FONT = 2.4                      # 文字高さ = fontScale x 10 (FontAtlas::kUILineH)
+UI_TEXT_Y = UI_BAR_Y - 58.0             # その上のビーコン所持数
+UI_ITEM_Y = UI_TEXT_Y - 50.0            # さらに上の石 / 瓶の所持数 (facility 付きのステージだけ)
+# 画面上部のメッセージ (アンカー 1 = 上中央)。既定はアルファ 0 で、SkFacility / SkGoal が出す
+UI_MSG_Y = 60.0
+UI_MSG_W = 1400.0
+UI_MSG_H = 70.0
+UI_MSG_FONT = 3.0
 
 # データコアの波。★敵の可聴距離 = cellSize * sqrt(A / threshold) = 0.5 * sqrt(0.6/0.0015)
 #   ≒ 10m。プレイヤーには radiusM の範囲まで面が描かれる
@@ -418,13 +510,15 @@ FIXED_LIGHT_SAFE_RADIUS_M = 3.0  # 開始地点は「唯一の帰る場所」な
 # ---------------------------------------------------------------- ステージ設定
 # ★ステージ間の差はここだけ。組み立ての手順 (build_scene) は 1 本しか持たない —
 #   2 本目を書くと必ず片方だけ直して食い違う。
-# ★座標の指定は **文字列ならマーカー名**、タプルなら literal。ステージ 1 は 1 つも
-#   書き写さない (placement_manifest.json が正本)。ステージ 2 は建物を逆走するので
-#   対応するマーカーが無く、そこでだけ literal を持つ。
+# ★座標の指定は **文字列ならマーカー名**、タプルなら literal。どちらのステージも 1 つも
+#   書き写さない (それぞれの placement_manifest.json が正本)。
 STAGES = {
     1: {
         "scene_name": "Stage1",
         "out": "stage1.scene.json",
+        "model_dir": "research_wing_stage01",
+        "prefab": "ResearchWing_Stage01_Collision.prefab.json",
+        "extent": (0.0, 74.0, 0.0, 36.0),
         "start": "START",
         "fixed_light": "FIXED_LIGHT",
         "core": "I06_DATA_CORE",
@@ -436,38 +530,59 @@ STAGES = {
         ),
         "floors": FLOOR_OVERRIDES_S1,
         "tuning": {},
+        "facility": None,
     },
     2: {
         "scene_name": "Stage2",
         "out": "stage2.scene.json",
-        # 逆走。A6_Core (rect 64..74 x 18..26) から入り、A1_LAB01 (0..12 x 0..10) を目指す
-        "start": (70.0, 0.0, 22.0),
-        "fixed_light": (72.0, 1.0, 22.0),
-        "core": (4.0, 1.0, 4.0),
-        # 敵 3 体。3 枠目の名前は SkCommon.h の kNameAgent[2]。
-        # ★AgentEar / AgentEar2 の巡回路はステージ 1 と同じ — 「同じ見張りが同じ道を
-        #   回っている建物を、逆から抜ける」ことが逆走の手応えそのものなので、
-        #   ここを変えるとステージ 1 で覚えた地図が無駄になる。
-        #   増えるのは A3S 倉庫を回る 3 体目だけで、これが中盤の迂回路を塞ぐ
+        # 中央研究施設 (ステージ2.md)。間取りは tools\stage02\build_stage.py の ROOMS が正本
+        "model_dir": "central_facility_stage02",
+        "prefab": "CentralFacility_Stage02.prefab.json",
+        "extent": (4.0, 92.0, 0.0, 72.0),
+        "start": "START",
+        "fixed_light": "FIXED_LIGHT",
+        # ★ゴール = 中央保管庫のメインデータ。facility 付きなので SkGoal.returnToStart = 1:
+        #   取得した tick に施設全体へ大音波 → START の固定光へ戻った時点でクリア
+        "core": "MAIN_DATA",
+        # 敵 3 体 (kNameAgent は 3 枠)。A 倉庫 / B 機械室 / C 実験区に 1 体ずつ。
+        # ★中央ホールには最初は置かない (ステージ2.md §6「初回は比較的安全」)。終盤に
+        #   ホールが危険になるのは、置いた光とデータ取得の大音波に敵が寄ることで作る
         "agents": (
             {"file_id": 8, "name": "AgentEar", "spawn": "E1_SPAWN",
              "route": ("patrol", "E1"), "tag": 0},
             {"file_id": 18, "name": "AgentEar2", "spawn": "E2_SPAWN",
              "route": ("patrol", "E2"), "tag": 1},
-            {"file_id": 21, "name": "AgentEar3", "spawn": (34.0, 0.0, 26.0),
-             "route": ((30.0, 22.0), (36.0, 22.0), (36.0, 32.0), (30.0, 32.0)), "tag": 2},
+            {"file_id": 21, "name": "AgentEar3", "spawn": "E3_SPAWN",
+             "route": ("patrol", "E3"), "tag": 2},
         ),
         "floors": FLOOR_OVERRIDES_S2,
-        # ビーコン 2 本 + 残響コスト 1.4 = 「置くまでに、より長くうるさく歩かされる」。
-        # 床材が上がっているぶん残響は速く貯まるので、コストを上げないと逆に楽になる
-        "tuning": {"beaconCount": 2, "echoCost": f32(1.4)},
+        # 光は 2 本で始まり、C 区画の補充 (I_C_LIGHT_REFILL_1) で 3 本目 = 任意エリアに行く
+        # 価値が「安全網が 1 本増える」で成立する (ステージ2.md §9「欲張るかどうか」)
+        "tuning": {"beaconCount": 2},
+        # ---- 施設の仕掛け (SkFacility / SkThrower / SkPickup)。座標は全部マーカー名 ----
+        "facility": {
+            # 端末 (SkCommon.h の kNameTerminal の並び): A = ロック A / B = ロック B + ポンプ / C = 近道
+            "terminals": ("TERMINAL_A", "TERMINAL_B", "TERMINAL_C"),
+            # 扉 (名前, マーカー, 壁の軸)。'z' = Z=一定の壁 (開口は X 方向)、'x' = その逆
+            "doors": (("DoorVault", "VAULT_DOOR", "z"),
+                      ("DoorFlood", "FLOOD_GATE", "x"),
+                      ("DoorShortcut", "SHORTCUT_GATE", "z")),
+            # 排水ポンプ。起動後 5 秒ごとに大音量 (ステージ2.md §8-1「ゴウン……」)
+            "pump": {"marker": "PUMP", "everyTicks": 300, "loudness": f32(2.0), "radiusM": f32(30.0)},
+            # 補給品 (マーカー, 種類 0=石 1=瓶 2=光, 個数)
+            "pickups": (("I_H_STONE_1", 0, 1), ("I_A_STONE_2", 0, 2), ("I_B_BOTTLE_1", 1, 1),
+                        ("I_C_BOTTLE_2", 1, 2), ("I_C_STONE_1", 0, 1), ("I_C_LIGHT_REFILL_1", 2, 1)),
+            # 最初から持っている石 / 瓶。B 区画の囮 (§8) を手ぶらで迎えないための 1 つずつ
+            "inventory": (1, 1),
+        },
     },
 }
 
 
 # ゴール検査用の複製で、プレイヤーをデータコアの手前に置く距離 (m)。
-# ★goalReachM (2.2) より内側 かつ 台 (2x1x2) にめり込まない値。台は z 23..25 を占めるので
-#   1.8m 手前 = z 22.2 なら、プレイヤー半径 0.3 を足しても台に触れない
+# ★goalReachM (2.2) より内側 かつ 台 (2x1x2) にめり込まない値。台はコアの z-1..z+1 を占める
+#   (研究棟 z 23..25、中央研究施設 z 48..50) ので、1.8m 手前ならプレイヤー半径 0.3 を
+#   足しても台に触れない
 PROBE_GOAL_OFFSET_M = 1.8
 
 
@@ -534,7 +649,7 @@ def merge_component(name, values):
     return out
 
 
-def add_stage_prefab(sb, base_file_id, floors):
+def add_stage_prefab(sb, base_file_id, floors, prefab_path):
     """プレハブを 1 インスタンスぶん展開して置く。
 
     エディタが「プレハブをシーンへ D&D して保存」したときと同じ形にする:
@@ -546,9 +661,9 @@ def add_stage_prefab(sb, base_file_id, floors):
         (エディタが吐いた既存シーンには古い上書き記録が残っていたが、値はベースと
          同一だったので、書かないほうが「プレハブを直せばシーンも直る」に近い)
     """
-    with open(STAGE_PREFAB, encoding="utf-8") as f:
+    with open(prefab_path, encoding="utf-8") as f:
         prefab = json.load(f)
-    prefab_hash = read_prefab_guid(STAGE_PREFAB)
+    prefab_hash = read_prefab_guid(prefab_path)
     max_local = 0
     for e in prefab["entities"]:
         local = e["fileId"]
@@ -574,8 +689,9 @@ def add_stage_prefab(sb, base_file_id, floors):
 
 
 def build_scene(cfg):
-    with open(STAGE_MANIFEST, encoding="utf-8") as f:
+    with open(stage_manifest(cfg), encoding="utf-8") as f:
         manifest = json.load(f)
+    acoustic_dim, acoustic_center = acoustic_volume(cfg["extent"])
     placement = manifest.get("engine_placement", [0, 0, 0])
     if list(placement) != [0, 0, 0]:
         raise SystemExit("mkstage: engine_placement が原点でない — 座標の前提が崩れる")
@@ -617,21 +733,33 @@ def build_scene(cfg):
     sb.add(5, "Acoustic Volume", {
         "AcousticVolume": {
             "blockLayerMask": 4294967295, "cellSize": f32(ACOUSTIC_CELL),
-            "dimX": ACOUSTIC_DIM[0], "dimY": ACOUSTIC_DIM[1], "dimZ": ACOUSTIC_DIM[2],
-            "enabled": True, "glowIntensity": f32(1.0), "glowKeepPerTick": f32(0.0),
+            "dimX": acoustic_dim[0], "dimY": acoustic_dim[1], "dimZ": acoustic_dim[2],
+            # ★glowAlbedoMix = 1: 近い残光にだけ床の色を乗せる (遠くは距離色のまま)。
+            #   0 だと暗闇で床材の色が一切出ず、足音の変わり目が読めない
+            "enabled": True, "glowAlbedoMix": f32(1.0), "glowIntensity": f32(1.0),
+            "glowKeepPerTick": f32(0.0),
             "navCellRatio": 2,
         },
-        "LocalTransform": transform(ACOUSTIC_CENTER),
+        "LocalTransform": transform(acoustic_center),
     })
 
     # ---- プレイヤー ----
-    sb.add(6, "Player", {
+    facility = cfg.get("facility")
+    player_comps = {
         "AcousticEmitter": emitter(True, 12, tuning["strideWalk"]),
+        # 音の聴点 = 体の位置 (無いとカメラに落ちる = 俯瞰では遠くから聞くことになる)
+        "AudioListener": {"enabled": 1},
         "CharacterController": character_controller(),
         "LocalTransform": transform((start[0], PLAYER_EYE_CENTER_Y, start[2])),
         "SkFpsController": dict(SK_FPS_CONTROLLER),
         "SkLightTool": dict(SK_LIGHT_TOOL),
-    })
+    }
+    if facility:
+        # 石・瓶の投擲 (企画 5)。所持数の初期値だけシーンが持つ
+        thrower = dict(SK_THROWER)
+        thrower["stones"], thrower["bottles"] = facility["inventory"]
+        player_comps["SkThrower"] = thrower
+    sb.add(6, "Player", player_comps)
     sb.add(7, "PlayerBody", {
         "LocalTransform": transform((0.0, 0.0, 0.0), IDENT_ROT, (0.55, 1.5, 0.55)),
         "MeshRenderer": {"material": MAT_BODY, "mesh": MESH_SPHERE},
@@ -651,8 +779,9 @@ def build_scene(cfg):
         "LocalTransform": transform((0.0, 0.0, 0.0)),
     }, parent=6)
 
-    # ---- 音の敵 (企画 6-2) x2。★Collider は付けない — 足音の下方レイが自分に当たって
-    #   無音になり、毎 tick 占有署名が変わって音響グリッドを全再ベイクする
+    # ---- 音の敵 (企画 6-2) x2。★Collider は敵同士の押し合いのために付ける。
+    #   音響の遮蔽ベイクは CC 持ちエンティティを除外する (AcousticField.cpp) ので占有署名は
+    #   変わらず再ベイクは起きない。足音の下方レイの問題は autoFootstep 持ち (Player) だけ
     # ★巡回路は manifest の patrol_xz をそのまま SkAgent へ渡す。AgentBrain には経路の
     #   概念が無く home の周り 4m を歩くだけなので、SkAgent が home を巡回点へ動かす
     # ★本体にメッシュは付けない。見た目は子の "<名前>_Body" (クローラー) が持つ
@@ -669,9 +798,15 @@ def build_scene(cfg):
                 "runSpeed": f32(3.0), "searchTicks": 180, "state": 0, "stateTicks": 0,
                 "target": home, "walkSpeed": f32(1.2),
             },
-            "CharacterController": character_controller(),
+            "CharacterController": character_controller(AGENT_HEIGHT),
+            # ★敵同士の押し合い用。CC は Collider を持つ物体にしか押し出されない (CC 同士の
+            #   判定は無い) ので、これが無いと敵が重なる。半径は CC (0.3) より太い 0.5 =
+            #   実半径 0.3m でクローラーの見た目に寄せる。自分の CC は自分の Collider を飛ばす
+            "Collider": merge_component("Collider", {"shape": 2, "radius": 0.5,
+                                                     "height": AGENT_HEIGHT}),
             "LocalTransform": transform(home, IDENT_ROT, AGENT_SCALE),
             "SkAgent": sk_agent(route, tag),
+            "WaveSound": wave_sound(WAVE_SOUND_ENEMY),
         })
         add_crawler(CRAWLER_FILE_ID_BASE + 10 * tag, name, file_id)
 
@@ -716,6 +851,7 @@ def build_scene(cfg):
         "SkPinger": {"everyTicks": 150, "loudness": f32(PINGER_LOUDNESS),
                      "radiusM": f32(PINGER_RADIUS_M),
                      "ringTicks": 2, "startDelay": 6, "ticks": 0, "tone": 1},
+        "WaveSound": wave_sound(WAVE_SOUND_CORE),
     })
 
     # ---- 開始地点の固定ビーコン (企画 4-2)。回収も消滅もしない唯一の帰る場所 ----
@@ -766,10 +902,10 @@ def build_scene(cfg):
     })
     sb.add(17, "UiBeaconText", {
         "LocalTransform": transform((0.0, 0.0, 0.0)),
-        "UIElement": ui_element(1, 6, UI_MARGIN, UI_TEXT_Y, UI_BAR_W, 30.0,
+        "UIElement": ui_element(1, 6, UI_MARGIN, UI_TEXT_Y, UI_BAR_W, UI_TEXT_H,
                                 (0.86, 0.86, 0.92, 1.0), order=2,
                                 text="BEACON %d / %d" % (tuning["beaconCount"], tuning["beaconCount"]),
-                                font_scale=0.9),
+                                font_scale=UI_TEXT_FONT),
     })
 
     # ---- ゴール: データコア (企画には無かった「終わり」) ----
@@ -779,27 +915,127 @@ def build_scene(cfg):
     # ★波の大きさは敵の可聴距離 (閾値 0.0015、cellSize 0.5) から逆算して決める:
     #   到達する経路長は d < cellSize * sqrt(A / T)。A=0.6 なら約 10m なので、
     #   コアの周り 10m にいる敵は引き寄せられる = 終盤ほど危険 (企画 8 と同じ向き)
+    goal = dict(SK_GOAL)
+    goal["returnToStart"] = 1 if facility else 0
     sb.add(19, "DataCore", {
         "AcousticEmitter": emitter(False, 30, 0.8),
         "LocalTransform": transform(core, IDENT_ROT, (0.5, 0.5, 0.5)),
         "MeshRenderer": {"material": MAT_ACCENT, "mesh": MESH_CUBE},
-        "SkGoal": dict(SK_GOAL),
+        "SkGoal": goal,
         "SkPinger": {"everyTicks": 150, "loudness": f32(GOAL_LOUDNESS),
                      "radiusM": f32(GOAL_RADIUS_M), "ringTicks": 2, "startDelay": 30,
                      "ticks": 0, "tone": 2},
+        "WaveSound": wave_sound(WAVE_SOUND_CORE),
     })
     # クリア表示。★既定はアルファ 0 = 見えない。SkGoal が到達した tick から出す
     sb.add(20, "UiClearText", {
         "LocalTransform": transform((0.0, 0.0, 0.0)),
-        "UIElement": ui_element(1, 4, -260.0, -40.0, 520.0, 80.0, (1.0, 0.94, 0.78, 0.0),
-                                order=3, text="", font_scale=2.2, align=4),
+        "UIElement": ui_element(1, 4, -600.0, -80.0, 1200.0, 160.0, (1.0, 0.94, 0.78, 0.0),
+                                order=3, text="", font_scale=6.0, align=4),
     })
 
+    if facility:
+        add_facility(sb, facility, marker)
+
     # ---- ステージ本体 (プレハブの展開) ----
-    # ★base は 1110。ゲーム側のエンティティ (1..13) と衝突せず、既存シーンの採番とも
+    # ★base は 1110。ゲーム側のエンティティ (1..42) と衝突せず、既存シーンの採番とも
     #   一致するので、差分が「値の変更」だけに収まって読める
-    next_id = add_stage_prefab(sb, 1110, cfg["floors"])
+    next_id = add_stage_prefab(sb, 1110, cfg["floors"], stage_prefab(cfg))
+
+    # ---- 音の調整卓 (エンジン M68b AcousticAudio)。**これが無いと音は 1 つも鳴らない** ----
+    # ★末尾に置く = ルートの childIndex が既存エンティティの後ろに付く (プレハブ展開の後)
+    sb.add(ACOUSTIC_AUDIO_FILE_ID, "Acoustic Audio", {
+        "AcousticAudio": acoustic_audio(),
+        "LocalTransform": transform((0.0, 0.0, 0.0)),
+    })
     return sb.json(next_id, cfg["scene_name"])
+
+
+def add_facility(sb, facility, marker):
+    """施設の仕掛け (ステージ 2)。fileId は 22..42 の帯を使う。
+
+    ★扉は「箱コライダの親 + 見た目の子」。コライダは LocalTransform のスケールに乗らない
+      前提で halfExtents を直接書き、見た目 (builtin cube) だけ子のスケールで伸ばす。
+      SkFacility が開くときは親を kDoorOpenY へ沈める = コライダも見た目も一緒に消える。
+    ★投擲物 / 補給品も実体をシーンに置く (SkLightTool のビーコンと同じ「実行時に生成しない」)。
+    """
+    # ---- 司会役 ----
+    sb.add(22, "Facility", {
+        "LocalTransform": transform((0.0, 0.0, 0.0)),
+        "SkFacility": dict(SK_FACILITY),
+    })
+    # ---- 端末 (名前は SkCommon.h の kNameTerminal) ----
+    for i, mk in enumerate(facility["terminals"]):
+        sb.add(23 + i, "Terminal" + "ABC"[i], {
+            "LocalTransform": transform(marker[mk]),
+        })
+    # ---- 扉 ----
+    for i, (name, mk, axis) in enumerate(facility["doors"]):
+        pos = marker[mk]
+        w, h, d = DOOR_SIZE
+        half = (w * 0.5, h * 0.5, d * 0.5) if axis == "z" else (d * 0.5, h * 0.5, w * 0.5)
+        scale = (w, h, d) if axis == "z" else (d, h, w)
+        parent_id = 26 + 2 * i
+        col = dict(COLLIDER_DEFAULT)
+        col["halfExtents"] = vec3(*half)
+        col["physMaterial"] = PHYSMAT_METAL
+        sb.add(parent_id, name, {
+            "Collider": col,
+            "LocalTransform": transform((pos[0], DOOR_Y, pos[2])),
+        })
+        sb.add(parent_id + 1, name + "_Visual", {
+            "LocalTransform": transform((0.0, 0.0, 0.0), IDENT_ROT, scale),
+            "MeshRenderer": {"material": MAT_DOOR, "mesh": MESH_CUBE},
+        }, parent=parent_id)
+    # ---- 排水ポンプ (Active を SkFacility が起こす。SkPinger は既存機能) ----
+    pump = facility["pump"]
+    pp = marker[pump["marker"]]
+    sb.add(32, "Pump", {
+        "AcousticEmitter": emitter(False, 30, 0.8),
+        "Active": {"enabled": 0},
+        "LocalTransform": transform((pp[0], 1.0, pp[2])),
+        "SkPinger": {"everyTicks": pump["everyTicks"], "loudness": pump["loudness"],
+                     "radiusM": pump["radiusM"], "ringTicks": 2, "startDelay": 30, "ticks": 0,
+                     "tone": 3},
+        "WaveSound": wave_sound(WAVE_SOUND_PUMP),
+    })
+    # ---- 投擲物 (床下で待機) ----
+    for i, (name, mat, sound) in enumerate((("SkStone", MAT_BODY, WAVE_SOUND_STONE),
+                                            ("SkBottle", MAT_ACCENT, WAVE_SOUND_BOTTLE))):
+        s = PROJECTILE_SCALE[name]
+        sb.add(33 + i, name, {
+            "AcousticEmitter": emitter(False, 0, 0.8),
+            "LocalTransform": transform((float(i) * 2.0 + 8.0, LAMP_STOW_Y, 0.0), IDENT_ROT, (s, s, s)),
+            "MeshRenderer": {"material": mat, "mesh": MESH_SPHERE},
+            "WaveSound": wave_sound(sound),
+        })
+    # ---- 補給品 ----
+    for i, (mk, kind, count) in enumerate(facility["pickups"]):
+        p = marker[mk]
+        pick = dict(SK_PICKUP)
+        pick["kind"] = kind
+        pick["count"] = count
+        sb.add(35 + i, "Pickup_" + mk, {
+            "LocalTransform": transform((p[0], p[1] + PICKUP_SCALE * 0.5, p[2]), IDENT_ROT,
+                                        (PICKUP_SCALE,) * 3),
+            "MeshRenderer": {"material": MAT_LAMP if kind == 2 else MAT_ACCENT, "mesh": MESH_SPHERE},
+            "SkPickup": pick,
+        })
+    # ---- UI: 上部メッセージ (既定アルファ 0) と左下の所持数 ----
+    sb.add(41, "UiStageText", {
+        "LocalTransform": transform((0.0, 0.0, 0.0)),
+        "UIElement": ui_element(1, 1, -UI_MSG_W * 0.5, UI_MSG_Y, UI_MSG_W, UI_MSG_H,
+                                (1.0, 0.94, 0.78, 0.0), order=4, text="", font_scale=UI_MSG_FONT,
+                                align=4),
+    })
+    stones, bottles = facility["inventory"]
+    sb.add(42, "UiItemText", {
+        "LocalTransform": transform((0.0, 0.0, 0.0)),
+        "UIElement": ui_element(1, 6, UI_MARGIN, UI_ITEM_Y, UI_BAR_W, UI_TEXT_H,
+                                (0.86, 0.86, 0.92, 1.0), order=2,
+                                text="STONE %d   BOTTLE %d" % (stones, bottles),
+                                font_scale=UI_TEXT_FONT),
+    })
 
 
 def probe_goal_cfg(cfg, marker):
@@ -817,6 +1053,33 @@ def probe_goal_cfg(cfg, marker):
     return out
 
 
+def probe_cfg(cfg, marker, at, offset, sets):
+    """任意のマーカーの手前から始まり、調整値を上書きした複製 (検証用)。
+
+    ★--probe-goal の一般形。端末 / 補給品 / 投擲を「歩いて辿り着く」代わりに初期位置で与え、
+      debugAutoInteract / debugAutoThrow のような検証専用の口を --set で立てる。
+      生成物は cache\\ (gitignore)。本編のシーンには 1 バイトも触れない"""
+    out = dict(cfg)
+    if at:
+        p = marker[at]
+        out["start"] = (p[0] + offset[0], 0.0, p[2] + offset[1])
+    tuning = dict(cfg["tuning"])
+    for k, v in sets:
+        if k not in SK_TUNING:
+            raise SystemExit("mkstage: SkTuning に無いフィールド %s" % k)
+        tuning[k] = int(v) if isinstance(SK_TUNING[k], int) else f32(v)
+    out["tuning"] = tuning
+    return out
+
+
+def write_scene(scene, path, what):
+    text = json.dumps(scene, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(text)
+    print("%s: wrote %s (%d entities)" % (what, path, len(scene["entities"])))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", type=int, choices=sorted(STAGES),
@@ -825,20 +1088,28 @@ def main():
                     help="書き込まずに、既存シーンとの差分だけ報告する")
     ap.add_argument("--probe-goal", metavar="PATH",
                     help="ゴールの手前から始まる複製をこのパスへ書く (検証用、--stage 必須)")
+    ap.add_argument("--probe", metavar="PATH",
+                    help="検証用の複製をこのパスへ書く (--stage 必須。--at / --offset / --set と併用)")
+    ap.add_argument("--at", metavar="MARKER", help="--probe の開始地点にするマーカー名")
+    ap.add_argument("--offset", metavar="DX,DZ", default="0,-1.3",
+                    help="--at からのずらし (m)。既定はマーカーの 1.3m 南")
+    ap.add_argument("--set", metavar="KEY=VALUE", action="append", default=[],
+                    help="--probe で SkTuning のフィールドを上書きする (繰り返し可)")
     args = ap.parse_args()
-    if args.probe_goal:
+    if args.probe_goal or args.probe:
         if not args.stage:
-            raise SystemExit("mkstage: --probe-goal には --stage が要る")
-        with open(STAGE_MANIFEST, encoding="utf-8") as f:
+            raise SystemExit("mkstage: --probe / --probe-goal には --stage が要る")
+        with open(stage_manifest(STAGES[args.stage]), encoding="utf-8") as f:
             marker = {m["name"]: m["engine_position"]
                       for m in json.load(f)["markers"]}
-        cfg = probe_goal_cfg(STAGES[args.stage], marker)
-        scene = build_scene(cfg)
-        text = json.dumps(scene, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
-        os.makedirs(os.path.dirname(os.path.abspath(args.probe_goal)), exist_ok=True)
-        with open(args.probe_goal, "w", encoding="utf-8", newline="\n") as f:
-            f.write(text)
-        print("stage%d: wrote goal probe %s" % (args.stage, args.probe_goal))
+        if args.probe_goal:
+            cfg = probe_goal_cfg(STAGES[args.stage], marker)
+            write_scene(build_scene(cfg), args.probe_goal, "stage%d goal probe" % args.stage)
+        if args.probe:
+            offset = tuple(float(v) for v in args.offset.split(","))
+            sets = [kv.split("=", 1) for kv in args.set]
+            cfg = probe_cfg(STAGES[args.stage], marker, args.at, offset, sets)
+            write_scene(build_scene(cfg), args.probe, "stage%d probe" % args.stage)
         return 0
     stages = [args.stage] if args.stage else sorted(STAGES)
     rc = 0

@@ -10,5 +10,6 @@
   "dragCoefficient": 0.47,
   "acousticLoudness": 0.06,
   "acousticRadiusM": 2.5,
-  "acousticTone": 0
+  "acousticTone": 0,
+  "acousticSound": "footstep_rubber"
 }

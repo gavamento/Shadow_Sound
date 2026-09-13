@@ -1,0 +1,15 @@
+{
+  "colliders": 228,
+  "floors": 68,
+  "renderers": 256,
+  "triangles": 140124,
+  "materials": 33,
+  "textured_materials": 33,
+  "transparent_materials": [
+    "Water",
+    "Glass"
+  ],
+  "capsule_probes": 81,
+  "prefab_guid": "2603c3b3ec898541",
+  "fbx_guid": "11db67e23f714ceb"
+}

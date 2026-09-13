@@ -1,0 +1,22 @@
+{
+  "engine": "MyEngine",
+  "impactSound": 1,
+  "//": "データコア / デバッグピンガーの ping (仮): 大きな金属の余韻",
+  "kind": "Impact",
+  "materialA": "Metal",
+  "materialB": "Metal",
+  "strength": 0.4,
+  "size": 2.5,
+  "brightness": 0.7,
+  "durationSec": 0.8,
+  "seed": 3100,
+  "variations": 4,
+  "sound": {
+    "volume": 1.0,
+    "volumeRandom": 0.08,
+    "pitch": 1.0,
+    "pitchRandom": 0.03,
+    "bus": "SE",
+    "priority": 120
+  }
+}

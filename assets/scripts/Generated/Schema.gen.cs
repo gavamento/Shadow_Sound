@@ -54,9 +54,26 @@ public static class SkTuningSchema
         public const ulong VoiceChaseLoud = 0xE0CA51C9AF21D709UL; // "voiceChaseLoud"
         public const ulong WaypointReachM = 0x71FF9EBB5BB646F4UL; // "waypointReachM"
         public const ulong WaypointDwellTicks = 0x55E41470BDA871E0UL; // "waypointDwellTicks"
+        public const ulong ChaseHoldTicks = 0xC33ACE29920AD6AAUL; // "chaseHoldTicks"
+        public const ulong ChaseReachM = 0x31FC0D73C72B41C7UL; // "chaseReachM"
         public const ulong GoalReachM = 0x98F5195FC7E254D0UL; // "goalReachM"
         public const ulong ClearHoldTicks = 0x30FEDD8474EA6973UL; // "clearHoldTicks"
         public const ulong DebugNoTransition = 0x08BD555674CE16D8UL; // "debugNoTransition"
+        public const ulong InteractTicks = 0x9EB2CA85E1376417UL; // "interactTicks"
+        public const ulong InteractReachM = 0xFB0CA4A1BC9EF439UL; // "interactReachM"
+        public const ulong ThrowSpeedMps = 0x19D53A7C64529D14UL; // "throwSpeedMps"
+        public const ulong ThrowUpMps = 0x94FA5F0939C95E24UL; // "throwUpMps"
+        public const ulong StoneLoudness = 0x640D8E53310FB81DUL; // "stoneLoudness"
+        public const ulong StoneRadiusM = 0xC28BE5CD9669F72FUL; // "stoneRadiusM"
+        public const ulong BottleLoudness = 0x76B3C781A5C697D6UL; // "bottleLoudness"
+        public const ulong BottleRadiusM = 0xC78602FF0730ECCEUL; // "bottleRadiusM"
+        public const ulong PickupReachM = 0x0D5AB339C0CAC68FUL; // "pickupReachM"
+        public const ulong DataWaveLoudness = 0xC5B0EF1C36E87D47UL; // "dataWaveLoudness"
+        public const ulong DataWaveRadiusM = 0x8B4D522FA5F9EB05UL; // "dataWaveRadiusM"
+        public const ulong MessageTicks = 0xADE21C423C72D5DEUL; // "messageTicks"
+        public const ulong DebugAutoInteract = 0xF4E9180515CFF525UL; // "debugAutoInteract"
+        public const ulong DebugAutoThrow = 0xA6896B0EE0AC6771UL; // "debugAutoThrow"
+        public const ulong BottleBreakSpeedMps = 0x76F8276AF9D420FBUL; // "bottleBreakSpeedMps"
     }
 
     public static bool GetWalkSpeed(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.WalkSpeed, out v);
@@ -194,6 +211,12 @@ public static class SkTuningSchema
     public static bool GetWaypointDwellTicks(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.WaypointDwellTicks, out v);
     public static bool SetWaypointDwellTicks(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.WaypointDwellTicks, v);
 
+    public static bool GetChaseHoldTicks(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.ChaseHoldTicks, out v);
+    public static bool SetChaseHoldTicks(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.ChaseHoldTicks, v);
+
+    public static bool GetChaseReachM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.ChaseReachM, out v);
+    public static bool SetChaseReachM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.ChaseReachM, v);
+
     public static bool GetGoalReachM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.GoalReachM, out v);
     public static bool SetGoalReachM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.GoalReachM, v);
 
@@ -202,4 +225,49 @@ public static class SkTuningSchema
 
     public static bool GetDebugNoTransition(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.DebugNoTransition, out v);
     public static bool SetDebugNoTransition(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.DebugNoTransition, v);
+
+    public static bool GetInteractTicks(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.InteractTicks, out v);
+    public static bool SetInteractTicks(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.InteractTicks, v);
+
+    public static bool GetInteractReachM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.InteractReachM, out v);
+    public static bool SetInteractReachM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.InteractReachM, v);
+
+    public static bool GetThrowSpeedMps(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.ThrowSpeedMps, out v);
+    public static bool SetThrowSpeedMps(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.ThrowSpeedMps, v);
+
+    public static bool GetThrowUpMps(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.ThrowUpMps, out v);
+    public static bool SetThrowUpMps(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.ThrowUpMps, v);
+
+    public static bool GetStoneLoudness(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.StoneLoudness, out v);
+    public static bool SetStoneLoudness(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.StoneLoudness, v);
+
+    public static bool GetStoneRadiusM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.StoneRadiusM, out v);
+    public static bool SetStoneRadiusM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.StoneRadiusM, v);
+
+    public static bool GetBottleLoudness(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.BottleLoudness, out v);
+    public static bool SetBottleLoudness(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.BottleLoudness, v);
+
+    public static bool GetBottleRadiusM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.BottleRadiusM, out v);
+    public static bool SetBottleRadiusM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.BottleRadiusM, v);
+
+    public static bool GetPickupReachM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.PickupReachM, out v);
+    public static bool SetPickupReachM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.PickupReachM, v);
+
+    public static bool GetDataWaveLoudness(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.DataWaveLoudness, out v);
+    public static bool SetDataWaveLoudness(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.DataWaveLoudness, v);
+
+    public static bool GetDataWaveRadiusM(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.DataWaveRadiusM, out v);
+    public static bool SetDataWaveRadiusM(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.DataWaveRadiusM, v);
+
+    public static bool GetMessageTicks(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.MessageTicks, out v);
+    public static bool SetMessageTicks(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.MessageTicks, v);
+
+    public static bool GetDebugAutoInteract(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.DebugAutoInteract, out v);
+    public static bool SetDebugAutoInteract(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.DebugAutoInteract, v);
+
+    public static bool GetDebugAutoThrow(MyeEntity e, out int v) => e.TryGetField(NameHash, FieldHash.DebugAutoThrow, out v);
+    public static bool SetDebugAutoThrow(MyeEntity e, int v) => e.SetField(NameHash, FieldHash.DebugAutoThrow, v);
+
+    public static bool GetBottleBreakSpeedMps(MyeEntity e, out float v) => e.TryGetField(NameHash, FieldHash.BottleBreakSpeedMps, out v);
+    public static bool SetBottleBreakSpeedMps(MyeEntity e, float v) => e.SetField(NameHash, FieldHash.BottleBreakSpeedMps, v);
 }

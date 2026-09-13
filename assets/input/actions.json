@@ -4,6 +4,9 @@
     { "name": "Crouch",      "keys": ["Ctrl"],   "pad": ["B"],      "mouse": [] },
     { "name": "SwitchView",  "keys": ["V"],      "pad": ["Y"],      "mouse": [] },
     { "name": "Light",       "keys": ["F"],      "pad": ["X"],      "mouse": [] },
+    { "name": "Interact",    "keys": ["E"],      "pad": ["A"],      "mouse": [] },
+    { "name": "ThrowStone",  "keys": [],         "pad": ["LB"],     "mouse": ["Left"] },
+    { "name": "ThrowBottle", "keys": [],         "pad": ["RB"],     "mouse": ["Right"] },
     { "name": "Pause",       "keys": ["Escape"], "pad": ["Start"],  "mouse": [] },
     { "name": "DebugLight",  "keys": ["F3"],     "pad": ["Back"],   "mouse": [] },
     { "name": "DebugPinger", "keys": ["F4"],     "pad": [],         "mouse": [] }

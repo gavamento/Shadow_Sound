@@ -11,5 +11,6 @@
   "adhesion": 0.0,
   "acousticLoudness": 1.0,
   "acousticRadiusM": 28.0,
-  "acousticTone": 3
+  "acousticTone": 3,
+  "acousticSound": "footstep_glass"
 }

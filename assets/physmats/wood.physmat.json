@@ -10,5 +10,6 @@
   "dragCoefficient": 0.47,
   "acousticLoudness": 0.3,
   "acousticRadiusM": 7.0,
-  "acousticTone": 1
+  "acousticTone": 1,
+  "acousticSound": "footstep_wood"
 }

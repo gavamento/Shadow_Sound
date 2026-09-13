@@ -11,5 +11,6 @@
   "adhesion": 0.0,
   "acousticLoudness": 0.8,
   "acousticRadiusM": 20.0,
-  "acousticTone": 0
+  "acousticTone": 0,
+  "acousticSound": "footstep_water"
 }

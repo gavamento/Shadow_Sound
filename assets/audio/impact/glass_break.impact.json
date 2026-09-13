@@ -1,0 +1,22 @@
+{
+  "engine": "MyEngine",
+  "impactSound": 1,
+  "//": "SkBottle が割れた着弾。Crack + 瓶の共鳴 + 破片 24",
+  "kind": "GlassBreak",
+  "materialA": "Glass",
+  "materialB": "Concrete",
+  "strength": 1.0,
+  "size": 1.0,
+  "brightness": 0.7,
+  "durationSec": 0.5,
+  "seed": 2200,
+  "variations": 4,
+  "sound": {
+    "volume": 1.0,
+    "volumeRandom": 0.08,
+    "pitch": 1.0,
+    "pitchRandom": 0.03,
+    "bus": "SE",
+    "priority": 180
+  }
+}

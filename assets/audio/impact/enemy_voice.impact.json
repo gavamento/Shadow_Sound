@@ -1,0 +1,22 @@
+{
+  "engine": "MyEngine",
+  "impactSound": 1,
+  "//": "敵の声 (仮): 小さく乾いたクリック",
+  "kind": "Impact",
+  "materialA": "Plastic",
+  "materialB": "Wood",
+  "strength": 0.5,
+  "size": 0.6,
+  "brightness": 0.7,
+  "durationSec": 0.12,
+  "seed": 3000,
+  "variations": 4,
+  "sound": {
+    "volume": 1.0,
+    "volumeRandom": 0.08,
+    "pitch": 1.0,
+    "pitchRandom": 0.03,
+    "bus": "SE",
+    "priority": 120
+  }
+}

@@ -1,0 +1,2599 @@
+{
+  "units": "meters",
+  "blender_axes": "X=east,Y=north,Z=height",
+  "engine_axes": "left-handed Y-up: (Blender X, Blender Z, Blender Y)",
+  "engine_placement": [
+    0,
+    0,
+    0
+  ],
+  "source": "ステージ2.md + tools/stage02/build_stage.py",
+  "stage": 2,
+  "extent": [
+    4,
+    92,
+    0,
+    72
+  ],
+  "exports": [
+    {
+      "file": "CentralFacility_Stage02_OpenTop.fbx",
+      "mesh_objects": 177,
+      "triangles": 140124
+    },
+    {
+      "file": "CentralFacility_Stage02_Markers.fbx",
+      "mesh_objects": 19,
+      "triangles": 1140
+    }
+  ],
+  "rooms": [
+    {
+      "name": "S0_Start",
+      "rect": [
+        44,
+        56,
+        0,
+        10
+      ],
+      "height": 3.0,
+      "wall": "Wall"
+    },
+    {
+      "name": "S1_SouthHall",
+      "rect": [
+        48,
+        52,
+        10,
+        20
+      ],
+      "height": 3.0,
+      "wall": "Wall"
+    },
+    {
+      "name": "H0_Hub",
+      "rect": [
+        36,
+        64,
+        20,
+        44
+      ],
+      "height": 4.5,
+      "wall": "Wall"
+    },
+    {
+      "name": "V0_Vault",
+      "rect": [
+        46,
+        54,
+        44,
+        52
+      ],
+      "height": 3.0,
+      "wall": "Vault"
+    },
+    {
+      "name": "A0_NorthHall",
+      "rect": [
+        36,
+        40,
+        44,
+        56
+      ],
+      "height": 3.0,
+      "wall": "WallA"
+    },
+    {
+      "name": "A1_Archive",
+      "rect": [
+        24,
+        44,
+        56,
+        72
+      ],
+      "height": 3.0,
+      "wall": "WallA"
+    },
+    {
+      "name": "A2_ControlA",
+      "rect": [
+        44,
+        56,
+        60,
+        68
+      ],
+      "height": 3.0,
+      "wall": "WallA"
+    },
+    {
+      "name": "A3a_BackHall",
+      "rect": [
+        56,
+        64,
+        62,
+        66
+      ],
+      "height": 3.0,
+      "wall": "WallA"
+    },
+    {
+      "name": "A3b_BackHall",
+      "rect": [
+        60,
+        64,
+        44,
+        62
+      ],
+      "height": 3.0,
+      "wall": "WallA"
+    },
+    {
+      "name": "B1_PumpHall",
+      "rect": [
+        12,
+        36,
+        26,
+        38
+      ],
+      "height": 4.5,
+      "wall": "WallB"
+    },
+    {
+      "name": "B2_Maintenance",
+      "rect": [
+        12,
+        16,
+        10,
+        26
+      ],
+      "height": 3.0,
+      "wall": "WallB"
+    },
+    {
+      "name": "B3_ControlB",
+      "rect": [
+        4,
+        20,
+        2,
+        10
+      ],
+      "height": 3.0,
+      "wall": "WallB"
+    },
+    {
+      "name": "B4_Drain",
+      "rect": [
+        20,
+        44,
+        4,
+        8
+      ],
+      "height": 3.0,
+      "wall": "WallB"
+    },
+    {
+      "name": "C1_LabWing",
+      "rect": [
+        64,
+        84,
+        24,
+        40
+      ],
+      "height": 3.0,
+      "wall": "WallC"
+    },
+    {
+      "name": "C2_Supply",
+      "rect": [
+        84,
+        92,
+        28,
+        36
+      ],
+      "height": 3.0,
+      "wall": "WallC"
+    },
+    {
+      "name": "C3a_Shortcut",
+      "rect": [
+        68,
+        72,
+        4,
+        24
+      ],
+      "height": 3.0,
+      "wall": "WallC"
+    },
+    {
+      "name": "C3b_Shortcut",
+      "rect": [
+        56,
+        68,
+        4,
+        8
+      ],
+      "height": 3.0,
+      "wall": "WallC"
+    }
+  ],
+  "doors": [
+    {
+      "name": "DS0",
+      "axis": "z",
+      "constant": 10,
+      "start": 48,
+      "end": 52,
+      "height": 3.0
+    },
+    {
+      "name": "DS1",
+      "axis": "z",
+      "constant": 20,
+      "start": 48,
+      "end": 52,
+      "height": 3.0
+    },
+    {
+      "name": "DV",
+      "axis": "z",
+      "constant": 44,
+      "start": 49,
+      "end": 51,
+      "height": 2.4
+    },
+    {
+      "name": "DA0",
+      "axis": "z",
+      "constant": 44,
+      "start": 36,
+      "end": 40,
+      "height": 3.0
+    },
+    {
+      "name": "DA1",
+      "axis": "z",
+      "constant": 56,
+      "start": 37,
+      "end": 39,
+      "height": 2.4
+    },
+    {
+      "name": "DA2",
+      "axis": "x",
+      "constant": 44,
+      "start": 63,
+      "end": 65,
+      "height": 2.4
+    },
+    {
+      "name": "DA3",
+      "axis": "x",
+      "constant": 56,
+      "start": 63,
+      "end": 65,
+      "height": 2.4
+    },
+    {
+      "name": "DA4",
+      "axis": "z",
+      "constant": 62,
+      "start": 60,
+      "end": 64,
+      "height": 3.0
+    },
+    {
+      "name": "DA5",
+      "axis": "z",
+      "constant": 44,
+      "start": 61,
+      "end": 63,
+      "height": 2.4
+    },
+    {
+      "name": "DB0",
+      "axis": "x",
+      "constant": 36,
+      "start": 31,
+      "end": 33,
+      "height": 2.4
+    },
+    {
+      "name": "DB1",
+      "axis": "z",
+      "constant": 26,
+      "start": 12,
+      "end": 16,
+      "height": 3.0
+    },
+    {
+      "name": "DB2",
+      "axis": "z",
+      "constant": 10,
+      "start": 12,
+      "end": 16,
+      "height": 3.0
+    },
+    {
+      "name": "DB3",
+      "axis": "x",
+      "constant": 20,
+      "start": 4,
+      "end": 8,
+      "height": 3.0
+    },
+    {
+      "name": "DB4",
+      "axis": "x",
+      "constant": 44,
+      "start": 5,
+      "end": 7,
+      "height": 2.4
+    },
+    {
+      "name": "DC0",
+      "axis": "x",
+      "constant": 64,
+      "start": 31,
+      "end": 33,
+      "height": 2.4
+    },
+    {
+      "name": "DC1",
+      "axis": "x",
+      "constant": 84,
+      "start": 31,
+      "end": 33,
+      "height": 2.4
+    },
+    {
+      "name": "DC2",
+      "axis": "z",
+      "constant": 24,
+      "start": 69,
+      "end": 71,
+      "height": 2.4
+    },
+    {
+      "name": "DC3",
+      "axis": "x",
+      "constant": 68,
+      "start": 4,
+      "end": 8,
+      "height": 3.0
+    },
+    {
+      "name": "DC4",
+      "axis": "x",
+      "constant": 56,
+      "start": 5,
+      "end": 7,
+      "height": 2.4
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "F_S1_Wood",
+      "rect": [
+        48,
+        52,
+        10,
+        20
+      ],
+      "material": "Wood"
+    },
+    {
+      "name": "F_H0_Metal",
+      "rect": [
+        46,
+        54,
+        26,
+        34
+      ],
+      "material": "Metal"
+    },
+    {
+      "name": "F_A0_Rubber",
+      "rect": [
+        36,
+        40,
+        44,
+        56
+      ],
+      "material": "Rubber"
+    },
+    {
+      "name": "F_A1_Carpet",
+      "rect": [
+        24,
+        44,
+        56,
+        72
+      ],
+      "material": "Carpet"
+    },
+    {
+      "name": "F_A1_MetalBand",
+      "rect": [
+        24,
+        44,
+        63,
+        65
+      ],
+      "material": "Metal"
+    },
+    {
+      "name": "F_A2_Rubber",
+      "rect": [
+        44,
+        56,
+        60,
+        68
+      ],
+      "material": "Rubber"
+    },
+    {
+      "name": "F_A3a_Carpet",
+      "rect": [
+        56,
+        64,
+        62,
+        66
+      ],
+      "material": "Carpet"
+    },
+    {
+      "name": "F_A3b_Carpet",
+      "rect": [
+        60,
+        64,
+        44,
+        62
+      ],
+      "material": "Carpet"
+    },
+    {
+      "name": "F_B1_Metal",
+      "rect": [
+        12,
+        36,
+        26,
+        38
+      ],
+      "material": "Metal"
+    },
+    {
+      "name": "F_B1_WaterW",
+      "rect": [
+        14,
+        18,
+        28,
+        31
+      ],
+      "material": "Water"
+    },
+    {
+      "name": "F_B1_WaterE",
+      "rect": [
+        28,
+        32,
+        30,
+        33
+      ],
+      "material": "Water"
+    },
+    {
+      "name": "F_B2_Metal",
+      "rect": [
+        12,
+        16,
+        10,
+        26
+      ],
+      "material": "Metal"
+    },
+    {
+      "name": "F_B3_Rubber",
+      "rect": [
+        4,
+        20,
+        2,
+        10
+      ],
+      "material": "Rubber"
+    },
+    {
+      "name": "F_B4_Water",
+      "rect": [
+        20,
+        44,
+        4,
+        8
+      ],
+      "material": "Water"
+    },
+    {
+      "name": "F_C1_GlassW",
+      "rect": [
+        66,
+        72,
+        30,
+        34
+      ],
+      "material": "Glass"
+    },
+    {
+      "name": "F_C1_GlassE",
+      "rect": [
+        76,
+        82,
+        30,
+        34
+      ],
+      "material": "Glass"
+    },
+    {
+      "name": "F_C1_Gravel",
+      "rect": [
+        80,
+        84,
+        30,
+        34
+      ],
+      "material": "Gravel"
+    }
+  ],
+  "walls": [
+    {
+      "rect": [
+        43.9,
+        44.1,
+        0,
+        4
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        4,
+        5
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        5,
+        7
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        7,
+        8
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        8,
+        10
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        56,
+        60
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        60,
+        63
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        63,
+        65
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        65,
+        68
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        43.9,
+        44.1,
+        68,
+        72
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        0,
+        4
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        4,
+        5
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        5,
+        7
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        7,
+        8
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        8,
+        10
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        60,
+        62
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        62,
+        63
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        63,
+        65
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        65,
+        66
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        55.9,
+        56.1,
+        66,
+        68
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        44,
+        56,
+        -0.1,
+        0.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        4,
+        12,
+        9.9,
+        10.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        16,
+        20,
+        9.9,
+        10.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        44,
+        48,
+        9.9,
+        10.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        52,
+        56,
+        9.9,
+        10.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        47.9,
+        48.1,
+        10,
+        20
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        51.9,
+        52.1,
+        10,
+        20
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        36,
+        48,
+        19.9,
+        20.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        48,
+        52,
+        19.9,
+        20.1
+      ],
+      "bottom": 3.0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        52,
+        64,
+        19.9,
+        20.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        35.9,
+        36.1,
+        20,
+        26
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        35.9,
+        36.1,
+        26,
+        31
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        35.9,
+        36.1,
+        31,
+        33
+      ],
+      "bottom": 2.4,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        35.9,
+        36.1,
+        33,
+        38
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        35.9,
+        36.1,
+        38,
+        44
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        35.9,
+        36.1,
+        44,
+        56
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        20,
+        24
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        24,
+        31
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        31,
+        33
+      ],
+      "bottom": 2.4,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        33,
+        40
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        40,
+        44
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        44,
+        62
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        63.9,
+        64.1,
+        62,
+        66
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        36,
+        40,
+        43.9,
+        44.1
+      ],
+      "bottom": 3.0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        40,
+        46,
+        43.9,
+        44.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        46,
+        49,
+        43.9,
+        44.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        49,
+        51,
+        43.9,
+        44.1
+      ],
+      "bottom": 2.4,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        51,
+        54,
+        43.9,
+        44.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        54,
+        60,
+        43.9,
+        44.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        60,
+        61,
+        43.9,
+        44.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        61,
+        63,
+        43.9,
+        44.1
+      ],
+      "bottom": 2.4,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        63,
+        64,
+        43.9,
+        44.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "Wall"
+    },
+    {
+      "rect": [
+        45.9,
+        46.1,
+        44,
+        52
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Vault"
+    },
+    {
+      "rect": [
+        53.9,
+        54.1,
+        44,
+        52
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Vault"
+    },
+    {
+      "rect": [
+        46,
+        54,
+        51.9,
+        52.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "Vault"
+    },
+    {
+      "rect": [
+        39.9,
+        40.1,
+        44,
+        56
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        24,
+        36,
+        55.9,
+        56.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        36,
+        37,
+        55.9,
+        56.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        37,
+        39,
+        55.9,
+        56.1
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        39,
+        40,
+        55.9,
+        56.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        40,
+        44,
+        55.9,
+        56.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        23.9,
+        24.1,
+        56,
+        72
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        24,
+        44,
+        71.9,
+        72.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        44,
+        56,
+        59.9,
+        60.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        44,
+        56,
+        67.9,
+        68.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        56,
+        60,
+        61.9,
+        62.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        56,
+        64,
+        65.9,
+        66.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        59.9,
+        60.1,
+        44,
+        62
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallA"
+    },
+    {
+      "rect": [
+        11.9,
+        12.1,
+        10,
+        26
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        11.9,
+        12.1,
+        26,
+        38
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        12,
+        16,
+        25.9,
+        26.1
+      ],
+      "bottom": 3.0,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        16,
+        36,
+        25.9,
+        26.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        12,
+        36,
+        37.9,
+        38.1
+      ],
+      "bottom": 0,
+      "top": 4.5,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        15.9,
+        16.1,
+        10,
+        26
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        3.9,
+        4.1,
+        2,
+        10
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        19.9,
+        20.1,
+        2,
+        4
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        19.9,
+        20.1,
+        8,
+        10
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        4,
+        20,
+        1.9,
+        2.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        20,
+        44,
+        3.9,
+        4.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        56,
+        68,
+        3.9,
+        4.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        68,
+        72,
+        3.9,
+        4.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        20,
+        44,
+        7.9,
+        8.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallB"
+    },
+    {
+      "rect": [
+        56,
+        68,
+        7.9,
+        8.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        83.9,
+        84.1,
+        24,
+        28
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        83.9,
+        84.1,
+        28,
+        31
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        83.9,
+        84.1,
+        31,
+        33
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        83.9,
+        84.1,
+        33,
+        36
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        83.9,
+        84.1,
+        36,
+        40
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        64,
+        68,
+        23.9,
+        24.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        68,
+        69,
+        23.9,
+        24.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        69,
+        71,
+        23.9,
+        24.1
+      ],
+      "bottom": 2.4,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        71,
+        72,
+        23.9,
+        24.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        72,
+        84,
+        23.9,
+        24.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        64,
+        84,
+        39.9,
+        40.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        91.9,
+        92.1,
+        28,
+        36
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        84,
+        92,
+        27.9,
+        28.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        84,
+        92,
+        35.9,
+        36.1
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        67.9,
+        68.1,
+        8,
+        24
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    },
+    {
+      "rect": [
+        71.9,
+        72.1,
+        4,
+        24
+      ],
+      "bottom": 0,
+      "top": 3.0,
+      "material": "WallC"
+    }
+  ],
+  "furniture": [
+    {
+      "name": "S0_Shelf",
+      "kind": "Shelf",
+      "rect": [
+        44.1,
+        47,
+        9,
+        10
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "FixedLight_Plinth",
+      "kind": "box:Pedestal",
+      "rect": [
+        48.7,
+        49.3,
+        1.7,
+        2.3
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_PillarSW",
+      "kind": "box:Wall",
+      "rect": [
+        45,
+        46.2,
+        27,
+        28.2
+      ],
+      "height": 4.5,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_PillarSE",
+      "kind": "box:Wall",
+      "rect": [
+        53.8,
+        55,
+        27,
+        28.2
+      ],
+      "height": 4.5,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_PillarNW",
+      "kind": "box:Wall",
+      "rect": [
+        45,
+        46.2,
+        32.8,
+        34
+      ],
+      "height": 4.5,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_PillarNE",
+      "kind": "box:Wall",
+      "rect": [
+        53.8,
+        55,
+        32.8,
+        34
+      ],
+      "height": 4.5,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_WestShelf",
+      "kind": "Shelf",
+      "rect": [
+        37,
+        41,
+        40,
+        41
+      ],
+      "height": 2.4,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_EastShelf",
+      "kind": "Shelf",
+      "rect": [
+        59,
+        63,
+        40,
+        41
+      ],
+      "height": 2.4,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_WestBench",
+      "kind": "Bench",
+      "rect": [
+        40,
+        43,
+        22,
+        24
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_EastBench",
+      "kind": "Bench",
+      "rect": [
+        57,
+        60,
+        22,
+        24
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_GlassWallW",
+      "kind": "box:Glass",
+      "rect": [
+        42,
+        42.08,
+        29,
+        36
+      ],
+      "height": 2.4,
+      "physmat": "glass"
+    },
+    {
+      "name": "H0_GlassWallE",
+      "kind": "box:Glass",
+      "rect": [
+        57.92,
+        58,
+        29,
+        36
+      ],
+      "height": 2.4,
+      "physmat": "glass"
+    },
+    {
+      "name": "H0_PipesW",
+      "kind": "box:Rust",
+      "rect": [
+        40,
+        46,
+        43.5,
+        43.9
+      ],
+      "height": 2.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "H0_PipesE",
+      "kind": "box:Rust",
+      "rect": [
+        54,
+        60,
+        43.5,
+        43.9
+      ],
+      "height": 2.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "I_H_Crate",
+      "kind": "box:Crate",
+      "rect": [
+        62,
+        63,
+        21.5,
+        22.5
+      ],
+      "height": 0.8,
+      "physmat": "metal"
+    },
+    {
+      "name": "Vault_Pedestal",
+      "kind": "box:Pedestal",
+      "rect": [
+        49,
+        51,
+        48,
+        50
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "A1_ShelfRow1",
+      "kind": "Shelf",
+      "rect": [
+        26.4,
+        27.6,
+        58,
+        70
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "A1_ShelfRow2",
+      "kind": "Shelf",
+      "rect": [
+        29.6,
+        30.8,
+        58,
+        70
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "A1_ShelfRow3",
+      "kind": "Shelf",
+      "rect": [
+        32.8,
+        34.0,
+        58,
+        70
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "A1_ShelfRow4",
+      "kind": "Shelf",
+      "rect": [
+        36.0,
+        37.2,
+        58,
+        70
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "A1_ShelfRow5",
+      "kind": "Shelf",
+      "rect": [
+        39.2,
+        40.4,
+        58,
+        70
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "I_A_Crate",
+      "kind": "box:Crate",
+      "rect": [
+        28.1,
+        29.1,
+        60,
+        61
+      ],
+      "height": 0.8,
+      "physmat": "metal"
+    },
+    {
+      "name": "TerminalA",
+      "kind": "box:Terminal",
+      "rect": [
+        49,
+        51,
+        66.6,
+        67.6
+      ],
+      "height": 1.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "A2_Bench",
+      "kind": "Bench",
+      "rect": [
+        45,
+        48,
+        61,
+        62.5
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "PumpA",
+      "kind": "box:Machine",
+      "rect": [
+        14,
+        18,
+        34,
+        37.5
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "PumpB",
+      "kind": "box:Machine",
+      "rect": [
+        23,
+        27,
+        34,
+        37.5
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "B1_Tank",
+      "kind": "box:Rust",
+      "rect": [
+        30,
+        34,
+        34.5,
+        38
+      ],
+      "height": 3.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "B1_PipesW",
+      "kind": "box:Rust",
+      "rect": [
+        12.1,
+        12.5,
+        27,
+        38
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "B2_Pipes",
+      "kind": "box:Rust",
+      "rect": [
+        12.1,
+        12.5,
+        11,
+        25
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "TerminalB",
+      "kind": "box:Terminal",
+      "rect": [
+        11,
+        13,
+        4.6,
+        5.6
+      ],
+      "height": 1.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "B3_Shelf",
+      "kind": "Shelf",
+      "rect": [
+        5,
+        8,
+        8.9,
+        9.9
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "B3_Sink",
+      "kind": "Sink",
+      "rect": [
+        17.9,
+        19.9,
+        2.1,
+        3.1
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "I_B_Crate",
+      "kind": "box:Crate",
+      "rect": [
+        6,
+        7,
+        3,
+        4
+      ],
+      "height": 0.8,
+      "physmat": "metal"
+    },
+    {
+      "name": "B4_Pipes",
+      "kind": "box:Rust",
+      "rect": [
+        21,
+        43,
+        7.6,
+        7.9
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "C1_BenchSW",
+      "kind": "Bench",
+      "rect": [
+        67,
+        70,
+        27,
+        29
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "C1_BenchSE",
+      "kind": "Bench",
+      "rect": [
+        78,
+        81,
+        27,
+        29
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "C1_BenchNW",
+      "kind": "Bench",
+      "rect": [
+        67,
+        70,
+        35,
+        37
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "C1_BenchNE",
+      "kind": "Bench",
+      "rect": [
+        78,
+        81,
+        35,
+        37
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "C1_Shelf",
+      "kind": "Shelf",
+      "rect": [
+        73,
+        77,
+        39,
+        40
+      ],
+      "height": 2.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "C1_Sink",
+      "kind": "Sink",
+      "rect": [
+        82,
+        84,
+        24.1,
+        25.1
+      ],
+      "height": 1.0,
+      "physmat": "metal"
+    },
+    {
+      "name": "C2_WestShelf",
+      "kind": "Shelf",
+      "rect": [
+        85,
+        87,
+        34,
+        35
+      ],
+      "height": 1.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "C2_EastShelf",
+      "kind": "Shelf",
+      "rect": [
+        89,
+        91,
+        34,
+        35
+      ],
+      "height": 1.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "TerminalC",
+      "kind": "box:Terminal",
+      "rect": [
+        85,
+        87,
+        32,
+        33
+      ],
+      "height": 1.2,
+      "physmat": "metal"
+    },
+    {
+      "name": "I_C_Crate",
+      "kind": "box:Crate",
+      "rect": [
+        87.5,
+        88.5,
+        29.5,
+        30.5
+      ],
+      "height": 0.8,
+      "physmat": "metal"
+    }
+  ],
+  "markers": [
+    {
+      "name": "START",
+      "engine_position": [
+        50,
+        0,
+        3
+      ]
+    },
+    {
+      "name": "FIXED_LIGHT",
+      "engine_position": [
+        49,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "E1_SPAWN",
+      "engine_position": [
+        33,
+        0,
+        57
+      ]
+    },
+    {
+      "name": "E2_SPAWN",
+      "engine_position": [
+        20,
+        0,
+        30
+      ]
+    },
+    {
+      "name": "E3_SPAWN",
+      "engine_position": [
+        74,
+        0,
+        32
+      ]
+    },
+    {
+      "name": "TERMINAL_A",
+      "engine_position": [
+        50,
+        1.2,
+        66
+      ]
+    },
+    {
+      "name": "TERMINAL_B",
+      "engine_position": [
+        12,
+        1.2,
+        4
+      ]
+    },
+    {
+      "name": "TERMINAL_C",
+      "engine_position": [
+        86,
+        1.2,
+        31.5
+      ]
+    },
+    {
+      "name": "VAULT_DOOR",
+      "engine_position": [
+        50,
+        0,
+        44
+      ]
+    },
+    {
+      "name": "MAIN_DATA",
+      "engine_position": [
+        50,
+        1,
+        49
+      ]
+    },
+    {
+      "name": "PUMP",
+      "engine_position": [
+        20.5,
+        0,
+        33
+      ]
+    },
+    {
+      "name": "FLOOD_GATE",
+      "engine_position": [
+        44,
+        0,
+        6
+      ]
+    },
+    {
+      "name": "SHORTCUT_GATE",
+      "engine_position": [
+        70,
+        0,
+        24
+      ]
+    },
+    {
+      "name": "I_H_STONE_1",
+      "engine_position": [
+        62.5,
+        0.8,
+        22
+      ]
+    },
+    {
+      "name": "I_A_STONE_2",
+      "engine_position": [
+        28.6,
+        0.8,
+        60.5
+      ]
+    },
+    {
+      "name": "I_B_BOTTLE_1",
+      "engine_position": [
+        6.5,
+        0.8,
+        3.5
+      ]
+    },
+    {
+      "name": "I_C_LIGHT_REFILL_1",
+      "engine_position": [
+        86,
+        1.2,
+        34.5
+      ]
+    },
+    {
+      "name": "I_C_BOTTLE_2",
+      "engine_position": [
+        90,
+        1.2,
+        34.5
+      ]
+    },
+    {
+      "name": "I_C_STONE_1",
+      "engine_position": [
+        88,
+        0.8,
+        30
+      ]
+    }
+  ],
+  "patrol_xz": {
+    "E1": [
+      [
+        25,
+        57
+      ],
+      [
+        43,
+        57
+      ],
+      [
+        43,
+        71
+      ],
+      [
+        25,
+        71
+      ]
+    ],
+    "E2": [
+      [
+        14,
+        28
+      ],
+      [
+        34,
+        28
+      ],
+      [
+        34,
+        32
+      ],
+      [
+        14,
+        32
+      ]
+    ],
+    "E3": [
+      [
+        66,
+        32
+      ],
+      [
+        82,
+        32
+      ],
+      [
+        82,
+        38
+      ],
+      [
+        66,
+        38
+      ]
+    ]
+  },
+  "materials": {
+    "Wall": {
+      "texture": "Plaster",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.88,
+      "opacity": 1.0,
+      "uv_meters": 3.0
+    },
+    "WallA": {
+      "texture": "PaintWhite",
+      "base_color": [
+        0.92,
+        0.94,
+        0.96
+      ],
+      "metallic": 0.0,
+      "roughness": 0.57,
+      "opacity": 1.0,
+      "uv_meters": 3.0
+    },
+    "WallB": {
+      "texture": "Grime",
+      "base_color": [
+        0.85,
+        0.87,
+        0.85
+      ],
+      "metallic": 0.0,
+      "roughness": 0.96,
+      "opacity": 1.0,
+      "uv_meters": 3.0
+    },
+    "WallC": {
+      "texture": "PaintGreen",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.65,
+      "opacity": 1.0,
+      "uv_meters": 3.0
+    },
+    "Vault": {
+      "texture": "Steel",
+      "base_color": [
+        0.62,
+        0.66,
+        0.72
+      ],
+      "metallic": 0.9,
+      "roughness": 0.34,
+      "opacity": 1.0,
+      "uv_meters": 2.0
+    },
+    "Tile": {
+      "texture": "Floor",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.73,
+      "opacity": 1.0,
+      "uv_meters": 2.0
+    },
+    "Metal": {
+      "texture": "Steel",
+      "base_color": [
+        0.8,
+        0.83,
+        0.86
+      ],
+      "metallic": 0.9,
+      "roughness": 0.34,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    },
+    "Rubber": {
+      "texture": "Rubber",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    },
+    "Water": {
+      "texture": "Water",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.06,
+      "opacity": 0.55,
+      "uv_meters": 2.0
+    },
+    "Glass": {
+      "texture": "Glass",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.09,
+      "opacity": 0.58,
+      "uv_meters": 2.0
+    },
+    "Carpet": {
+      "texture": "Carpet",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 1.0,
+      "opacity": 1.0,
+      "uv_meters": 1.5
+    },
+    "Wood": {
+      "texture": "Wood",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "opacity": 1.0,
+      "uv_meters": 2.0
+    },
+    "Gravel": {
+      "texture": "Gravel",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.95,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    },
+    "Rust": {
+      "texture": "Rust",
+      "base_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.3,
+      "roughness": 0.94,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    },
+    "Machine": {
+      "texture": "Steel",
+      "base_color": [
+        0.5,
+        0.56,
+        0.6
+      ],
+      "metallic": 0.8,
+      "roughness": 0.45,
+      "opacity": 1.0,
+      "uv_meters": 1.5
+    },
+    "Crate": {
+      "texture": "Grime",
+      "base_color": [
+        0.55,
+        0.42,
+        0.26
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    },
+    "Pedestal": {
+      "texture": "Steel",
+      "base_color": [
+        0.3,
+        0.32,
+        0.36
+      ],
+      "metallic": 0.8,
+      "roughness": 0.4,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    },
+    "Terminal": {
+      "texture": "Steel",
+      "base_color": [
+        0.22,
+        0.26,
+        0.3
+      ],
+      "metallic": 0.6,
+      "roughness": 0.5,
+      "opacity": 1.0,
+      "uv_meters": 1.0
+    }
+  },
+  "notes": [
+    "Static layout only. Gameplay (locks, vault door, pump, pickups) requires engine-side scripts.",
+    "No ceiling meshes (open top); ceiling colliders come from rooms[].height in build_collision.py.",
+    "Carpet / Wood / Gravel textures are baked by build_stage.py; the rest are copies of assets/model/textures."
+  ]
+}

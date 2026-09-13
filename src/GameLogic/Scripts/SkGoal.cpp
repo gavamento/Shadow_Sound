@@ -28,6 +28,16 @@
 // ★次のシーンは GetSceneName (ABI v17) で「今どこに居るか」を訊いてから決める。
 //   各シーンへ遷移先を焼き込む案もあったが、それだと「stage1 の複製」である検証シーンが
 //   本編の stage2 を指してしまう。名前で引けば複製も本物と同じ鎖に乗る。
+// ★returnToStart (ステージ2.md §11-12): 1 なら到達は「取得」で、その tick に**施設全体へ
+//   大音波を 1 回**出す (自分の AcousticEmitter へ書く。コアの小さな波を出していた SkPinger は
+//   everyTicks=0 で止める)。クリアは開始地点の固定光 (FixedLight) へ戻った時点。
+//   敵にも位置が伝わるので、ここから最終脱出。stage1 は 0 のまま = 従来どおり触れた時点でクリア
+// ★★**データを持ったまま捕まったら取得を戻す** (音と攻略順の設計補足.md §4)。コアは保管庫へ
+//   戻り、小さな波も鳴り直す。取り直せば大音波もまた出る。ロック解除と消費した物には触らない。
+//   これが無いと、ビーコンを置かずに捕まる = 開始地点へ戻される = その場で帰還判定を満たす、で
+//   帰還の山場を丸ごと飛ばせた (開始地点と固定光は goalReachM の内側にある)。
+//   ★死亡は SkLightTool.deaths の増加で知る。SkLightTool から SkGoal を書き換える案は採らない —
+//     取得状態の持ち主はこちらで、書き手が 2 つになると snapshot 復元の後に食い違う
 #include <cmath>
 
 #include "SkCommon.h"
@@ -53,6 +63,12 @@ constexpr float kClearR = 1.0f;
 constexpr float kClearG = 0.94f;
 constexpr float kClearB = 0.78f;
 
+// 画面上部のメッセージの種類 (msgKind)。文言は ASCII (UI のフォントは英数字が確実)
+constexpr int32_t kMsgAcquired = 0;
+constexpr int32_t kMsgLost = 1;
+constexpr char kTextAcquired[] = "DATA ACQUIRED - RETURN TO START";
+constexpr char kTextLost[] = "DATA LOST - REACQUIRE";
+
 float Dist2XZ(const MyeVec3& a, const MyeVec3& b)
 {
     const float dx = a.x - b.x, dz = a.z - b.z;
@@ -62,13 +78,24 @@ float Dist2XZ(const MyeVec3& a, const MyeVec3& b)
 } // namespace
 
 struct SkGoal : Script<SkGoal> {
-    // ---- 登録フィールド 5 本 / 上限 32 ----
+    // ---- 登録フィールド 15 本 / 上限 32 ----
     int32_t cleared = 0;
     int32_t holdLeft = 0;   // "STAGE CLEAR" を見せ終わるまでの残り tick
     MyeEntityId player = {};
     MyeEntityId uiClear = {};
     MyeEntityId root = {};
     int32_t bound = 0;
+    // ---- 取得 → 帰還 (ステージ 2)。シーン側が returnToStart=1 を書く ----
+    int32_t returnToStart = 0;
+    int32_t taken = 0;      // データを取った (以後、ゴールは開始地点の固定光)
+    int32_t msgLeft = 0;    // 画面上部のメッセージの残り tick
+    MyeEntityId fixedLight = {};
+    MyeEntityId uiMsg = {};
+    // ---- 死亡でデータを失う ----
+    int32_t deathsSeen = 0; // 前の tick に見た SkLightTool.deaths
+    int32_t pingEvery = 0;  // 取得前のコアの SkPinger.everyTicks (失ったときに戻す)
+    MyeVec3 corePos = {};   // 取得前のコアの位置 (床下から戻す先)
+    int32_t msgKind = kMsgAcquired;
 
     void Update(MyeUpdateContext& ctx)
     {
@@ -82,6 +109,8 @@ struct SkGoal : Script<SkGoal> {
             bound = 1;
             player = api->FindByName(api->engine, sk::kNamePlayer);
             uiClear = api->FindByName(api->engine, sk::kNameUiClear);
+            fixedLight = api->FindByName(api->engine, sk::kNameFixedLight);
+            uiMsg = api->FindByName(api->engine, sk::kNameUiStage);
         }
         if (cleared) {
             ShowClear(ctx); // ★毎 tick 冪等に描き直す (DLL リロード / snapshot 復元に耐える)
@@ -91,11 +120,28 @@ struct SkGoal : Script<SkGoal> {
         if (MyeEntityIdIsNull(player) || !api->IsAlive(api->engine, player)) {
             return;
         }
+        // ★帰還判定より**先に**見る。SkLightTool が捕まった tick に開始地点へ戻したあとで
+        //   ここへ来ても、前に来ても (スクリプトの実行順がどちらでも)、クリアより先にデータを失う
+        WatchDeaths(ctx, t);
+        TickMessage(ctx);
         MyeVec3 pp = {}, gp = {};
         api->GetLocalPosition(api->engine, player, &pp);
-        api->GetLocalPosition(api->engine, ctx.self, &gp);
+        if (taken) {
+            // ---- 帰還フェーズ: コアは床下へ沈め、ゴールは開始地点の固定光 ----
+            sk::StowEntity(ctx, ctx.self); // 取得した tick は波を出すために残し、翌 tick から沈める
+            if (MyeEntityIdIsNull(fixedLight) || !api->IsAlive(api->engine, fixedLight)) {
+                return;
+            }
+            api->GetLocalPosition(api->engine, fixedLight, &gp);
+        } else {
+            api->GetLocalPosition(api->engine, ctx.self, &gp);
+        }
         // ★高さは見ない。コアは台の上に載っていて、プレイヤーは床に立っている
         if (Dist2XZ(pp, gp) > t.goalReachM * t.goalReachM) {
+            return;
+        }
+        if (returnToStart != 0 && !taken) {
+            Take(ctx, t);
             return;
         }
         cleared = 1;
@@ -108,6 +154,69 @@ struct SkGoal : Script<SkGoal> {
             MyeSetPaused(ctx, true);
             holdLeft = (t.clearHoldTicks > 0) ? t.clearHoldTicks : 1;
         }
+    }
+
+    // メインデータの取得 (ステージ2.md §11)。施設全体へ大音波を 1 回 = 最大の見せ場であり、
+    // 同時に全ての敵へプレイヤーの位置が伝わる。★死んで取り直したときも同じ道を通る = 毎回鳴る
+    void Take(MyeUpdateContext& ctx, const sk::Tuning& t)
+    {
+        taken = 1;
+        msgKind = kMsgAcquired;
+        msgLeft = (t.messageTicks > 0) ? t.messageTicks * 2 : 1; // 大事な指示なので通常の 2 倍
+        // 失ったときに戻す先を控える。★沈めるのは翌 tick からなので、ここではまだ台の上に居る
+        ctx.api->GetLocalPosition(ctx.api->engine, ctx.self, &corePos);
+        MyeGetField(ctx, ctx.self, sk::kCompSkPinger, sk::kFieldPingerEveryTicks, pingEvery);
+        // コアの小さな波 (SkPinger) を止める。★同じ tick に SkPinger が後から走っても、
+        //   everyTicks=0 なら鳴らさない (SkPinger.cpp の everyTicks > 0 ゲート) = 上書きされない
+        MyeSetField(ctx, ctx.self, sk::kCompSkPinger, sk::kFieldPingerEveryTicks, int32_t{ 0 });
+        MyeSetField(ctx, ctx.self, sk::kCompEmitter, sk::kFieldTicksPerRing, int32_t{ 2 });
+        MyeSetField(ctx, ctx.self, sk::kCompEmitter, sk::kFieldPendingTone, int32_t{ 2 });
+        MyeSetField(ctx, ctx.self, sk::kCompEmitter, sk::kFieldPendingRadiusM, t.dataWaveRadiusM);
+        // 大きさは最後に書く (pendingLoudness > 0 が発音の合図)
+        MyeSetField(ctx, ctx.self, sk::kCompEmitter, sk::kFieldPendingLoudness, t.dataWaveLoudness);
+        TickMessage(ctx);
+        MyeLogf(ctx, "[goal] t=%llu MAIN DATA acquired - facility-wide wave (loudness=%.1f) - return to start",
+                static_cast<unsigned long long>(ctx.tickIndex), static_cast<double>(t.dataWaveLoudness));
+    }
+
+    // SkLightTool.deaths が増えていたら、持っているデータを失う。
+    // ★前回値は毎 tick 取り直す (増えた tick だけ見る)。取得前の死亡は何も起こさない
+    void WatchDeaths(MyeUpdateContext& ctx, const sk::Tuning& t)
+    {
+        int32_t deaths = 0;
+        if (!MyeGetField(ctx, player, sk::kCompSkLightTool, sk::kFieldDeaths, deaths)) {
+            return; // SkLightTool の無いプレイヤー = 死なない
+        }
+        const bool died = deaths > deathsSeen;
+        deathsSeen = deaths;
+        if (died && taken) {
+            LoseData(ctx, t);
+        }
+    }
+
+    // データ取得を戻す。コアを保管庫の台へ戻し、小さな波を元の間隔で鳴らし直す
+    void LoseData(MyeUpdateContext& ctx, const sk::Tuning& t)
+    {
+        taken = 0;
+        ctx.api->SetLocalPosition(ctx.api->engine, ctx.self, corePos);
+        MyeSetField(ctx, ctx.self, sk::kCompSkPinger, sk::kFieldPingerEveryTicks, pingEvery);
+        // ★表示中の "DATA ACQUIRED" は上書きする。取得時と同じ長さ (大事な指示)
+        msgKind = kMsgLost;
+        msgLeft = (t.messageTicks > 0) ? t.messageTicks * 2 : 1;
+        MyeLogf(ctx, "[goal] t=%llu caught while carrying the data - DATA LOST, core back in the vault",
+                static_cast<unsigned long long>(ctx.tickIndex));
+    }
+
+    void TickMessage(MyeUpdateContext& ctx)
+    {
+        if (msgLeft <= 0) {
+            return;
+        }
+        --msgLeft;
+        const bool lost = (msgKind == kMsgLost);
+        const char* text = lost ? kTextLost : kTextAcquired;
+        const int32_t len = static_cast<int32_t>(lost ? sizeof(kTextLost) : sizeof(kTextAcquired));
+        sk::ShowStageMessage(ctx, uiMsg, text, len, msgLeft > 0);
     }
 
     // クリア表示を見せ終わったら次のステージへ。★holdLeft が 0 のまま = 遷移しない
@@ -157,4 +266,5 @@ struct SkGoal : Script<SkGoal> {
         MyeSetField(ctx, uiClear, sk::kCompUiElement, sk::kFieldUiColor, color);
     }
 };
-REGISTER_SCRIPT(SkGoal, FIELDS(cleared, holdLeft, player, uiClear, root, bound));
+REGISTER_SCRIPT(SkGoal, FIELDS(cleared, holdLeft, player, uiClear, root, bound, returnToStart, taken,
+                               msgLeft, fixedLight, uiMsg, deathsSeen, pingEvery, corePos, msgKind));

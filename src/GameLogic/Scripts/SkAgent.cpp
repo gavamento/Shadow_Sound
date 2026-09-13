@@ -49,6 +49,19 @@
 // 角度を持たず sqrt だけで作る (CRT の atan2 / sin / cos を混ぜない)。
 // ★回すのは見た目の Body だけ。AgentEar 本体 (耳・当たり判定・AgentBrain) には触らない —
 //   エンジンは敵の向きを 1 度も読まないので、本体を回しても得るものが無い
+//
+// ---- 4. 聞いた地点まで行き切る (2026-09-13) ----
+// エンジンの追跡は「最後に聞いてから loseTicks (120 = 2 秒) 無音なら探索」で、**着いたかは
+// 見ていない**。警戒の 30 tick もその 2 秒に含まれるので、1 回の音で寄ってくるのは約 8m だった。
+// その結果: データ取得の大音波で敵が保管庫まで来ない / 瓶を投げた地点まで行き切らない /
+// 走って引き離せば 2 秒で完全に振り切れる (実機で「取得後にまっすぐ走れば帰れる」を確認)。
+// ここでは追跡中に target (= 聞いた地点、辿れなければ辿れる最寄り) から chaseReachM より
+// 遠い間だけ loseTicks を chaseHoldTicks へ引き上げ、着いたら敵本来の値へ戻す。
+// 戻した tick には無音の時間が本来の値を超えているので、エンジンがそのまま探索へ落とす。
+// ★loseTicks は設定値なので書いてよい (home と同じ扱い)。state / target は書かない。
+// ★引き上げている間は soundFresh が真のままなので、追跡中の敵は**光に寄り道しない**
+//   (エンジンの「光に寄るのは音が古くなってから」)。着けば従来どおり光へ向かう。
+// ★chaseHoldTicks は上限。譲り合いや詰まりで着けない敵が走り続けないための安全弁
 #include <cmath>
 #include <cstdio>
 
@@ -103,7 +116,7 @@ constexpr int32_t kFlinchTicks = 90;    // 07_LightFlinch の長さ (1.5 秒)
 } // namespace
 
 struct SkAgent : Script<SkAgent> {
-    // ---- 巡回路・声 (登録フィールド 11 本。見た目の 12 本と合わせて 23 本 / 上限 32) ----
+    // ---- 巡回路・声 (登録フィールド 11 本。見た目の 12 本・追跡の 2 本と合わせて 25 本 / 上限 32) ----
     // ★4 点まで。placement_manifest の巡回点がどちらも 4 点なので足りている。
     //   増やしたくなったら wp4.. を足すより「巡回点を持つ別エンティティを親に置く」
     //   ほうが良い (フィールドは snapshot にも .rep にも載るので安くない)
@@ -126,6 +139,12 @@ struct SkAgent : Script<SkAgent> {
     int32_t flinchRequest = 0;          // SkLightTool が閃光で 1 を書く
     int32_t flinchLeft = 0;             // ひるみの残り tick
     MyeVec3 faceDir = { 0.0f, 0.0f, -1.0f }; // 見た目の前方 (水平の単位ベクトル。-Z = モデルの正面)
+
+    // ---- 追跡 (登録フィールド 2 本) ----
+    // ★-1 = まだ読んでいない。0 を未読の印にすると、loseTicks が本当に 0 の敵で
+    //   引き上げた値を「本来の値」として読み直してしまう
+    int32_t loseBase = -1;              // シーンに書かれた敵本来の loseTicks
+    int32_t holding = 0;                // 1 = 聞いた地点へ向かう間 loseTicks を引き上げている
 
     MyeVec3& Waypoint(int32_t i)
     {
@@ -172,7 +191,37 @@ struct SkAgent : Script<SkAgent> {
 
         Voice(ctx, t, state);
         Patrol(ctx, t, state);
+        Pursue(ctx, t, state);
         Animate(ctx, state);
+    }
+
+    // 聞いた地点に着くまで追跡を保つ (冒頭の 4)。★毎 tick 書く — 状態が変わった tick だけ
+    //   書く方式は、snapshot 復元や DLL リロードの後に引き上げたまま戻らなくなる
+    void Pursue(MyeUpdateContext& ctx, const sk::Tuning& t, int32_t state)
+    {
+        if (loseBase < 0) {
+            int32_t base = 0;
+            if (!MyeGetField(ctx, ctx.self, sk::kCompAgentBrain, sk::kFieldAgentLoseTicks, base)) {
+                return;
+            }
+            loseBase = base;
+        }
+        bool hold = false;
+        if (state == kChase) {
+            MyeVec3 pos = {}, target = {};
+            ctx.api->GetLocalPosition(ctx.api->engine, ctx.self, &pos);
+            MyeGetField(ctx, ctx.self, sk::kCompAgentBrain, sk::kFieldAgentTarget, target);
+            hold = Dist2XZ(pos, target) > t.chaseReachM * t.chaseReachM;
+        }
+        const int32_t lose = (hold && t.chaseHoldTicks > loseBase) ? t.chaseHoldTicks : loseBase;
+        MyeSetField(ctx, ctx.self, sk::kCompAgentBrain, sk::kFieldAgentLoseTicks, lose);
+        // ★着いたことは状態ログに現れない (追跡のまま次の tick に探索へ落ちるだけ) ので、
+        //   ここで 1 行出す。書式の "[agent] " は巡回点のログと揃える
+        if (holding != 0 && !hold && state == kChase) {
+            MyeLogf(ctx, "[agent] t=%llu #%d reached the sound source",
+                    static_cast<unsigned long long>(ctx.tickIndex), tag);
+        }
+        holding = hold ? 1 : 0;
     }
 
     // 状態 -> (間隔, 振幅)。★純関数にしてあるのはログと書き込みで同じ表を通すため
@@ -404,4 +453,4 @@ struct SkAgent : Script<SkAgent> {
 REGISTER_SCRIPT(SkAgent,
                 FIELDS(wp0, wp1, wp2, wp3, wpCount, wpIndex, tag, prevState, voiceTicks, dwell,
                        root, body, part0, part1, part2, part3, part4, animBound, animClip,
-                       animMoving, flinchRequest, flinchLeft, faceDir));
+                       animMoving, flinchRequest, flinchLeft, faceDir, loseBase, holding));

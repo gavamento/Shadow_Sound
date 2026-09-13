@@ -1,0 +1,150 @@
+{
+  "files": [
+    {
+      "file": "CentralFacility_Stage02_OpenTop.fbx",
+      "mesh_objects": 177,
+      "triangles": 140124,
+      "blender_bounds": [
+        [
+          3.9000000953674316,
+          -0.10000024735927582,
+          -0.20000195503234863
+        ],
+        [
+          92.0999984741211,
+          72.0999984741211,
+          4.500000953674316
+        ]
+      ],
+      "textures": [
+        "Carpet_BaseColor.png",
+        "Carpet_Normal_DX.png",
+        "Ceramic_BaseColor.png",
+        "Ceramic_Normal_DX.png",
+        "Epoxy_BaseColor.png",
+        "Epoxy_Normal_DX.png",
+        "Floor_BaseColor.png",
+        "Floor_Normal_DX.png",
+        "Glass_BaseColor.png",
+        "Glass_Normal_DX.png",
+        "Gravel_BaseColor.png",
+        "Gravel_Normal_DX.png",
+        "Grime_BaseColor.png",
+        "Grime_Normal_DX.png",
+        "PaintGreen_BaseColor.png",
+        "PaintGreen_Normal_DX.png",
+        "PaintWhite_BaseColor.png",
+        "PaintWhite_Normal_DX.png",
+        "Plaster_BaseColor.png",
+        "Plaster_Normal_DX.png",
+        "Rubber_BaseColor.png",
+        "Rubber_Normal_DX.png",
+        "Rust_BaseColor.png",
+        "Rust_Normal_DX.png",
+        "Steel_BaseColor.png",
+        "Steel_Normal_DX.png",
+        "Water_BaseColor.png",
+        "Water_Normal_DX.png",
+        "Wood_BaseColor.png",
+        "Wood_Normal_DX.png"
+      ]
+    },
+    {
+      "file": "CentralFacility_Stage02_Markers.fbx",
+      "mesh_objects": 19,
+      "triangles": 1140,
+      "blender_bounds": [
+        [
+          6.25,
+          1.75,
+          -5.702223759840308e-08
+        ],
+        [
+          90.25,
+          66.25,
+          1.7000000476837158
+        ]
+      ],
+      "textures": []
+    }
+  ],
+  "door_checks": [
+    {
+      "door": "DS0",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DS1",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DV",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DA0",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DA1",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DA2",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DA3",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DA4",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DA5",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DB0",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DB1",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DB2",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DB3",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DB4",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DC0",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DC1",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DC2",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DC3",
+      "clearance_rays": 9
+    },
+    {
+      "door": "DC4",
+      "clearance_rays": 9
+    }
+  ],
+  "failures": []
+}

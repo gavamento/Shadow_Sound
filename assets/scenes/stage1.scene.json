@@ -11964,15 +11964,15 @@
         },
         "LocalTransform": {
           "position": [
-            3.0,
-            1.600000023841858,
-            3.0
+            31.81757164001465,
+            1.5,
+            17.254655838012695
           ],
           "rotation": [
-            0.06041087955236435,
-            0.49878203868865967,
-            -0.034878235310316086,
-            0.8639158010482788
+            0.06943944096565247,
+            0.6719545125961304,
+            -0.06351852416992188,
+            0.7345911264419556
           ],
           "scale": [
             1.0,
@@ -12094,22 +12094,31 @@
           ]
         },
         "SkDebugDirector": {
-          "applied": 0,
+          "applied": 1,
           "litOn": 0,
-          "pinger": 0,
+          "pinger": 9,
           "pingerOn": 0,
-          "sun": 0
+          "sun": 3
         },
         "SkTuning": {
           "beaconCount": 3,
           "beaconRangeM": 0.009999999776482582,
+          "bottleBreakSpeedMps": 4.0,
+          "bottleLoudness": 1.600000023841858,
+          "bottleRadiusM": 26.0,
           "breathLoudness": 0.07000000029802322,
           "breathRadiusM": 3.0,
           "breathTicks": 96,
           "catchRadiusM": 1.7000000476837158,
+          "chaseHoldTicks": 1500,
+          "chaseReachM": 2.5,
           "clearHoldTicks": 180,
           "crouchSpeed": 1.0,
+          "dataWaveLoudness": 8.0,
+          "dataWaveRadiusM": 90.0,
+          "debugAutoInteract": 0,
           "debugAutoLight": 0,
+          "debugAutoThrow": 0,
           "debugFullbright": 0,
           "debugNoTransition": 0,
           "debugPinger": 0,
@@ -12126,6 +12135,8 @@
           "gainWalk": 1.0,
           "goalReachM": 2.200000047683716,
           "graceTicks": 120,
+          "interactReachM": 2.0,
+          "interactTicks": 90,
           "lightAheadM": 1.2000000476837158,
           "lightIntensity": 1.0,
           "lightPlaceTicks": 150,
@@ -12133,12 +12144,18 @@
           "lightRetrieveTicks": 300,
           "lightSafeRadiusM": 2.5,
           "lookSpeedDeg": 140.0,
-          "mouseSensDeg": 0.05999999865889549,
+          "messageTicks": 240,
+          "mouseSensDeg": 0.10000000149011612,
+          "pickupReachM": 1.2999999523162842,
           "pitchLimitDeg": 80.0,
           "runSpeed": 4.400000095367432,
+          "stoneLoudness": 0.5,
+          "stoneRadiusM": 14.0,
           "strideCrouch": 1.7000000476837158,
           "strideRun": 0.550000011920929,
           "strideWalk": 0.8999999761581421,
+          "throwSpeedMps": 9.0,
+          "throwUpMps": 2.5,
           "voiceChaseLoud": 0.6200000047683716,
           "voiceChaseTicks": 10,
           "voicePatrolLoud": 0.2199999988079071,
@@ -12164,6 +12181,7 @@
           "dimY": 5,
           "dimZ": 72,
           "enabled": true,
+          "glowAlbedoMix": 1.0,
           "glowIntensity": 1.0,
           "glowKeepPerTick": 0.0,
           "navCellRatio": 2
@@ -12197,85 +12215,88 @@
           "autoFootstep": true,
           "cooldown": 0,
           "cooldownTicks": 12,
-          "footstepGain": 1.0,
+          "footstepGain": 0.6000000238418579,
           "pendingLoudness": 0.0,
           "pendingRadiusM": 0.0,
-          "pendingTone": 0,
-          "stepDistanceM": 0.8999999761581421,
+          "pendingTone": 3,
+          "stepDistanceM": 1.7000000476837158,
           "ticksPerRing": 2,
-          "travelAccum": 0.0
+          "travelAccum": 1.664543628692627
+        },
+        "AudioListener": {
+          "enabled": 1
         },
         "CharacterController": {
           "gravityScale": 1.0,
           "height": 1.600000023841858,
-          "isGrounded": 0,
+          "isGrounded": 1,
           "jumpSpeed": 0.0,
           "moveInput": [
+            -0.9071552157402039,
             0.0,
-            0.0,
-            0.0
+            -1.08493173122406
           ],
           "radius": 0.30000001192092896,
           "skinWidth": 0.019999999552965164,
           "slopeLimitDeg": 50.0,
           "velocity": [
+            -0.9071730971336365,
             0.0,
-            0.0,
-            0.0
+            -1.0848997831344604
           ]
         },
         "LocalTransform": {
           "position": [
-            3.0,
-            0.8999999761581421,
-            3.0
+            2.1434905529022217,
+            0.9946193695068359,
+            3.1902689933776855
           ],
           "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
+            0.06943952292203903,
+            0.6719543933868408,
+            -0.06351872533559799,
+            0.7345888614654541
           ],
           "scale": [
-            1.0,
-            1.0,
-            1.0
+            1.0000025033950806,
+            0.999999463558197,
+            1.000001072883606
           ]
         },
         "SkFpsController": {
           "breathPhase": 0,
-          "camera": 0,
+          "camera": 1,
           "cursorMode": 0,
           "firstPerson": 1,
-          "pitchDeg": 0.0,
-          "root": 0,
-          "yawDeg": 0.0
+          "pitchDeg": 10.800039291381836,
+          "root": 4,
+          "yawDeg": 84.90035247802734
         },
         "SkLightTool": {
-          "agent0": 0,
-          "agent1": 0,
+          "agent0": 8,
+          "agent1": 18,
           "agent2": 0,
-          "bound": 0,
+          "bound": 1,
           "busyIdx": -1,
           "caughtGrace": 0,
           "deaths": 0,
-          "ear": 0,
-          "echo": 0.0,
-          "fixedLight": 0,
+          "ear": 14,
+          "echo": 1.0,
+          "fixedLight": 10,
           "flashIdx": -1,
           "flashLeft": 0,
           "lamp0": 0,
-          "lamp1": 0,
-          "lamp2": 0,
+          "lamp1": 12,
+          "lamp2": 13,
           "mode": 0,
-          "order0": 0,
+          "order0": 1,
           "order1": 0,
           "order2": 0,
           "progress": 0,
           "respawn0": [
-            0.0,
-            0.0,
-            0.0
+            48.50936508178711,
+            0.7999999523162842,
+            27.85858726501465
           ],
           "respawn1": [
             0.0,
@@ -12287,21 +12308,23 @@
             0.0,
             0.0
           ],
-          "root": 0,
-          "startCaptured": 0,
+          "root": 4,
+          "startCaptured": 1,
           "startPos": [
-            0.0,
-            0.0,
-            0.0
+            3.0,
+            0.8999999761581421,
+            3.0
           ],
-          "state0": 0,
+          "state0": 1,
           "state1": 0,
           "state2": 0,
-          "uiFill": 0,
-          "uiText": 0
+          "uiFill": 16,
+          "uiText": 17
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 0,
           "playing": 1,
           "timeTicks": 0
@@ -12315,14 +12338,14 @@
       "components": {
         "AcousticListener": {
           "lastHeardPos": [
-            0.0,
-            0.0,
-            0.0
+            32.75,
+            0.8500000238418579,
+            16.75
           ],
-          "lastHeardTick": 0,
-          "lastLoudness": 0.0,
-          "lastSourceEntity": 0,
-          "lastTone": 0,
+          "lastHeardTick": 3624,
+          "lastLoudness": 0.6000000238418579,
+          "lastSourceEntity": 6,
+          "lastTone": 3,
           "threshold": 9.999999747378752e-06
         },
         "LocalTransform": {
@@ -12430,9 +12453,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 8073666279216276312,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2270,
@@ -12492,9 +12517,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 11352717997739470776,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2272,
@@ -12554,9 +12581,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 3348102577382068872,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2274,
@@ -12616,9 +12645,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 11008134436263671976,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2276,
@@ -12678,9 +12709,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 10895653525383921632,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2278,
@@ -12740,9 +12773,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5618870473525994825,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2280,
@@ -12802,9 +12837,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 11114961249090150693,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2282,
@@ -12864,9 +12901,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5085543990808880328,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2284,
@@ -12926,9 +12965,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 17271322038264369444,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2286,
@@ -12988,9 +13029,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 4445597795473746332,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2288,
@@ -13050,9 +13093,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 8139493738434905563,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2290,
@@ -13112,9 +13157,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5011549701163727142,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2292,
@@ -13174,9 +13221,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 7073209306653845090,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2294,
@@ -13236,9 +13285,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 14525654447623160363,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2296,
@@ -13298,9 +13349,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 272572135512756772,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2298,
@@ -13360,9 +13413,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 10142111180089586528,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2300,
@@ -14358,9 +14413,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 2077450605121040721,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2338,
@@ -14420,9 +14477,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 9868341339863237466,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2340,
@@ -14482,9 +14541,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 13365246975830006103,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2342,
@@ -14544,9 +14605,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 10793642857368864024,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2344,
@@ -14606,9 +14669,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 17721230938620529737,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2346,
@@ -14668,9 +14733,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 109454671751283225,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2348,
@@ -14825,6 +14892,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 8073666279216276312,
           "playing": 1,
           "timeTicks": 0
@@ -14895,6 +14964,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 11352717997739470776,
           "playing": 1,
           "timeTicks": 0
@@ -14965,6 +15036,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 3348102577382068872,
           "playing": 1,
           "timeTicks": 0
@@ -15035,6 +15108,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 11008134436263671976,
           "playing": 1,
           "timeTicks": 0
@@ -15105,6 +15180,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 10895653525383921632,
           "playing": 1,
           "timeTicks": 0
@@ -15175,6 +15252,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5618870473525994825,
           "playing": 1,
           "timeTicks": 0
@@ -15245,6 +15324,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 11114961249090150693,
           "playing": 1,
           "timeTicks": 0
@@ -15315,6 +15396,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5085543990808880328,
           "playing": 1,
           "timeTicks": 0
@@ -15385,6 +15468,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 17271322038264369444,
           "playing": 1,
           "timeTicks": 0
@@ -15455,6 +15540,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 4445597795473746332,
           "playing": 1,
           "timeTicks": 0
@@ -15525,6 +15612,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 8139493738434905563,
           "playing": 1,
           "timeTicks": 0
@@ -15595,6 +15684,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5011549701163727142,
           "playing": 1,
           "timeTicks": 0
@@ -15665,6 +15756,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 7073209306653845090,
           "playing": 1,
           "timeTicks": 0
@@ -15735,6 +15828,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 14525654447623160363,
           "playing": 1,
           "timeTicks": 0
@@ -15805,6 +15900,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 272572135512756772,
           "playing": 1,
           "timeTicks": 0
@@ -15875,6 +15972,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 10142111180089586528,
           "playing": 1,
           "timeTicks": 0
@@ -17025,6 +17124,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 2077450605121040721,
           "playing": 1,
           "timeTicks": 0
@@ -17095,6 +17196,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 9868341339863237466,
           "playing": 1,
           "timeTicks": 0
@@ -17165,6 +17268,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 13365246975830006103,
           "playing": 1,
           "timeTicks": 0
@@ -17235,6 +17340,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 10793642857368864024,
           "playing": 1,
           "timeTicks": 0
@@ -17305,6 +17412,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 17721230938620529737,
           "playing": 1,
           "timeTicks": 0
@@ -17375,6 +17484,8 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 109454671751283225,
           "playing": 1,
           "timeTicks": 0
@@ -17390,13 +17501,13 @@
       "components": {
         "AcousticListener": {
           "lastHeardPos": [
-            0.0,
-            0.0,
-            0.0
+            30.75,
+            0.8500000238418579,
+            23.25
           ],
-          "lastHeardTick": 0,
-          "lastLoudness": 0.0,
-          "lastSourceEntity": 0,
+          "lastHeardTick": 236531,
+          "lastLoudness": 0.0024691252037882805,
+          "lastSourceEntity": 6,
           "lastTone": 0,
           "threshold": 0.001500000013038516
         },
@@ -17407,29 +17518,29 @@
           "alertTicks": 30,
           "emitEveryTicks": 120,
           "emitLoudness": 0.2199999988079071,
-          "emitPhase": 0,
+          "emitPhase": 76,
           "home": [
             22.0,
-            1.2799999713897705,
-            16.0
+            0.839999794960022,
+            18.0
           ],
           "loseTicks": 120,
           "memoryTicks": 600,
           "runSpeed": 3.0,
           "searchTicks": 180,
-          "state": 0,
-          "stateTicks": 0,
+          "state": 4,
+          "stateTicks": 5205,
           "target": [
             22.0,
-            1.2799999713897705,
-            16.0
+            0.839999794960022,
+            12.0
           ],
           "walkSpeed": 1.2000000476837158
         },
         "CharacterController": {
           "gravityScale": 1.0,
           "height": 1.0499999523162842,
-          "isGrounded": 0,
+          "isGrounded": 1,
           "jumpSpeed": 0.0,
           "moveInput": [
             0.0,
@@ -17445,11 +17556,28 @@
             0.0
           ]
         },
+        "Collider": {
+          "friction": 0.5,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 1.0499999523162842,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 2
+        },
         "LocalTransform": {
           "position": [
-            22.37090492248535,
-            1.2799999713897705,
-            16.0
+            23.00956916809082,
+            0.839999794960022,
+            13.999629974365234
           ],
           "rotation": [
             0.0,
@@ -17464,25 +17592,27 @@
           ]
         },
         "SkAgent": {
-          "animBound": 0,
-          "animClip": -1,
+          "animBound": 1,
+          "animClip": 0,
           "animMoving": 0,
-          "body": 0,
+          "body": 1001,
           "dwell": 0,
           "faceDir": [
-            0.0,
+            -3.857122177208794e-09,
             0.0,
             -1.0
           ],
           "flinchLeft": 0,
           "flinchRequest": 0,
-          "part0": 0,
-          "part1": 0,
-          "part2": 0,
-          "part3": 0,
-          "part4": 0,
-          "prevState": -1,
-          "root": 0,
+          "holding": 0,
+          "loseBase": -1,
+          "part0": 1002,
+          "part1": 1003,
+          "part2": 1004,
+          "part3": 1005,
+          "part4": 1006,
+          "prevState": 4,
+          "root": 4,
           "tag": 0,
           "voiceTicks": 0,
           "wp0": [
@@ -17506,7 +17636,10 @@
             18.0
           ],
           "wpCount": 4,
-          "wpIndex": 0
+          "wpIndex": 1
+        },
+        "WaveSound": {
+          "sound": "enemy_voice"
         }
       },
       "fileId": 8,
@@ -17564,12 +17697,12 @@
           "mesh": 10339381082593114030
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 8384716452530548893,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 150
         }
       },
       "fileId": 1002,
@@ -17602,12 +17735,12 @@
           "mesh": 17153238837598881303
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 3998160248696221641,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 150
         }
       },
       "fileId": 1003,
@@ -17640,12 +17773,12 @@
           "mesh": 14225325912750735848
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 17996846333972838797,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 150
         }
       },
       "fileId": 1004,
@@ -17678,12 +17811,12 @@
           "mesh": 1154840182673957505
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 15523392672632137513,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 150
         }
       },
       "fileId": 1005,
@@ -17716,12 +17849,12 @@
           "mesh": 7507144814243060658
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 12787163067259099393,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 150
         }
       },
       "fileId": 1006,
@@ -17733,43 +17866,43 @@
       "components": {
         "AcousticListener": {
           "lastHeardPos": [
-            0.0,
-            0.0,
-            0.0
+            46.25,
+            0.8500000238418579,
+            15.25
           ],
-          "lastHeardTick": 0,
-          "lastLoudness": 0.0,
-          "lastSourceEntity": 0,
+          "lastHeardTick": 2495,
+          "lastLoudness": 0.0016552101587876678,
+          "lastSourceEntity": 6,
           "lastTone": 0,
           "threshold": 0.001500000013038516
         },
         "AgentBrain": {
           "alertTicks": 30,
-          "emitEveryTicks": 60,
+          "emitEveryTicks": 120,
           "emitLoudness": 0.2199999988079071,
-          "emitPhase": 0,
+          "emitPhase": 63,
           "home": [
-            52.0,
-            1.2799999713897705,
+            47.0,
+            0.839999794960022,
             25.0
           ],
           "loseTicks": 120,
           "memoryTicks": 600,
           "runSpeed": 3.0,
           "searchTicks": 180,
-          "state": 0,
-          "stateTicks": 0,
+          "state": 4,
+          "stateTicks": 873,
           "target": [
-            52.0,
-            1.2799999713897705,
-            25.0
+            47.0,
+            0.839999794960022,
+            17.0
           ],
           "walkSpeed": 1.2000000476837158
         },
         "CharacterController": {
           "gravityScale": 1.0,
-          "height": 1.600000023841858,
-          "isGrounded": 0,
+          "height": 1.0499999523162842,
+          "isGrounded": 1,
           "jumpSpeed": 0.0,
           "moveInput": [
             0.0,
@@ -17785,11 +17918,28 @@
             0.0
           ]
         },
+        "Collider": {
+          "friction": 0.5,
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "height": 1.0499999523162842,
+          "isTrigger": false,
+          "layer": 0,
+          "mask": 4294967295,
+          "materialOverrideBits": 0,
+          "meshAsset": 0,
+          "physMaterial": 0,
+          "radius": 0.5,
+          "shape": 2
+        },
         "LocalTransform": {
           "position": [
-            52.0,
-            1.2799999713897705,
-            25.0
+            47.986183166503906,
+            0.839999794960022,
+            17.015527725219727
           ],
           "rotation": [
             0.0,
@@ -17804,49 +17954,54 @@
           ]
         },
         "SkAgent": {
-          "animBound": 0,
-          "animClip": -1,
+          "animBound": 1,
+          "animClip": 0,
           "animMoving": 0,
-          "body": 0,
+          "body": 1011,
           "dwell": 0,
           "faceDir": [
+            -0.0001060111535480246,
             0.0,
-            0.0,
-            -1.0
+            1.0
           ],
           "flinchLeft": 0,
           "flinchRequest": 0,
-          "part0": 0,
-          "part1": 0,
-          "part2": 0,
-          "part3": 0,
-          "part4": 0,
-          "prevState": -1,
-          "root": 0,
+          "holding": 0,
+          "loseBase": -1,
+          "part0": 1012,
+          "part1": 1013,
+          "part2": 1014,
+          "part3": 1015,
+          "part4": 1016,
+          "prevState": 4,
+          "root": 4,
           "tag": 1,
           "voiceTicks": 0,
           "wp0": [
             47.0,
-            1.2799999713897705,
+            0.839999794960022,
             25.0
           ],
           "wp1": [
             52.0,
-            1.2799999713897705,
+            0.839999794960022,
             25.0
           ],
           "wp2": [
             52.0,
-            1.2799999713897705,
+            0.839999794960022,
             17.0
           ],
           "wp3": [
             47.0,
-            1.2799999713897705,
+            0.839999794960022,
             17.0
           ],
           "wpCount": 4,
           "wpIndex": 0
+        },
+        "WaveSound": {
+          "sound": "enemy_voice"
         }
       },
       "fileId": 18,
@@ -17858,14 +18013,14 @@
         "LocalTransform": {
           "position": [
             0.0,
-            -0.800000011920929,
+            -0.5249999761581421,
             0.0
           ],
           "rotation": [
             0.0,
+            1.0,
             0.0,
-            0.0,
-            1.0
+            0.0
           ],
           "scale": [
             1.6666666269302368,
@@ -17904,12 +18059,12 @@
           "mesh": 10339381082593114030
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 8384716452530548893,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 39
         }
       },
       "fileId": 1012,
@@ -17942,12 +18097,12 @@
           "mesh": 17153238837598881303
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 3998160248696221641,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 39
         }
       },
       "fileId": 1013,
@@ -17980,12 +18135,12 @@
           "mesh": 14225325912750735848
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 17996846333972838797,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 39
         }
       },
       "fileId": 1014,
@@ -18018,12 +18173,12 @@
           "mesh": 1154840182673957505
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 15523392672632137513,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 39
         }
       },
       "fileId": 1015,
@@ -18056,12 +18211,12 @@
           "mesh": 7507144814243060658
         },
         "SkinnedMesh": {
-          "clip": 1,
-          "fadeTicks": 0,
+          "clip": 0,
+          "fadeTicks": 12,
           "loop": 1,
           "model": 12787163067259099393,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 39
         }
       },
       "fileId": 1016,
@@ -18116,6 +18271,9 @@
           "startDelay": 6,
           "ticks": 0,
           "tone": 1
+        },
+        "WaveSound": {
+          "sound": "core_ping"
         }
       },
       "fileId": 9,
@@ -18193,9 +18351,9 @@
         },
         "LocalTransform": {
           "position": [
-            0.0,
+            47.01494598388672,
             -4.0,
-            0.0
+            17.360286712646484
           ],
           "rotation": [
             0.0,
@@ -18210,55 +18368,7 @@
           ]
         },
         "MeshRenderer": {
-          "material": 4205236152057200912,
-          "mesh": 2446064346655322217
-        }
-      },
-      "fileId": 11,
-      "name": "SkLamp0"
-    },
-    {
-      "childIndex": 12,
-      "components": {
-        "Light": {
-          "ambient": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "castShadow": 0,
-          "color": [
-            1.0,
-            0.8799999952316284,
-            0.6200000047683716
-          ],
-          "intensity": 0.0,
-          "range": 0.009999999776482582,
-          "safeRadius": 0.0,
-          "spotInnerDeg": 25.0,
-          "spotOuterDeg": 35.0,
-          "type": 1
-        },
-        "LocalTransform": {
-          "position": [
-            2.0,
-            -4.0,
-            0.0
-          ],
-          "rotation": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ],
-          "scale": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ]
-        },
-        "MeshRenderer": {
-          "material": 4205236152057200912,
+          "material": 4205236152057200913,
           "mesh": 2446064346655322217
         }
       },
@@ -18266,7 +18376,7 @@
       "name": "SkLamp1"
     },
     {
-      "childIndex": 13,
+      "childIndex": 12,
       "components": {
         "Light": {
           "ambient": [
@@ -18314,7 +18424,7 @@
       "name": "SkLamp2"
     },
     {
-      "childIndex": 14,
+      "childIndex": 13,
       "components": {
         "LocalTransform": {
           "position": [
@@ -18352,7 +18462,7 @@
           "focusable": 0,
           "focused": 0,
           "fontScale": 1.0,
-          "h": 22.0,
+          "h": 36.0,
           "kind": 0,
           "order": 0,
           "sliceBorder": [
@@ -18365,17 +18475,17 @@
           "space": 0,
           "text": "",
           "texture": 0,
-          "w": 320.0,
+          "w": 540.0,
           "wrap": 0,
-          "x": 40.0,
-          "y": -62.0
+          "x": 56.0,
+          "y": -92.0
         }
       },
       "fileId": 15,
       "name": "UiEchoBg"
     },
     {
-      "childIndex": 15,
+      "childIndex": 14,
       "components": {
         "LocalTransform": {
           "position": [
@@ -18408,12 +18518,12 @@
           ],
           "distanceRef": 5.0,
           "distanceScale": false,
-          "fillAmount": 0.0,
+          "fillAmount": 1.0,
           "fillMode": 1,
           "focusable": 0,
           "focused": 0,
           "fontScale": 1.0,
-          "h": 22.0,
+          "h": 36.0,
           "kind": 0,
           "order": 1,
           "sliceBorder": [
@@ -18426,17 +18536,17 @@
           "space": 0,
           "text": "",
           "texture": 0,
-          "w": 320.0,
+          "w": 540.0,
           "wrap": 0,
-          "x": 40.0,
-          "y": -62.0
+          "x": 56.0,
+          "y": -92.0
         }
       },
       "fileId": 16,
       "name": "UiEchoFill"
     },
     {
-      "childIndex": 16,
+      "childIndex": 15,
       "components": {
         "LocalTransform": {
           "position": [
@@ -18473,8 +18583,8 @@
           "fillMode": 0,
           "focusable": 0,
           "focused": 0,
-          "fontScale": 0.8999999761581421,
-          "h": 30.0,
+          "fontScale": 2.4000000953674316,
+          "h": 44.0,
           "kind": 1,
           "order": 2,
           "sliceBorder": [
@@ -18485,19 +18595,19 @@
           ],
           "sliced": 0,
           "space": 0,
-          "text": "BEACON 3 / 3",
+          "text": "BEACON 2 / 3   READY",
           "texture": 0,
-          "w": 320.0,
+          "w": 540.0,
           "wrap": 0,
-          "x": 40.0,
-          "y": -102.0
+          "x": 56.0,
+          "y": -150.0
         }
       },
       "fileId": 17,
       "name": "UiBeaconText"
     },
     {
-      "childIndex": 17,
+      "childIndex": 16,
       "components": {
         "AcousticEmitter": {
           "autoFootstep": false,
@@ -18506,7 +18616,7 @@
           "footstepGain": 1.0,
           "pendingLoudness": 0.0,
           "pendingRadiusM": 0.0,
-          "pendingTone": 0,
+          "pendingTone": 2,
           "stepDistanceM": 0.800000011920929,
           "ticksPerRing": 2,
           "travelAccum": 0.0
@@ -18534,12 +18644,25 @@
           "mesh": 1506918697593860217
         },
         "SkGoal": {
-          "bound": 0,
+          "bound": 1,
           "cleared": 0,
+          "corePos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "deathsSeen": 0,
+          "fixedLight": 10,
           "holdLeft": 0,
-          "player": 0,
-          "root": 0,
-          "uiClear": 0
+          "msgKind": 0,
+          "msgLeft": 0,
+          "pingEvery": 0,
+          "player": 6,
+          "returnToStart": 0,
+          "root": 4,
+          "taken": 0,
+          "uiClear": 20,
+          "uiMsg": 0
         },
         "SkPinger": {
           "everyTicks": 150,
@@ -18547,15 +18670,18 @@
           "radiusM": 14.0,
           "ringTicks": 2,
           "startDelay": 30,
-          "ticks": 0,
+          "ticks": 8081,
           "tone": 2
+        },
+        "WaveSound": {
+          "sound": "core_ping"
         }
       },
       "fileId": 19,
       "name": "DataCore"
     },
     {
-      "childIndex": 18,
+      "childIndex": 17,
       "components": {
         "LocalTransform": {
           "position": [
@@ -18592,8 +18718,8 @@
           "fillMode": 0,
           "focusable": 0,
           "focused": 0,
-          "fontScale": 2.200000047683716,
-          "h": 80.0,
+          "fontScale": 6.0,
+          "h": 160.0,
           "kind": 1,
           "order": 3,
           "sliceBorder": [
@@ -18606,17 +18732,17 @@
           "space": 0,
           "text": "",
           "texture": 0,
-          "w": 520.0,
+          "w": 1200.0,
           "wrap": 0,
-          "x": -260.0,
-          "y": -40.0
+          "x": -600.0,
+          "y": -80.0
         }
       },
       "fileId": 20,
       "name": "UiClearText"
     },
     {
-      "childIndex": 19,
+      "childIndex": 18,
       "components": {
         "LocalTransform": {
           "position": [
@@ -18693,9 +18819,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 12787163067259099393,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2351,
@@ -18755,9 +18883,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 15523392672632137513,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2353,
@@ -18817,9 +18947,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 17996846333972838797,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2355,
@@ -20595,9 +20727,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 3998160248696221641,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2423,
@@ -20657,9 +20791,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 8384716452530548893,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2425,
@@ -20667,7 +20803,7 @@
       "parent": 2349
     },
     {
-      "childIndex": 20,
+      "childIndex": 19,
       "components": {
         "LocalTransform": {
           "position": [
@@ -20744,9 +20880,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 9046287159487158113,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2428,
@@ -20806,9 +20944,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 17987409226260035849,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2430,
@@ -20868,9 +21008,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 5065593997184047853,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2432,
@@ -20930,9 +21072,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 862504438768797993,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2434,
@@ -20992,9 +21136,11 @@
         },
         "SkinnedMesh": {
           "clip": 0,
+          "fadeTicks": 0,
+          "loop": 1,
           "model": 4742555588349783293,
           "playing": 1,
-          "timeTicks": 0
+          "timeTicks": 161
         }
       },
       "fileId": 2436,
@@ -22716,6 +22862,56 @@
       "fileId": 2502,
       "name": "Toe2_2.R",
       "parent": 2501
+    },
+    {
+      "childIndex": 20,
+      "components": {
+        "AcousticAudio": {
+          "bendFullM": 8.0,
+          "detourWet": 0.25,
+          "enabled": true,
+          "lpfFloor": 0.25,
+          "minWaveVolume": 0.10000000149011612,
+          "occludedGain": 0.15000000596046448,
+          "occludedLpf": 0.10000000149011612,
+          "openLarge": 0.800000011920929,
+          "openSmall": 0.30000001192092896,
+          "probeMaxRing": 96,
+          "reverbLarge": 6,
+          "reverbSmall": 3,
+          "roomProbeM": 6.0,
+          "roomSmoothTicks": 18,
+          "smoothTicks": 6,
+          "toneSound0": "footstep_tile",
+          "toneSound1": "footstep_wood",
+          "toneSound2": "footstep_gravel",
+          "toneSound3": "footstep_metal",
+          "waveReverbSend": 0.3499999940395355,
+          "waveRolloff": 0,
+          "waveVolume": 1.0,
+          "waveVolumeExp": 1.0
+        },
+        "LocalTransform": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "fileId": 43,
+      "name": "Acoustic Audio"
     }
   ],
   "nextFileId": 2740,

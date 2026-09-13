@@ -66,6 +66,33 @@ inline constexpr const char* kNameEchoEar = "EchoEar";
 // 画面左下の残響 UI (kComponentNoHash なので毎 tick 書いてもリプレイは 1 ビットも動かない)
 inline constexpr const char* kNameUiEchoFill = "UiEchoFill";
 inline constexpr const char* kNameUiBeacon = "UiBeaconText";
+// ---- ステージ 2 (中央研究施設) の仕掛け。名前は mkstage.py の STAGES[2] と揃える ----
+// 施設の状態 (ロック A/B/C、扉、ポンプ) を 1 つで持つ司会役。無いステージでは誰も引かない
+inline constexpr const char* kNameFacility = "Facility";
+// 制御端末 (近づいて Interact を長押し)。0 = A (ロック A) / 1 = B (ロック B + ポンプ) / 2 = C (近道)
+inline constexpr int32_t kTerminalCount = 3;
+inline constexpr const char* kNameTerminal[kTerminalCount] = { "TerminalA", "TerminalB", "TerminalC" };
+// 扉 = 開口に置いた箱コライダ。開くと床下へ沈める (コライダは外さない = 構造変更なし、遮蔽も消える)
+inline constexpr const char* kNameDoorVault = "DoorVault";       // 保管庫。ロック A と B で開く
+inline constexpr const char* kNameDoorFlood = "DoorFlood";       // 水没通路の出口。ポンプ (端末 B) で開く
+inline constexpr const char* kNameDoorShortcut = "DoorShortcut"; // C1 → C3 の近道。端末 C で開く
+inline constexpr const char* kNamePump = "Pump";                 // 排水ポンプ (SkPinger を Active で起こす)
+// 投擲物 (企画 5「石・瓶」)。★ビーコンと同じく実行時に生成しない — シーンが床下に用意した
+//   実体を飛ばして、着弾点で AcousticEmitter に波を出させる
+inline constexpr const char* kNameStone = "SkStone";
+inline constexpr const char* kNameBottle = "SkBottle";
+// 画面上部のメッセージ (ロック解除・扉・データ取得)。左下の所持数 (石 / 瓶)
+inline constexpr const char* kNameUiStage = "UiStageText";
+inline constexpr const char* kNameUiItem = "UiItemText";
+// 瓶の波が鳴らす音 (assets\audio\impact\*.impact.json の名前)。着弾の法線速度で割れる / 割れないを
+// 分け、SkThrower が着弾 tick に SkBottle の WaveSound.sound へ書く。**音だけの違い** — 波の大きさ
+// (敵に聞こえる量) は変えない = sim は 1 bit も動かない
+inline constexpr const char* kSoundGlassBreak = "glass_break";
+inline constexpr const char* kSoundGlassImpact = "glass_impact";
+// 扉の高さ (閉 = 開口の中央 / 開 = 床下)。★閉の値は mkstage.py の door_y と一致させること
+inline constexpr float kDoorClosedY = 1.2f;
+inline constexpr float kDoorOpenY = -10.0f;
+inline constexpr float kStowY = -4.0f; // 床下の格納高さ (ビーコン / 投擲物 / 拾った補給品で共通)
 // 携行する光 3 本 (企画 4-1)。★実行時に生成しない — 生成した tick の 1 フレームだけ
 //   既定値の白い平行光がシーン全体を照らす (エンジン WatcherLightTool.cpp の実測)。
 //   シーンが床下に用意した実体を目の前へ動かして強度を 0 から育てる
@@ -109,6 +136,10 @@ inline constexpr uint64_t kCompListener = MyeNameHash("AcousticListener");
 inline constexpr uint64_t kFieldLastHeardTick = MyeNameHash("lastHeardTick");
 inline constexpr uint64_t kFieldLastLoudness = MyeNameHash("lastLoudness");
 inline constexpr uint64_t kFieldLastSourceEntity = MyeNameHash("lastSourceEntity");
+// WaveSound (エンジン ImpactSynth、kComponentNoHash = 音レーン)。発音元の波が鳴らす音の名前。
+// 石 / 瓶 / 敵 / データコアに付いている。NoHash なので毎 tick 書いてもリプレイは動かない
+inline constexpr uint64_t kCompWaveSound = MyeNameHash("WaveSound");
+inline constexpr uint64_t kFieldWaveSoundName = MyeNameHash("sound");
 // UIElement (kComponentNoHash = 描画専用レーン)
 inline constexpr uint64_t kCompUiElement = MyeNameHash("UIElement");
 inline constexpr uint64_t kFieldFillAmount = MyeNameHash("fillAmount");
@@ -124,6 +155,9 @@ inline constexpr uint64_t kFieldAgentHome = MyeNameHash("home");
 inline constexpr uint64_t kFieldEmitEveryTicks = MyeNameHash("emitEveryTicks");
 inline constexpr uint64_t kFieldEmitLoudness = MyeNameHash("emitLoudness");
 inline constexpr uint64_t kFieldEmitPhase = MyeNameHash("emitPhase");
+// 追跡を「聞いた地点に着くまで」保つのに SkAgent が読む / 書く (target は読むだけ)
+inline constexpr uint64_t kFieldAgentTarget = MyeNameHash("target");
+inline constexpr uint64_t kFieldAgentLoseTicks = MyeNameHash("loseTicks");
 
 // ---- 敵の見た目 (assets\model\enemy_crawler_c_v02)。★綴りは mkstage.py の CRAWLER_* と揃える ----
 // 敵エンティティの子 "<敵の名前>_Body" の下に、材質ごとに割れたスキン付きメッシュが 5 つ並ぶ
@@ -153,6 +187,16 @@ inline constexpr uint64_t kFieldSkinTimeTicks = MyeNameHash("timeTicks");
 // (アニメは SkAgent の持ち物なので、SkLightTool は要求を立てるだけ)
 inline constexpr uint64_t kCompSkAgent = MyeNameHash("SkAgent");
 inline constexpr uint64_t kFieldFlinchRequest = MyeNameHash("flinchRequest");
+// SkThrower (Player) の所持数。SkPickup が拾った分を足す
+inline constexpr uint64_t kCompSkThrower = MyeNameHash("SkThrower");
+inline constexpr uint64_t kFieldStones = MyeNameHash("stones");
+inline constexpr uint64_t kFieldBottles = MyeNameHash("bottles");
+// SkLightTool (Player) の死亡数。SkGoal が増えたのを見てデータ取得を戻す
+inline constexpr uint64_t kCompSkLightTool = MyeNameHash("SkLightTool");
+inline constexpr uint64_t kFieldDeaths = MyeNameHash("deaths");
+// SkPinger の発音間隔。データ取得後にコアの波を止めるのに 0 を書く
+inline constexpr uint64_t kCompSkPinger = MyeNameHash("SkPinger");
+inline constexpr uint64_t kFieldPingerEveryTicks = MyeNameHash("everyTicks");
 
 // ---- SkTuning (assets\schemas\sk_tuning.component.schema.json, id 3001) ----
 inline constexpr uint64_t kCompTuning = MyeNameHash("SkTuning");
@@ -203,9 +247,27 @@ inline constexpr uint64_t kFieldVoiceChaseTicks = MyeNameHash("voiceChaseTicks")
 inline constexpr uint64_t kFieldVoiceChaseLoud = MyeNameHash("voiceChaseLoud");
 inline constexpr uint64_t kFieldWaypointReachM = MyeNameHash("waypointReachM");
 inline constexpr uint64_t kFieldWaypointDwellTicks = MyeNameHash("waypointDwellTicks");
+inline constexpr uint64_t kFieldChaseHoldTicks = MyeNameHash("chaseHoldTicks");
+inline constexpr uint64_t kFieldChaseReachM = MyeNameHash("chaseReachM");
 inline constexpr uint64_t kFieldGoalReachM = MyeNameHash("goalReachM");
 inline constexpr uint64_t kFieldClearHoldTicks = MyeNameHash("clearHoldTicks");
 inline constexpr uint64_t kFieldDebugNoTransition = MyeNameHash("debugNoTransition");
+// ---- ステージ 2 の仕掛け (端末 / 投擲 / 補給 / データ取得) ----
+inline constexpr uint64_t kFieldInteractTicks = MyeNameHash("interactTicks");
+inline constexpr uint64_t kFieldInteractReachM = MyeNameHash("interactReachM");
+inline constexpr uint64_t kFieldThrowSpeedMps = MyeNameHash("throwSpeedMps");
+inline constexpr uint64_t kFieldThrowUpMps = MyeNameHash("throwUpMps");
+inline constexpr uint64_t kFieldStoneLoudness = MyeNameHash("stoneLoudness");
+inline constexpr uint64_t kFieldStoneRadiusM = MyeNameHash("stoneRadiusM");
+inline constexpr uint64_t kFieldBottleLoudness = MyeNameHash("bottleLoudness");
+inline constexpr uint64_t kFieldBottleRadiusM = MyeNameHash("bottleRadiusM");
+inline constexpr uint64_t kFieldPickupReachM = MyeNameHash("pickupReachM");
+inline constexpr uint64_t kFieldDataWaveLoudness = MyeNameHash("dataWaveLoudness");
+inline constexpr uint64_t kFieldDataWaveRadiusM = MyeNameHash("dataWaveRadiusM");
+inline constexpr uint64_t kFieldMessageTicks = MyeNameHash("messageTicks");
+inline constexpr uint64_t kFieldDebugAutoInteract = MyeNameHash("debugAutoInteract");
+inline constexpr uint64_t kFieldDebugAutoThrow = MyeNameHash("debugAutoThrow");
+inline constexpr uint64_t kFieldBottleBreakSpeedMps = MyeNameHash("bottleBreakSpeedMps");
 
 // 調整値のスナップショット。★既定値はスキーマの default と一致させること —
 // GameRoot が見つからない tick でも「素の値」で動き続けるための保険
@@ -261,6 +323,9 @@ struct Tuning {
     float voiceChaseLoud = 0.62f;
     float waypointReachM = 3.0f;      // 巡回点に「着いた」と見なす水平距離
     int32_t waypointDwellTicks = 150; // 巡回点での滞在 (2.5 秒)
+    // ---- 追跡: 聞いた地点に着くまで諦めない (SkAgent が AgentBrain.loseTicks を書き換える) ----
+    int32_t chaseHoldTicks = 1500;    // 着くまで追跡を保つ上限 (25 秒、最後に聞いてから)
+    float chaseReachM = 2.5f;         // 聞いた地点に「着いた」と見なす水平距離
     // ---- ゴール (データコア) とステージ遷移 ----
     float goalReachM = 2.2f;
     int32_t clearHoldTicks = 180;   // "STAGE CLEAR" を見せてから次のシーンへ移るまで (3 秒)
@@ -271,6 +336,24 @@ struct Tuning {
     //   (2) 停止だけでも同じことが起きる — 敵も物理も凍るので、巡回や声を見ている
     //       関門が「クリアしたから静かになった」だけで緑になってしまう
     int32_t debugNoTransition = 0;
+    // ---- ステージ 2 の仕掛け ----
+    int32_t interactTicks = 90;       // 端末の長押し 1.5 秒 (企画の「操作」に時間を持たせる)
+    float interactReachM = 2.0f;      // 端末に届く水平距離
+    float throwSpeedMps = 9.0f;       // 投擲の初速 (視線方向)
+    float throwUpMps = 2.5f;          // 投擲に足す上向きの初速
+    float stoneLoudness = 0.5f;       // 石 = 偵察。敵の可聴距離 0.5*sqrt(0.5/0.0015) ≒ 9m
+    float stoneRadiusM = 14.0f;
+    float bottleLoudness = 1.6f;      // 瓶 = 誘導。可聴距離 ≒ 16m
+    float bottleRadiusM = 26.0f;
+    float pickupReachM = 1.3f;        // 補給品を拾う水平距離
+    float dataWaveLoudness = 8.0f;    // メインデータ取得の大音波。可聴距離 ≒ 36m = 施設のほぼ全域
+    float dataWaveRadiusM = 90.0f;
+    int32_t messageTicks = 240;       // 画面上部のメッセージを出す長さ (4 秒)
+    int32_t debugAutoInteract = 0;    // 1 = Interact を押しっぱなし扱い (ヘッドレス検証用)
+    int32_t debugAutoThrow = 0;       // 1 = 60 tick ごとに瓶 → 石の順で投げる (ヘッドレス検証用)
+    // 瓶が割れる着弾の法線速度 [m/s]。床へ落ちると 5-6 m/s、壁を浅くかすると 3 m/s 程度。
+    // ★音 (glass_break / glass_impact) だけを分ける。波の大きさは bottleLoudness のまま
+    float bottleBreakSpeedMps = 4.0f;
 };
 
 // 調整値を持つエンティティ (シーンでは "GameRoot")
@@ -332,10 +415,62 @@ inline Tuning ReadTuning(const MyeUpdateContext& ctx, MyeEntityId root)
     MyeGetField(ctx, root, kCompTuning, kFieldVoiceChaseLoud, t.voiceChaseLoud);
     MyeGetField(ctx, root, kCompTuning, kFieldWaypointReachM, t.waypointReachM);
     MyeGetField(ctx, root, kCompTuning, kFieldWaypointDwellTicks, t.waypointDwellTicks);
+    MyeGetField(ctx, root, kCompTuning, kFieldChaseHoldTicks, t.chaseHoldTicks);
+    MyeGetField(ctx, root, kCompTuning, kFieldChaseReachM, t.chaseReachM);
     MyeGetField(ctx, root, kCompTuning, kFieldGoalReachM, t.goalReachM);
     MyeGetField(ctx, root, kCompTuning, kFieldClearHoldTicks, t.clearHoldTicks);
     MyeGetField(ctx, root, kCompTuning, kFieldDebugNoTransition, t.debugNoTransition);
+    MyeGetField(ctx, root, kCompTuning, kFieldInteractTicks, t.interactTicks);
+    MyeGetField(ctx, root, kCompTuning, kFieldInteractReachM, t.interactReachM);
+    MyeGetField(ctx, root, kCompTuning, kFieldThrowSpeedMps, t.throwSpeedMps);
+    MyeGetField(ctx, root, kCompTuning, kFieldThrowUpMps, t.throwUpMps);
+    MyeGetField(ctx, root, kCompTuning, kFieldStoneLoudness, t.stoneLoudness);
+    MyeGetField(ctx, root, kCompTuning, kFieldStoneRadiusM, t.stoneRadiusM);
+    MyeGetField(ctx, root, kCompTuning, kFieldBottleLoudness, t.bottleLoudness);
+    MyeGetField(ctx, root, kCompTuning, kFieldBottleRadiusM, t.bottleRadiusM);
+    MyeGetField(ctx, root, kCompTuning, kFieldPickupReachM, t.pickupReachM);
+    MyeGetField(ctx, root, kCompTuning, kFieldDataWaveLoudness, t.dataWaveLoudness);
+    MyeGetField(ctx, root, kCompTuning, kFieldDataWaveRadiusM, t.dataWaveRadiusM);
+    MyeGetField(ctx, root, kCompTuning, kFieldMessageTicks, t.messageTicks);
+    MyeGetField(ctx, root, kCompTuning, kFieldDebugAutoInteract, t.debugAutoInteract);
+    MyeGetField(ctx, root, kCompTuning, kFieldDebugAutoThrow, t.debugAutoThrow);
+    MyeGetField(ctx, root, kCompTuning, kFieldBottleBreakSpeedMps, t.bottleBreakSpeedMps);
     return t;
+}
+
+// ---- 画面上部のメッセージ (UiStageText)。SkFacility と SkGoal が共用する ----
+// ★書くのは「自分のメッセージが出ている間」と「消える瞬間の 1 回」だけ。待機中に毎 tick
+//   アルファ 0 を書くと、もう一方のスクリプトが出しているメッセージを握り潰す
+inline void ShowStageMessage(const MyeUpdateContext& ctx, MyeEntityId ui, const char* text, int32_t len,
+                             bool visible)
+{
+    if (MyeEntityIdIsNull(ui) || !ctx.api->IsAlive(ctx.api->engine, ui)) {
+        return;
+    }
+    MyeSetComponentField(ctx, ui, kCompUiElement, kFieldUiText, text, len);
+    const MyeVec4 color = { 1.0f, 0.94f, 0.78f, visible ? 1.0f : 0.0f };
+    MyeSetField(ctx, ui, kCompUiElement, kFieldUiColor, color);
+}
+
+// 水平距離の 2 乗。高さは見ない (台の上の物と床に立つプレイヤーの差を無視する)
+inline float Dist2XZ(const MyeVec3& a, const MyeVec3& b)
+{
+    const float dx = a.x - b.x, dz = a.z - b.z;
+    return dx * dx + dz * dz;
+}
+
+// 床下へ沈める (構造変更は起きない。ビーコンの Stow と同じ流儀)
+inline void StowEntity(const MyeUpdateContext& ctx, MyeEntityId e)
+{
+    if (MyeEntityIdIsNull(e) || !ctx.api->IsAlive(ctx.api->engine, e)) {
+        return;
+    }
+    MyeVec3 p = {};
+    ctx.api->GetLocalPosition(ctx.api->engine, e, &p);
+    if (p.y > kStowY) {
+        p.y = kStowY;
+        ctx.api->SetLocalPosition(ctx.api->engine, e, p);
+    }
 }
 
 } // namespace sk

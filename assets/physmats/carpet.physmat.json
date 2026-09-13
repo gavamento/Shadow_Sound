@@ -11,5 +11,6 @@
   "adhesion": 0.0,
   "acousticLoudness": 0.12,
   "acousticRadiusM": 3.0,
-  "acousticTone": 0
+  "acousticTone": 0,
+  "acousticSound": "footstep_carpet"
 }

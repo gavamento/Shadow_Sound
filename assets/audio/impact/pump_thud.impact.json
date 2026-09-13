@@ -1,0 +1,22 @@
+{
+  "engine": "MyEngine",
+  "impactSound": 1,
+  "//": "排水ポンプ (仮): 低い金属の打音",
+  "kind": "Impact",
+  "materialA": "Metal",
+  "materialB": "Concrete",
+  "strength": 1.0,
+  "size": 4.0,
+  "brightness": 0.7,
+  "durationSec": 1.2,
+  "seed": 3200,
+  "variations": 4,
+  "sound": {
+    "volume": 1.0,
+    "volumeRandom": 0.08,
+    "pitch": 1.0,
+    "pitchRandom": 0.03,
+    "bus": "SE",
+    "priority": 120
+  }
+}
